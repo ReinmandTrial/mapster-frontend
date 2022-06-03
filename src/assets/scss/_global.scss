@@ -1,0 +1,45 @@
+:root {
+	--white: #ffffff;
+	--gray: #707070;
+	--black: #000000;
+	--light-green: #41b619;
+	--light-gray: #ececec;
+}
+
+html,
+body {
+	height: 100%;
+	font-family: "Open Sans";
+	font-weight: normal;
+	font-style: normal;
+	color: #212b36;
+	overflow-x: hidden;
+	font-size: 16px;
+}
+.container-xl {
+	max-width: 1250px;
+	margin: 0 auto;
+	padding: 0px 25px;
+	height: 100%;
+}
+.container-l {
+	max-width: 1210px;
+	margin: 0 auto;
+	padding: 0px 55px;
+	height: 100%;
+}
+.container-m {
+	max-width: 850px;
+	margin: 0 auto;
+	padding: 0px 55px;
+	height: 100%;
+}
+.container-s {
+	max-width: 770px;
+	margin: 0 auto;
+	padding: 0px 55px;
+	height: 100%;
+}
+.icon {
+	font-size: 24px;
+}

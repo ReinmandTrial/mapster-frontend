@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "icon";
+  src: url("../fonts/icon/fonts/icon.ttf?5rtdvk") format("truetype"),
+    url("../fonts/icon/fonts/icon.woff?5rtdvk") format("woff"),
+    url("../fonts/icon/fonts/icon.svg?5rtdvk#icon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-right:before {
+  content: "\e900";
+}
+.icon-bed:before {
+  content: "\e901";
+}
+.icon-calendar:before {
+  content: "\e902";
+}
+.icon-calendar-2:before {
+  content: "\e903";
+}
+.icon-camera:before {
+  content: "\e904";
+}
+.icon-check:before {
+  content: "\e905";
+}
+.icon-check-circle:before {
+  content: "\e906";
+}
+.icon-close:before {
+  content: "\e907";
+}
+.icon-close-square:before {
+  content: "\e908";
+}
+.icon-distribute-vertical:before {
+  content: "\e909";
+}
+.icon-download:before {
+  content: "\e90a";
+}
+.icon-euro:before {
+  content: "\e90b";
+}
+.icon-exit:before {
+  content: "\e90c";
+}
+.icon-eye:before {
+  content: "\e90d";
+}
+.icon-facebook:before {
+  content: "\e90e";
+}
+.icon-info:before {
+  content: "\e90f";
+}
+.icon-inst:before {
+  content: "\e910";
+}
+.icon-mark:before {
+  content: "\e911";
+}
+.icon-palm:before {
+  content: "\e913";
+}
+.icon-pen:before {
+  content: "\e914";
+}
+.icon-pencil:before {
+  content: "\e915";
+}
+.icon-people:before {
+  content: "\e916";
+}
+.icon-person:before {
+  content: "\e917";
+}
+.icon-person-edit:before {
+  content: "\e918";
+}
+.icon-plane:before {
+  content: "\e919";
+}
+.icon-plus:before {
+  content: "\e91a";
+}
+.icon-plus-out:before {
+  content: "\e91b";
+}
+.icon-minus-out:before {
+  content: "\e912";
+}
+.icon-quotes:before {
+  content: "\e91c";
+}
+.icon-settings:before {
+  content: "\e91d";
+}
+.icon-taxi:before {
+  content: "\e91e";
+}
+.icon-three-dots-vertical:before {
+  content: "\e91f";
+}
+.icon-triangle-down:before {
+  content: "\e920";
+}
+.icon-triangle-down-line:before {
+  content: "\e921";
+}
+.icon-triangle-left-line:before {
+  content: "\e922";
+}
+.icon-triangle-right-line:before {
+  content: "\e923";
+}
+.icon-watch:before {
+  content: "\e924";
+}
+.icon-youtube:before {
+  content: "\e925";
+}
