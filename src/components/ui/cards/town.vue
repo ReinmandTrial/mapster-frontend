@@ -1,57 +1,115 @@
 <template>
-  <div class="card-town">
+  <router-link
+    class="card-town"
+    :to="{
+      name: `ExcursionsTown`,
+      params: {
+        country_name: town.country,
+        city_name: town.city,
+      },
+    }"
+  >
     <img
-      v-if="town.image != null"
-      :src="town.image"
+      v-if="image.data[0]"
+      :src="'data:image/jpg;base64,' + image.data"
       alt=""
       class="card-town__img"
     />
     <div class="card-town__content">
-      <h5 class="card-town__name">{{ town.name }}</h5>
+      <h5 class="card-town__name">{{ town.city }}</h5>
       <p class="card-town__amount-excursions" v-html="calcExcursions"></p>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
+import axiosConfig from '../../../api/instance'
+
 export default {
   name: 'CardTown',
   data() {
     return {
-      // town: {
-      //    name:'',
-      // },
+      image: {
+        data: [],
+      },
+      count: 0,
     }
+  },
+
+  props: {
+    town: {
+      default() {
+        return {
+          city: '',
+          image: null,
+        }
+      },
+    },
   },
   computed: {
     calcExcursions: function () {
-      var lastNum = this.town.excursions.toString().slice(-1),
-        lastTwoNums = this.town.excursions.toString().slice(-2)
+      const amountExcurtions = async () => {
+        await axiosConfig
+          .get(`/guide/count?city=${this.town.city}`)
+          .then((response) => {
+            if (response.data.data[0].count) {
+              this.count = response.data.data[0].count
+            }
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
+      }
+      amountExcurtions()
+
+      var lastNum = this.count.toString().slice(-1),
+        lastTwoNums = this.count.toString().slice(-2)
       if (lastTwoNums != 11 && lastNum == 1) {
-        return this.town.excursions + ' экскурсия'
+        return this.count + this.$t('excursions.client.amount_excursions.one')
       } else if (
         (lastNum == 2 || lastNum == 3 || lastNum == 4) &&
         lastTwoNums != 12 &&
         lastTwoNums != 13 &&
         lastTwoNums != 14
       ) {
-        return this.town.excursions + ' экскурсии'
+        return (
+          this.count +
+          this.$t('excursions.client.amount_excursions.two_to_four')
+        )
       } else {
-        return this.town.excursions + ' экскурсий'
+        return (
+          this.count + this.$t('excursions.client.amount_excursions.another')
+        )
       }
     },
   },
-  methods: {},
-  props: {
-    town: {
-      default() {
-        return {
-          name: 'some name',
-          excursions: 0,
-          image: null,
-        }
-      },
+  methods: {
+    getImage() {
+      axiosConfig
+        .get(`/enums/cityphoto?city=${this.town.city}`)
+        .then((response) => {
+          // console.log(response.data)
+          if (response.data.data[0]) {
+            this.image = response.data.data[0]
+          }
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
     },
+  },
+  created() {
+    const country = this.$route.params.country_name
+    if (country) {
+      this.current_country = country
+    }
+    const city = this.$route.params.city_name
+    if (city) {
+      this.current_city = city
+    }
+  },
+  mounted() {
+    this.getImage()
   },
 }
 </script>
@@ -64,6 +122,7 @@ export default {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+  background: #c3c3c3;
   @media (max-width: 575.98px) {
     border-radius: 8px;
   }

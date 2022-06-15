@@ -10,18 +10,13 @@
 import '@/assets/scss/style.scss'
 import VHeader from '../ui/header.vue'
 import VFooter from '../ui/footer.vue'
-// import ExcursionsHome from './services/excursions/Home.vue'
 export default {
   name: 'ServicesMain',
   components: {
     VHeader,
     VFooter,
-    // ExcursionsHome,
   },
-  mounted() {
-    // function test() {}
-    console.log(typeof this.test)
-  },
+  mounted() {},
 }
 </script>
 

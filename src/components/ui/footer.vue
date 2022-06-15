@@ -5,31 +5,33 @@
         <div class="footer__content">
           <div class="footer__leftside">
             <div class="footer__block">
-              <h3 class="footer__title">КОМПАНИЯ</h3>
+              <h3 class="footer__title">
+                {{ $t('footer.company') }}
+              </h3>
               <div class="footer__list">
                 <button type="button" class="footer__link">
-                  Политика конфиденциальности
+                  {{ $t('footer.privacy_policy') }}
                 </button>
                 <button type="button" class="footer__link">
-                  Информация о компании
+                  {{ $t('footer.info_company') }}
                 </button>
               </div>
             </div>
             <div class="footer__block footer__block--services">
-              <h3 class="footer__title">СЕРВИСЫ</h3>
+              <h3 class="footer__title">{{ $t('footer.services') }}</h3>
               <div class="footer__list">
                 <button type="button" class="footer__link">
-                  Войти / зарегистрироваться
+                  {{ $t('footer.login') }}
                 </button>
                 <button type="button" class="footer__link">
-                  Мобильное приложение
+                  {{ $t('footer.app') }}
                 </button>
               </div>
             </div>
           </div>
           <div class="footer__rightside">
             <div class="footer__socials">
-              <h4 class="footer__socials-title">Батуми, ул Кобаладзе 6</h4>
+              <h4 class="footer__socials-title">{{ $t('footer.adress') }}</h4>
               <div class="footer__socials-items">
                 <a href="#" class="footer__socials-link icon icon-facebook"></a>
                 <a href="#" class="footer__socials-link icon icon-inst"></a>

@@ -1,8 +1,8 @@
 @font-face {
   font-family: "icon";
-  src: url("../fonts/icon/fonts/icon.ttf?5rtdvk") format("truetype"),
-    url("../fonts/icon/fonts/icon.woff?5rtdvk") format("woff"),
-    url("../fonts/icon/fonts/icon.svg?5rtdvk#icon") format("svg");
+  src: url("@/assets/fonts/icon/fonts/icon.ttf?rkrwjd") format("truetype"),
+    url("@/assets/fonts/icon/fonts/icon.woff?rkrwjd") format("woff"),
+    url("@/assets/fonts/icon/fonts/icon.svg?rkrwjd#icon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -23,6 +23,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-burger:before {
+  content: "\e926";
+}
 .icon-arrow-right:before {
   content: "\e900";
 }
