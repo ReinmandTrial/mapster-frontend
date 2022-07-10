@@ -133,6 +133,8 @@
         </div>
       </div>
     </div>
+
+    <router-view></router-view>
   </div>
 </template>
 
@@ -323,13 +325,13 @@ export default {
     min-height: 100vh;
     color: var(--white);
     background: #023047;
-    @media (min-width: 1500px) {
-      max-width: 1500px;
+    @media (min-width: 1300px) {
+      max-width: 1300px;
       margin-left: auto;
       margin-right: auto;
     }
-    @media (min-height: 770px) {
-      min-height: 770px;
+    @media (min-height: 600px) {
+      min-height: 600px;
     }
     @media (max-width: 991.98px) {
       padding-left: unset;

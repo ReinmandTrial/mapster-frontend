@@ -403,11 +403,18 @@
             v-if="excursions.langth != 0"
             class="excursions-city__excursions-wrap"
           >
-            <card-excursion
+            <router-link
               v-for="(excursion, index) in excursions"
               :key="index"
-              :excursion="excursion"
-            />
+              :to="{
+                name: `ExcursionPage`,
+                params: {
+                  id: excursion.id,
+                },
+              }"
+            >
+              <card-excursion :excursion="excursion" />
+            </router-link>
           </div>
           <button
             class="excursions-city__excursions-more"
@@ -1066,8 +1073,8 @@ export default {
   @media (max-width: 575.98px) {
     margin-top: -123px;
   }
-  @media (min-width: 1500px) {
-    max-width: 1500px;
+  @media (min-width: 1300px) {
+    max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -1357,6 +1364,9 @@ export default {
   top: calc(100% + 10px);
   background-color: #fff;
   z-index: 10;
+  .mx-input-wrapper {
+    display: none;
+  }
 }
 .drop-people {
   border-radius: 3px;
@@ -1653,7 +1663,9 @@ export default {
     }
   }
   &__filter-post {
-    margin-bottom: 92px;
+    min-height: 10px;
+    margin-bottom: 46px;
+
     @media (max-width: 767.98px) {
       margin-bottom: 0;
     }
@@ -1698,7 +1710,7 @@ export default {
     // display: none;
   }
 }
-.mx-table-date .today,
+.mx-table-date .today:not(.busy),
 .cell.active,
 .cell:hover {
   color: var(--black) !important;
@@ -1740,9 +1752,9 @@ export default {
 }
 .datepicker__input {
   //   background: #000;
-  display: none;
+  // display: none;
   & + i {
-    display: none;
+    // display: none;
   }
 }
 </style>

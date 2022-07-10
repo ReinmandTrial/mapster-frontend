@@ -1,5 +1,10 @@
 <template>
-  <footer class="footer">
+  <footer
+    class="footer"
+    :class="{
+      supplier: profile_mode == 'supplier',
+    }"
+  >
     <div class="footer__main">
       <div class="container-xl">
         <div class="footer__content">
@@ -20,7 +25,12 @@
             <div class="footer__block footer__block--services">
               <h3 class="footer__title">{{ $t('footer.services') }}</h3>
               <div class="footer__list">
-                <button type="button" class="footer__link">
+                <button
+                  v-if="!$store.getters.getUser"
+                  type="button"
+                  class="footer__link"
+                  @click.stop="openPopupSingIn"
+                >
                   {{ $t('footer.login') }}
                 </button>
                 <button type="button" class="footer__link">
@@ -74,12 +84,65 @@
 <script>
 export default {
   name: 'VFooter',
+  data() {
+    return {
+      profile_mode: null,
+    }
+  },
+  watch: {
+    $route: function () {
+      this.changeHeader()
+    },
+  },
+  methods: {
+    openPopupSingIn() {
+      this.$store.dispatch('popupSignIn', true)
+    },
+    changeHeader() {
+      if (this.$route.name == 'ExcursionsHome') {
+        this.profile_mode = 'client'
+      } else if (this.$route.name == 'ExcursionsCountry') {
+        this.profile_mode = 'client'
+      } else if (this.$route.name == 'ExcursionsTown') {
+        this.profile_mode = 'client'
+      } else if (this.$route.name == 'ExcursionPage') {
+        this.profile_mode = 'client'
+      } else if (this.$route.name == 'BookingData') {
+        this.profile_mode = 'client'
+      } else if (this.$route.name == 'PaymentExcursion') {
+        this.profile_mode = 'client'
+      } else if (this.$route.name == 'ThankYou') {
+        this.profile_mode = 'client'
+      } else if (this.$route.name == 'GuideMyExcursions') {
+        this.profile_mode = 'supplier'
+      } else if (this.$route.name == 'GuideRegistration') {
+        this.profile_mode = 'supplier'
+      }
+    },
+  },
+  mounted() {
+    this.changeHeader()
+  },
 }
 </script>
 
 <style lang="scss">
 .footer {
   background: var(--black);
+
+  &.supplier {
+    @media (max-width: 991.98px) {
+      .footer__main {
+        background: var(--light-green);
+      }
+      .footer__title,
+      .footer__link,
+      .footer__socials-title,
+      .footer__socials-link {
+        color: var(--black);
+      }
+    }
+  }
   &__main {
     background: var(--black);
     @media (max-width: 991.98px) {
@@ -187,6 +250,11 @@ export default {
 
   &__bottom {
     background: var(--black);
+    @media (max-width: 575.98px) {
+      .container-xl {
+        padding: 0 10px;
+      }
+    }
   }
 
   &__bottom-content {
@@ -203,6 +271,9 @@ export default {
     @media (max-width: 991.98px) {
       text-align: center;
       width: 100%;
+    }
+    @media (max-width: 575.98px) {
+      font-size: 10px;
     }
   }
 

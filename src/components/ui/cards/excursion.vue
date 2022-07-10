@@ -51,9 +51,36 @@
           {{
             excursion.cost_type == 'person'
               ? $t('excursions.client.card_excursion.cost_type.person')
-              : $t('excursions.client.card_excursion.cost_type.excousion')
+              : $t('excursions.client.card_excursion.cost_type.excursion')
           }}
         </span>
+      </div>
+
+      <div class="card-excursion__my" v-if="my_excursion">
+        <div class="card-excursion__btns">
+          <router-link
+            :to="{ name: 'GuideEditExcursion', params: { id: excursion.id } }"
+            class="card-excursion__button icon icon-pencil"
+          ></router-link>
+          <router-link
+            :to="{
+              name: `ExcursionPage`,
+              params: {
+                id: excursion.id,
+              },
+            }"
+            class="card-excursion__button icon icon-eye"
+          ></router-link>
+        </div>
+        <label class="card-excursion__show-checkbox" @click="changeVisibility">
+          <input
+            type="checkbox"
+            class="card-excursion__show-checkbox-input"
+            v-model="show_excursion"
+            disabled
+          />
+          <span class="card-excursion__show-checkbox-style"></span>
+        </label>
       </div>
     </div>
   </div>
@@ -66,6 +93,7 @@ export default {
   name: 'CardExcursion',
   data() {
     return {
+      show_excursion: false,
       photo_owner: {
         id: null,
         primary: true,
@@ -120,12 +148,31 @@ export default {
           console.log(error)
         })
     },
+    async changeVisibility() {
+      console.log(this.show_excursion)
+      await axiosConfig
+        .get(`/guide/${this.excursion.id}/visible`)
+        .then((response) => {
+          this.show_excursion = response.data.data[0].active
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
   },
+
   mounted() {
-    this.getImage()
-    this.getPhotoOwner()
+    this.excursion.id && this.getImage()
+    this.excursion.id && this.getPhotoOwner()
+    this.show_excursion = this.excursion.active
   },
   props: {
+    my_excursion: {
+      type: Boolean,
+      default() {
+        return false
+      },
+    },
     excursion: {
       default() {
         return {
@@ -337,6 +384,82 @@ export default {
 
   &__price-text {
     font-size: 18px;
+  }
+
+  &__my {
+    border-top: 1px dashed #000000;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+    margin-top: 15px;
+    @media (max-width: 575.98px) {
+      margin-top: 10px;
+      padding-top: 15px;
+    }
+  }
+  &__btns {
+    display: flex;
+    align-items: center;
+    column-gap: 11px;
+  }
+
+  &__button {
+    width: 52px;
+    height: 31px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.icon-pencil {
+      font-size: 20px;
+    }
+    &.icon-eye {
+      font-size: 29px;
+    }
+  }
+
+  &__show-checkbox {
+    position: relative;
+    margin-right: 10px;
+  }
+
+  &__show-checkbox-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  &__show-checkbox-style {
+    display: block;
+    width: 37px;
+    height: 15px;
+    background: var(--light-gray);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--black);
+    }
+  }
+
+  &__show-checkbox-input:checked + .card-excursion__show-checkbox-style {
+    background: #bababa;
+    &::before {
+      left: 17px;
+    }
   }
 }
 </style>

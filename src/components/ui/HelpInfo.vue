@@ -4,7 +4,9 @@
       class="help-info__icon icon icon-info"
       :style="{ color: iconColor }"
     ></span>
-    <p class="help-info__text" v-html="text"></p>
+    <p class="help-info__text">
+      <slot></slot>
+    </p>
   </div>
 </template>
 
@@ -17,6 +19,11 @@ export default {
 
   props: {
     color_style: {
+      default() {
+        return null
+      },
+    },
+    icon_style: {
       default() {
         return null
       },
@@ -37,10 +44,17 @@ export default {
       }
     },
     iconColor() {
+      if (this.icon_style) {
+        if (this.icon_style == 'black') {
+          return '#000000'
+        }
+      }
       if (this.color_style == 'green') {
         return '#41B619'
+      } else if (this.color_style == 'black') {
+        return '#000000'
       } else {
-        return 'gray'
+        return this.color_style
       }
     },
   },
@@ -55,12 +69,18 @@ export default {
   column-gap: 13px;
   padding: 8px 22px;
   border-radius: 5px;
+  @media (max-width: 575.98px) {
+    padding: 8px 10px;
+  }
   &__icon {
   }
   &__text {
     padding-top: 2px;
     font-size: 14px;
     letter-spacing: 0.2px;
+    a {
+      font-weight: 600;
+    }
   }
 }
 </style>

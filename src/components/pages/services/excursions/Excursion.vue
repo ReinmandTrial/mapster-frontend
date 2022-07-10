@@ -3,8 +3,8 @@
     <div class="excursion__banner excursion-banner">
       <div class="excursion-banner__image-bg">
         <img
-          v-if="excursion_images"
-          :src="'data:image/jpg;base64,' + excursion_images[0].data"
+          v-if="excursion_image.length"
+          :src="'data:image/jpg;base64,' + excursion_image[0].data"
           alt=""
         />
       </div>
@@ -30,12 +30,12 @@
                 {{
                   guide.first_name +
                   ' ' +
-                  guide.middle_name +
-                  ' ' +
-                  guide.last_name
+                  (guide.last_name ? guide.last_name : '')
                 }}
               </p>
-              <p class="excursion-banner__guide-function">Гид экскурсовод</p>
+              <p class="excursion-banner__guide-function">
+                {{ $t('excursions.client.excursion_page.guide_function.once') }}
+              </p>
             </div>
           </div>
         </div>
@@ -50,10 +50,14 @@
           </p>
         </div>
         <div class="excursion__content">
-          <h2 class="excursion__title">Что вас ожидает</h2>
+          <h2 class="excursion__title">
+            {{ $t('excursions.client.excursion_page.title') }}
+          </h2>
           <div class="excursion__content-wrap">
             <div class="excursion__group">
-              <h4 class="excursion__group-title">Групповая экскурсия</h4>
+              <h4 class="excursion__group-title">
+                {{ $t('excursions.client.excursion_page.title_group') }}
+              </h4>
               <div class="excursion__group-container">
                 <div class="excursion__group-mark">
                   <img src="@/assets/images/point-path-curve.svg" alt="" />
@@ -61,48 +65,101 @@
                 <table class="excursion__table">
                   <tbody class="excursion__table-body">
                     <tr class="excursion__table-row">
-                      <td class="excursion__table-item">Длительность</td>
-                      <td class="excursion__table-item">10 часов</td>
+                      <td class="excursion__table-item">
+                        {{
+                          $t('excursions.client.excursion_page.table.duration')
+                        }}
+                      </td>
+                      <td class="excursion__table-item">
+                        {{ calcDuration(excursion.duration) }}
+                      </td>
                     </tr>
                     <tr class="excursion__table-row">
-                      <td class="excursion__table-item">Размер группы</td>
+                      <td class="excursion__table-item">
+                        {{
+                          $t('excursions.client.excursion_page.table.amount')
+                        }}
+                      </td>
                       <td class="excursion__table-item">до {{ calcPeople }}</td>
                     </tr>
                     <tr class="excursion__table-row">
-                      <td class="excursion__table-item">Дети</td>
+                      <td class="excursion__table-item">
+                        {{
+                          $t(
+                            'excursions.client.excursion_page.table.children.title',
+                          )
+                        }}
+                      </td>
                       <td class="excursion__table-item">
                         {{
                           excursion.children_allowed == true
-                            ? 'Можно с детьми'
-                            : 'Нельзя с детьми'
+                            ? $t(
+                                'excursions.client.excursion_page.table.children.true',
+                              )
+                            : $t(
+                                'excursions.client.excursion_page.table.children.false',
+                              )
                         }}
                       </td>
                     </tr>
                     <tr class="excursion__table-row">
-                      <td class="excursion__table-item">Как проходит</td>
                       <td class="excursion__table-item">
-                        {{ excursion.moves == 'car' ? 'На машине' : 'Пешком' }}
+                        {{
+                          $t(
+                            'excursions.client.excursion_page.table.move.title',
+                          )
+                        }}
+                      </td>
+                      <td class="excursion__table-item">
+                        {{
+                          excursion.moves == 'car'
+                            ? $t(
+                                'excursions.client.excursion_page.table.move.car',
+                              )
+                            : $t(
+                                'excursions.client.excursion_page.table.move.onfoot',
+                              )
+                        }}
                       </td>
                     </tr>
                     <tr class="excursion__table-row excursion__table-row--bold">
                       <td class="excursion__table-item">
-                        Общая длина экскурсии:
+                        {{
+                          $t(
+                            'excursions.client.excursion_page.table.length.term',
+                          )
+                        }}
                       </td>
-                      <td class="excursion__table-item">17 км</td>
-                    </tr>
-                    <tr class="excursion__table-row excursion__table-row--bold">
-                      <td class="excursion__table-item">Продолжительность:</td>
-                      <td class="excursion__table-item">9 часов</td>
+                      <td class="excursion__table-item">
+                        {{
+                          excursion.length +
+                          ' ' +
+                          $t('excursions.client.excursion_page.table.length.km')
+                        }}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
+            <div class="excursion__tags excursion-tags">
+              <ul class="excursion-tags__list">
+                <li
+                  class="excursion-tags__item"
+                  v-for="tag in excursion.tags"
+                  :key="tag.id"
+                >
+                  {{ tag.tag }}
+                </li>
+              </ul>
+            </div>
             <div class="excursion__route">
-              <h3 class="excursion__route-title">Маршрут экскурсии</h3>
+              <h3 class="excursion__route-title">
+                {{ $t('excursions.client.excursion_page.route.title') }}
+              </h3>
               <div
                 class="excursion__route-container"
-                v-if="excursion.guideplan[0].id"
+                v-if="excursion.guideplan.length"
               >
                 <div
                   class="excursion__route-block"
@@ -118,17 +175,28 @@
                       {{ index + 1 + '. ' + route.subject }}
                     </h4>
                     <p class="excursion__route-info" v-if="route.stoptime">
-                      {{ 'Стоянка ' + calcMinutes(route.stoptime) }}
+                      {{
+                        $t('excursions.client.excursion_page.route.wait') +
+                        calcMinutes(route.stoptime)
+                      }}
                     </p>
-                    <div class="excursion__route-image">
-                      <img src="" alt="" />
+                    <div class="excursion__route-image" v-if="route.image">
+                      <img
+                        :src="
+                          'data:image/' +
+                          route.image.extension.slice(1) +
+                          ';base64,' +
+                          route.image.data
+                        "
+                        alt=""
+                      />
                     </div>
                     <p class="excursion__route-descr">
                       {{ route.description }}
                     </p>
                     <p class="excursion__route-info" v-if="route.roadtime">
                       {{
-                        'До следующей точки ехать ' +
+                        $t('excursions.client.excursion_page.route.next') +
                         calcMinutes(route.roadtime)
                       }}
                     </p>
@@ -138,74 +206,103 @@
             </div>
             <div class="excursion__organization">
               <h3 class="excursion__organization-title">
-                Организационные детали
+                {{ $t('excursions.client.excursion_page.organization.title') }}
               </h3>
               <div class="excursion__organization-block">
                 <h4
                   class="excursion__organization-subtitle excursion__organization-subtitle--price"
                 >
-                  {{ 'Стоимость тура на 1 человека – ' + min_price + ' €' }}
+                  {{
+                    $t('excursions.client.excursion_page.organization.price') +
+                    min_price +
+                    ' €'
+                  }}
                 </h4>
                 <p class="excursion__organization-text">
                   {{ excursion.details }}
                 </p>
               </div>
               <div class="excursion__organization-block">
-                <h4 class="excursion__organization-subtitle">Место встречи</h4>
+                <h4 class="excursion__organization-subtitle">
+                  {{
+                    $t(
+                      'excursions.client.excursion_page.organization.meeting_point',
+                    )
+                  }}
+                </h4>
                 <p class="excursion__organization-text">
                   {{ excursion.expect_point }}
                 </p>
               </div>
               <div class="excursion__organization-block">
                 <h4 class="excursion__organization-subtitle">
-                  Забронировать экскурсию
+                  {{
+                    $t('excursions.client.excursion_page.organization.book_now')
+                  }}
                 </h4>
                 <p class="excursion__organization-text">
                   {{
-                    'Это индивидуальная экскурсия на ' +
-                    calcLanguages(excursion.lang) +
-                    ', гид проведет ее для вас и вашей компании.'
+                    $t(
+                      'excursions.client.excursion_page.organization.book_now_text',
+                      {
+                        langs: calcLanguages(excursion.lang),
+                      },
+                    )
                   }}
                 </p>
               </div>
             </div>
-            <div class="excursion__calendar excursion-calendar">
-              <!-- <date-picker
-                class="excursion-calendar"
-                v-model="datepicker"
-                :editable="false"
-                :clearable="false"
-                :append-to-body="false"
-                :popup-style="{ position: 'static', width: 'fit-content' }"
-                :popup-class="['datepicker']"
-                :input-class="['datepicker__input']"
-                :open="true"
-                :lang="langDatepicker"
-                :title-format="'DD-MM-YYYY'"
-                :multiple="true"
-                :range="true"
-              ></date-picker> -->
-              <date-picker v-if="sdd"></date-picker>
-              <calendar-panel
-                v-model="value"
-                :calendar="calendar1"
-                @update:calendar="handleUpdateCalendar1"
-                @select="handleSelect"
-                :not-before="value ? value : new Date()"
-              ></calendar-panel>
-              <calendar-panel
-                v-model="value"
-                :calendar="calendar2"
-                @update:calendar="handleUpdateCalendar2"
-                @select="handleSelect"
-                :not-before="value ? value : new Date()"
-              ></calendar-panel>
+            <div v-if="to_buy" class="excursion__calendar excursion-calendar">
+              <div class="excursion-calendar__wrap">
+                <date-picker v-show="sdd"></date-picker>
+                <calendar-panel
+                  :calendar="calendar1"
+                  v-model="datepicker"
+                  @update:calendar="handleUpdateCalendar1"
+                  :get-classes="getClasses"
+                  @select="handleSelect"
+                ></calendar-panel>
+                <calendar-panel
+                  :calendar="calendar2"
+                  v-model="datepicker"
+                  @update:calendar="handleUpdateCalendar2"
+                  :get-classes="getClasses"
+                  @select="handleSelect"
+                ></calendar-panel>
+              </div>
+              <div class="excursion-calendar__info">
+                <div
+                  class="excursion-calendar__info-item excursion-calendar__info-item--red"
+                >
+                  <span></span>
+                  {{ $t('calendar.info.busy') }}
+                </div>
+                <div
+                  class="excursion-calendar__info-item excursion-calendar__info-item--green"
+                >
+                  <span></span>
+                  {{ $t('calendar.info.free') }}
+                </div>
+              </div>
             </div>
             <help-info
+              v-if="to_buy"
               class="excursion__info"
               :color_style="'green'"
-              :text="text"
-            />
+            >
+              {{ $t('excursions.client.excursion_page.calendar.info') }}
+            </help-info>
+            <button
+              v-if="to_buy"
+              type="button"
+              class="excursion__btn"
+              @click="pickDate"
+            >
+              {{ $t('excursions.client.excursion_page.calendar.btn') }}
+            </button>
+            <div class="excursion__error" v-if="errors.date.null">
+              {{ $t('errors.date.null') }}
+            </div>
           </div>
         </div>
       </div>
@@ -218,10 +315,10 @@ import axiosConfig from '../../../../api/instance'
 import ClickOutside from 'vue-click-outside'
 import 'vue-slider-component/theme/antd.css'
 import 'vue2-datepicker/index.css'
-import DatePicker from 'vue2-datepicker'
-import { addMonths, subMonths } from 'date-fns'
 import 'vue2-datepicker/index.css'
 import HelpInfo from '../../../ui/HelpInfo.vue'
+import DatePicker from 'vue2-datepicker'
+import { addMonths, subMonths } from 'date-fns'
 
 const { CalendarPanel } = DatePicker
 
@@ -234,6 +331,18 @@ export default {
   },
   directives: {
     ClickOutside,
+  },
+  props: {
+    to_buy: {
+      default() {
+        return true
+      },
+    },
+    watch_excursion: {
+      default() {
+        return null
+      },
+    },
   },
   data() {
     return {
@@ -286,6 +395,7 @@ export default {
             roadtime: null,
             stoptime: null,
             owner: null,
+            image: null,
           },
           {
             id: null,
@@ -294,6 +404,7 @@ export default {
             roadtime: null,
             stoptime: null,
             owner: null,
+            image: null,
           },
         ],
         guideschedule: [
@@ -327,7 +438,7 @@ export default {
       },
       min_price: '?',
       guide: null,
-      excursion_images: null,
+      excursion_image: null,
       datepicker: null,
       datepicker_ru: {
         // the locale of formatting and parsing function
@@ -437,9 +548,27 @@ export default {
       value: [new Date()],
       startValue: null,
       endValue: null,
+      value1: [new Date(2022, 7, 3), new Date(2022, 7, 10)],
+      value2: [new Date(2022, 7, 11), new Date(2022, 7, 10)],
       calendar1: new Date(),
       calendar2: new Date(),
+      busy_array: [],
+      errors: {
+        date: {
+          null: false,
+        },
+      },
     }
+  },
+  watch: {
+    busy_array: {
+      immediate: true,
+      handler(val) {
+        if (val[0]) {
+          this.handleUpdateCalendar1(new Date(val[0]))
+        }
+      },
+    },
   },
   methods: {
     handleUpdateCalendar1(date) {
@@ -450,9 +579,67 @@ export default {
       this.calendar2 = date
       this.calendar1 = subMonths(date, 1)
     },
+    selectTimeNow(date) {
+      var now = new Date()
+      var nowHours = now.getHours()
+      var nowMinutes = now.getMinutes()
+      var dateHours = new Date(date.setHours(nowHours))
+      var dateMinutes = new Date(dateHours.setMinutes(nowMinutes))
+
+      return dateMinutes
+    },
+    getClasses(date) {
+      const result = []
+      var cellDate = this.selectTimeNow(date)
+      if (
+        this.busy_array.some((v) => v === cellDate.toISOString().slice(0, 10))
+      ) {
+        result.push('busy')
+      }
+      if (new Date().toISOString() >= cellDate.toISOString()) {
+        result.push('disabled')
+      }
+
+      return result
+    },
+
     handleSelect(date) {
-      this.value = [date]
-      console.log(this.value1)
+      this.datepicker = date
+    },
+    pickDate() {
+      if (this.datepicker) {
+        // console.log(this.datepicker)
+        // console.log(this.datepicker.toLocaleDateString())
+
+        this.$router.push({
+          name: `BookingData`,
+          params: {
+            id: this.current_id,
+            week_day: this.datepicker.getDay(),
+            date: this.datepicker.toLocaleDateString(),
+          },
+        })
+      } else {
+        this.errors.date.null = true
+      }
+    },
+    calcDuration(minutes) {
+      const hours = (minutes / 60).toFixed(1)
+      var lastNum = hours.toString().slice(-1),
+        lastTwoNums = hours.toString().slice(-2)
+      if (lastTwoNums != 11 && lastNum == 1) {
+        return hours + ' час'
+      } else if (
+        (lastNum == 2 || lastNum == 3 || lastNum == 4) &&
+        lastTwoNums != 12 &&
+        lastTwoNums != 13 &&
+        lastTwoNums != 14
+      ) {
+        hours
+        return hours + ' часа'
+      } else {
+        return hours + ' часов'
+      }
     },
     calcMinutes(num) {
       var lastNum = num.toString().slice(-1),
@@ -510,6 +697,20 @@ export default {
         }
       })
     },
+    getGuidePlanImages() {
+      // var
+      this.excursion.guideplan.forEach((el) => {
+        axiosConfig
+          .get(`/guide/media/guideplan/${el.id}`)
+          .then((response) => {
+            const newImage = response.data.data[0]
+            this.$set(el, 'image', newImage)
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
+      })
+    },
   },
   computed: {
     langDatepicker() {
@@ -523,62 +724,114 @@ export default {
       var lastNum = this.excursion.number.toString().slice(-1),
         lastTwoNums = this.excursion.number.toString().slice(-2)
       if (lastTwoNums != 11 && lastNum == 1) {
-        return this.excursion.number + ' человек'
+        return this.excursion.number + ' человека'
       } else if (
         (lastNum == 2 || lastNum == 3 || lastNum == 4) &&
         lastTwoNums != 12 &&
         lastTwoNums != 13 &&
         lastTwoNums != 14
       ) {
-        return this.excursion.number + ' человека'
+        return this.excursion.number + ' человек'
       } else {
         return this.excursion.number + ' человек'
       }
     },
   },
   created() {
-    const excursion = this.$route.params.id
-    if (excursion) {
-      this.current_id = excursion
+    if (this.to_buy) {
+      const excursion = this.$route.params.id
+      if (excursion) {
+        this.current_id = excursion
+      }
+    } else {
+      this.excursion = this.watch_excursion
+      this.excursion_image = [this.watch_excursion.main_image]
+      this.excursion.guideplan.forEach((el, index) => {
+        this.$set(el, 'image', this.watch_excursion.points_images[index])
+      })
+      this.guide = this.$store.getters.getUser
     }
   },
   async mounted() {
-    await axiosConfig
-      .get(`/guide/${this.current_id}`)
-      .then((response) => {
-        this.excursion = response.data.data[0]
-        console.log(this.excursion)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
-    this.checkPrice()
-    await axiosConfig
-      .get(`/user/${this.excursion.owner}`)
-      .then((response) => {
-        this.guide = response.data.data[0]
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
-    await axiosConfig
-      .get(`/guide/media/${this.current_id}`)
-      .then((response) => {
-        this.excursion_images = response.data.data
-        console.log(this.excursion_images)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
+    if (this.to_buy) {
+      await axiosConfig
+        .get(`/guide/${this.current_id}`)
+        .then((response) => {
+          this.excursion = response.data.data[0]
+          // console.log(this.excursion)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+
+      this.checkPrice()
+      this.getGuidePlanImages()
+      await axiosConfig
+        .get(`/user/${this.excursion.owner}`)
+        .then((response) => {
+          this.guide = response.data.data[0]
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+
+      await axiosConfig
+        .get(`/guide/media/${this.current_id}`)
+        .then((response) => {
+          this.excursion_image = response.data.data
+          // console.log(this.excursion_image)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+
+      var newSchedule = []
+
+      const calendar = this.excursion.available_calendar
+      const maxPeople = this.excursion.number
+      for (var key in calendar) {
+        if (calendar[key] < maxPeople) {
+          newSchedule.push(key.toString().slice(0, 10))
+        }
+      }
+      // console.log(newSchedule)
+      this.busy_array = newSchedule
+      // console.log(this.busy_array)
+    } else {
+      this.checkPrice()
+    }
   },
 }
 </script>
 
 <style lang="scss">
+.busy {
+  background: #ff0000 !important;
+  pointer-events: none;
+}
+.disabled {
+  background: #bdbdbd !important;
+  pointer-events: none;
+  color: #000 !important;
+}
+.in-range1 {
+  background: #ffaaaa;
+}
+.active2 {
+  background: #00ff00;
+}
+.in-range2 {
+  background: #aaffaa;
+}
 .excursion-banner {
   position: relative;
   margin-top: -136px;
   padding: 175px 0 45px;
+  @media (min-width: 1300px) {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @media (max-width: 767.98px) {
     background: #023047;
     margin-top: 0;
@@ -800,10 +1053,11 @@ export default {
     flex: 1 1 auto;
     row-gap: 4px;
     border-spacing: 6px 4px;
-    margin-bottom: 25px;
+    margin: 0 -6px 47px;
+
     @media (max-width: 575.98px) {
       border-spacing: 0px 4px;
-      margin-bottom: 20px;
+      margin: 0 0 20px;
     }
   }
 
@@ -904,6 +1158,7 @@ export default {
 
   &__route-text {
     padding-top: 15px;
+    flex: 1 1 auto;
     @media (max-width: 767.98px) {
       padding-bottom: 5px;
       padding-top: 13px;
@@ -1009,16 +1264,120 @@ export default {
   }
   &__calendar {
   }
+
   &__info {
     margin-left: 67px;
+    @media (max-width: 767.98px) {
+      margin-left: unset;
+    }
+  }
+  &__btn {
+    width: 100%;
+    max-width: 280px;
+    background: var(--light-green);
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    padding: 7px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto 0;
+    @media (max-width: 575.98px) {
+      margin-top: 22px;
+    }
+  }
+  &__error {
+    font-size: 14px;
+    color: red;
+    margin-top: 10px;
+    text-align: center;
   }
 }
+
+.excursion-tags {
+  padding-left: 67px;
+  margin-bottom: 32px;
+  @media (max-width: 767.98px) {
+    padding-left: unset;
+  }
+  &__list {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    background: #d9d9d9;
+    border-radius: 5px;
+    padding: 6px 10px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
 .excursion-calendar {
   padding-left: 67px;
-  display: flex;
-  column-gap: 20px;
-  justify-content: center;
-  margin-bottom: 17px;
+  margin: 0 auto 26px;
+  width: fit-content;
+  @media (max-width: 767.98px) {
+    padding-left: unset;
+  }
+  &__wrap {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+  }
+
+  &__info {
+    display: flex;
+    column-gap: 68px;
+    margin-bottom: 17px;
+    padding-left: 5px;
+  }
+
+  &__info-item {
+    display: flex;
+    column-gap: 10px;
+    font-size: 14px;
+    align-items: center;
+    span {
+      width: 35px;
+      height: 29px;
+      background: #85d95e;
+      border: 2px solid #78e4de;
+    }
+  }
+
+  &__info-item--red {
+    span {
+      background: #ee0e00;
+      border: 2px solid #ff5f5f;
+    }
+  }
+
+  &__info-item--green {
+    span {
+      background: #85d95e;
+      border: 2px solid #78e4de;
+    }
+  }
+  .mx-calendar:nth-child(2) {
+    .mx-btn-icon-right {
+      display: none;
+      @media (max-width: 767.98px) {
+        display: block;
+      }
+    }
+  }
+  .mx-calendar:last-child {
+    .mx-btn-icon-left {
+      display: none;
+    }
+  }
   .mx-calendar + .mx-calendar {
     border: none;
     @media (min-width: 768px) {
@@ -1027,6 +1386,9 @@ export default {
   }
   .mx-datepicker-main {
     border: none;
+  }
+  .cell {
+    background: #85d95e;
   }
 }
 </style>

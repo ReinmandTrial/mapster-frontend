@@ -1,5 +1,11 @@
 <template>
-  <header class="header">
+  <header
+    class="header"
+    :class="{ 'header-supplier': profile_mode == 'supplier' }"
+    :style="{
+      background: background_color,
+    }"
+  >
     <div class="container-xl">
       <div class="header__content">
         <router-link :to="{ name: 'ExcursionsHome' }" class="header__logo logo">
@@ -8,12 +14,13 @@
           </span>
           <span class="logo__text">
             <span class="logo__name">Mapster</span>
-            <span class="logo__descr">
-              {{ $t('excursions.client.header.logo_descr') }}
-            </span>
+            <span class="logo__descr" v-html="changeLogoDescr"></span>
           </span>
         </router-link>
-        <ul class="header__servises-nav">
+        <ul
+          class="header__servises-nav"
+          v-if="nav_visibility && profile_mode == 'client'"
+        >
           <li class="header__servises-item">
             <button type="button" class="header__servises-link">
               <span class="icon icon-palm"></span>
@@ -45,6 +52,41 @@
             </button>
           </li>
         </ul>
+        <ul
+          class="header__servises-nav header__servises-nav--supplier"
+          v-if="
+            $route.name != 'GuideRegistration' &&
+            profile_mode == 'supplier' &&
+            nav_visibility
+          "
+        >
+          <li class="header__servises-item">
+            <router-link
+              :to="{
+                name: 'GuideMyExcursions',
+              }"
+              class="header__servises-link"
+            >
+              {{ $t('header.menu_guide.my_excursions') }}
+            </router-link>
+          </li>
+          <li class="header__servises-item">
+            <router-link
+              :to="{ name: 'GuideOrders' }"
+              class="header__servises-link"
+            >
+              {{ $t('header.menu_guide.orders') }}
+            </router-link>
+          </li>
+          <li class="header__servises-item">
+            <router-link
+              :to="{ name: 'GuideBalance' }"
+              class="header__servises-link"
+            >
+              {{ $t('header.menu_guide.balance') }}
+            </router-link>
+          </li>
+        </ul>
         <div class="header__rightside">
           <div class="lang" :class="{ active: lang_open }">
             <button
@@ -69,9 +111,18 @@
               </button>
             </div>
           </div>
+          <button
+            type="button"
+            class="header__login"
+            v-if="!$store.getters.getUser"
+            @click.stop="openPopupSingIn"
+          >
+            {{ $t('header.login') }}
+          </button>
           <div
             class="header__profile header-profile"
             :class="{ active: dropdown_open }"
+            v-if="$store.getters.getUser"
             v-click-outside="closeDropdown"
           >
             <button
@@ -89,18 +140,34 @@
                 <button type="button" class="header-profile__item">
                   <span class="header-profile__photo">
                     <span
-                      v-if="profile.photo"
+                      v-if="$store.getters.getUser.photo[0]"
                       class="header-profile__photo-img"
                     >
-                      <img :src="profile.photo" alt="" />
+                      <img
+                        :src="
+                          'data:image/' +
+                          $store.getters.getUser.photo[0].extension.slice(1) +
+                          ';base64,' +
+                          $store.getters.getUser.photo[0].data
+                        "
+                        alt=""
+                      />
                     </span>
                     <span
-                      v-if="!profile.photo"
+                      v-if="!$store.getters.getUser.photo[0]"
                       class="header-profile__item-icon icon icon-person"
                     ></span>
                   </span>
-                  <span class="header-profile__item-text">
-                    {{ profile.name }}
+                  <span
+                    class="header-profile__item-text"
+                    v-if="$store.getters.getUser"
+                  >
+                    {{
+                      $store.getters.getUser.first_name +
+                        ' ' +
+                        $store.getters.getUser.last_name &&
+                      $store.getters.getUser.first_name
+                    }}
                   </span>
                 </button>
               </div>
@@ -117,7 +184,11 @@
                     {{ lang.name }}
                   </button>
                 </div>
-                <button type="button" class="header-profile__item">
+                <button
+                  type="button"
+                  class="header-profile__item"
+                  v-if="profile_mode == 'client'"
+                >
                   <span
                     class="header-profile__item-icon icon icon-distribute-vertical"
                   ></span>
@@ -125,7 +196,85 @@
                     {{ $t('excursions.client.header.profile.history') }}
                   </span>
                 </button>
-                <button type="button" class="header-profile__item">
+                <button
+                  type="button"
+                  class="header-profile__item"
+                  v-if="profile_mode == 'supplier'"
+                  @click="toAddExcursion"
+                >
+                  <span class="header-profile__item-icon icon icon-plus"></span>
+                  <span class="header-profile__item-text">
+                    {{ $t('excursions.guide.header.profile.add') }}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="header-profile__item"
+                  v-if="profile_mode == 'supplier'"
+                  @click="toMyExcursions"
+                >
+                  <span
+                    class="header-profile__item-icon icon icon-camera"
+                  ></span>
+                  <span class="header-profile__item-text">
+                    {{ $t('excursions.guide.header.profile.my') }}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="header-profile__item"
+                  v-if="profile_mode == 'supplier'"
+                  @click="toMyOrders"
+                >
+                  <span
+                    class="header-profile__item-icon icon icon-distribute-vertical"
+                  ></span>
+                  <span class="header-profile__item-text">
+                    {{ $t('excursions.guide.header.profile.orders') }}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="header-profile__item"
+                  v-if="profile_mode == 'supplier'"
+                  @click="toBalance"
+                >
+                  <span class="header-profile__item-icon icon icon-euro"></span>
+                  <span class="header-profile__item-text">
+                    {{ $t('excursions.guide.header.profile.balance') }}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="header-profile__item"
+                  v-if="profile_mode == 'client'"
+                  @click="toGuideHome"
+                >
+                  <span
+                    class="header-profile__item-icon icon icon-person"
+                  ></span>
+                  <span class="header-profile__item-text">
+                    {{ $t('excursions.client.header.profile.to_guide') }}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="header-profile__item"
+                  v-if="profile_mode == 'supplier'"
+                  @click="toClientHome"
+                >
+                  <span
+                    class="header-profile__item-icon icon icon-person"
+                  ></span>
+                  <span class="header-profile__item-text">
+                    {{ $t('excursions.guide.header.profile.to_client') }}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  class="header-profile__item"
+                  @click="toProfile"
+                >
                   <span
                     class="header-profile__item-icon icon icon-settings"
                   ></span>
@@ -135,7 +284,11 @@
                 </button>
               </div>
               <div class="header-profile__body-block">
-                <button type="button" class="header-profile__item">
+                <button
+                  type="button"
+                  class="header-profile__item"
+                  @click="logoutHandler"
+                >
                   <span class="header-profile__item-icon icon icon-exit"></span>
                   <span class="header-profile__item-text">
                     {{ $t('excursions.client.header.profile.exit') }}
@@ -152,16 +305,19 @@
 
 <script>
 import ClickOutside from 'vue-click-outside'
+import axiosConfig from '../../api/instance'
 
 export default {
   name: 'VHeader',
   data() {
     return {
+      background_color: null,
+      profile_mode: 'client',
+      nav_visibility: true,
       profile: {
-        photo:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3CBS0Q8N6OTcNBgO6FdUtFbpqanBRv7TdOw&usqp=CAU',
+        photo: null,
         // null,
-        name: 'Петр Иванов',
+        name: null,
       },
       lang_open: false,
       dropdown_open: false,
@@ -181,7 +337,166 @@ export default {
       ],
     }
   },
+  computed: {
+    // findProfilePhoto() {
+    //   if (this.$store.getters.getUser.photo) {
+    //   }
+    // },
+    changeLogoDescr() {
+      if (this.profile_mode == 'client') {
+        return this.$t('excursions.client.header.logo_descr')
+      } else if (this.profile_mode == 'supplier') {
+        return this.$t('excursions.guide.header.logo_descr')
+      } else {
+        return ''
+      }
+    },
+  },
+  watch: {
+    $route: function () {
+      this.changeHeader()
+    },
+    profile_mode: function () {
+      if (this.$route.name == 'GuideRegistration') {
+        this.nav_visibility = false
+      } else {
+        this.nav_visibility = true
+      }
+    },
+  },
   methods: {
+    toClientHome() {
+      this.$router.push({ name: `ExcursionsHome` })
+      this.dropdown_open = false
+    },
+    toGuideHome() {
+      this.$router.push({ name: `GuideMyExcursions` })
+      this.dropdown_open = false
+    },
+    toMyExcursions() {
+      this.$router.push({ name: `GuideMyExcursions` })
+      this.dropdown_open = false
+    },
+    toAddExcursion() {
+      this.$router.push({ name: `GuideAddExcursion` })
+      this.dropdown_open = false
+    },
+    toMyOrders() {
+      this.$router.push({ name: `GuideOrders` })
+      this.dropdown_open = false
+    },
+    toBalance() {
+      this.$router.push({ name: 'GuideBalance' })
+      this.dropdown_open = false
+    },
+    toProfile() {
+      if (this.profile_mode == 'supplier') {
+        this.$router.push({ name: `GuideProfile` })
+      } else {
+        // this.$router.push({ name: `GuideProfile` })
+      }
+      this.dropdown_open = false
+    },
+    changeHeader() {
+      if (this.$route.name == 'ExcursionsHome') {
+        this.profile_mode = 'client'
+        this.background_color = 'rgba(0, 0, 0, 0.5)'
+        if (window.innerWidth < 768) {
+          this.background_color = '#023047'
+        }
+      } else if (this.$route.name == 'ExcursionsCountry') {
+        this.profile_mode = 'client'
+        this.background_color = 'rgba(0, 0, 0, 0.5)'
+        if (window.innerWidth < 768) {
+          this.background_color = '#023047'
+        }
+      } else if (this.$route.name == 'ExcursionsTown') {
+        this.profile_mode = 'client'
+        this.background_color = 'rgba(0, 0, 0, 0.5)'
+        if (window.innerWidth < 768) {
+          this.background_color = '#023047'
+        }
+      } else if (this.$route.name == 'ExcursionPage') {
+        this.profile_mode = 'client'
+        this.background_color = 'rgba(0, 0, 0, 0.5)'
+        if (window.innerWidth < 768) {
+          this.background_color = '#023047'
+        }
+      } else if (this.$route.name == 'GuidePreviewExcursion') {
+        this.profile_mode = 'supplier'
+        this.background_color = 'rgba(0, 0, 0, 0.5)'
+        if (window.innerWidth < 768) {
+          this.background_color = '#023047'
+        }
+      } else if (this.$route.name == 'BookingData') {
+        this.profile_mode = 'client'
+        this.background_color = 'var(--black)'
+        if (window.innerWidth < 768) {
+          this.background_color = '#023047'
+        }
+      } else if (this.$route.name == 'PaymentExcursion') {
+        this.profile_mode = 'client'
+        this.background_color = 'var(--black)'
+        if (window.innerWidth < 768) {
+          this.background_color = '#023047'
+        }
+      } else if (this.$route.name == 'ThankYou') {
+        this.profile_mode = 'client'
+        this.background_color = 'var(--black)'
+        if (window.innerWidth < 768) {
+          this.background_color = '#023047'
+        }
+      } else if (this.$route.name == 'GuideMyExcursions') {
+        this.profile_mode = 'supplier'
+        this.background_color = 'var(--black)'
+      } else if (this.$route.name == 'GuideRegistration') {
+        this.profile_mode = 'supplier'
+        this.background_color = 'transparent'
+        if (window.innerWidth < 768) {
+          this.background_color = 'var(--black)'
+        }
+      } else if (this.$route.name == 'GuideAddExcursion') {
+        this.profile_mode = 'supplier'
+        this.background_color = 'var(--black)'
+        if (window.innerWidth < 768) {
+          this.background_color = 'var(--black)'
+        }
+      } else if (this.$route.name == 'GuideOrders') {
+        this.profile_mode = 'supplier'
+        this.background_color = 'var(--black)'
+        if (window.innerWidth < 768) {
+          this.background_color = 'var(--black)'
+        }
+      } else if (this.$route.name == 'GuideBalance') {
+        this.profile_mode = 'supplier'
+        this.background_color = 'var(--black)'
+        if (window.innerWidth < 768) {
+          this.background_color = 'var(--black)'
+        }
+      } else if (this.$route.name == 'GuideProfile') {
+        this.profile_mode = 'supplier'
+        this.background_color = 'var(--black)'
+        if (window.innerWidth < 768) {
+          this.background_color = 'var(--black)'
+        }
+      } else if (this.$route.name == 'GuideProfileEdit') {
+        this.profile_mode = 'supplier'
+        this.background_color = 'var(--black)'
+        if (window.innerWidth < 768) {
+          this.background_color = 'var(--black)'
+        }
+      }
+    },
+    logoutHandler() {
+      this.$store.dispatch('deleteUser')
+      localStorage.removeItem('user')
+      localStorage.removeItem('ref')
+      axiosConfig.defaults.headers.common['Authorization'] = ''
+      window.location.reload()
+    },
+    openPopupSingIn() {
+      this.$store.dispatch('popupSignIn', true)
+    },
     closeDropdown() {
       this.dropdown_open = false
     },
@@ -200,12 +515,19 @@ export default {
     },
   },
   mounted() {
+    // console.log(this.$store.getters.getUser)
+    this.changeHeader()
     if (localStorage.getItem('lang') == 'ru') {
       this.langs[0].active = true
       this.langs[1].active = false
     } else {
       this.langs[0].active = false
       this.langs[1].active = true
+    }
+    if (this.$route.name == 'GuideRegistration') {
+      this.nav_visibility = false
+    } else {
+      this.nav_visibility = true
     }
   },
   directives: {
@@ -225,6 +547,14 @@ export default {
   }
   @media (max-width: 575.98px) {
     height: 123px;
+  }
+  &.header-supplier {
+    @media (max-width: 1099.98px) {
+      height: 100px;
+    }
+    @media (max-width: 575.98px) {
+      height: 80px;
+    }
   }
   &__content {
     height: 100%;
@@ -254,6 +584,11 @@ export default {
       overflow-x: auto;
       margin-bottom: -20px;
       padding-bottom: 20px;
+    }
+    &--supplier {
+      @media (max-width: 1099.98px) {
+        display: none;
+      }
     }
   }
 
@@ -319,6 +654,12 @@ export default {
     align-items: center;
   }
   &__profile {
+  }
+  &__login {
+    // padding: 5px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: var(--white);
   }
 }
 .logo {
@@ -568,6 +909,9 @@ export default {
     }
     &.icon-exit {
       font-size: 15px;
+    }
+    &.icon-camera {
+      font-size: 18px;
     }
   }
 

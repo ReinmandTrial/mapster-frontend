@@ -112,11 +112,18 @@
             }}
           </h2>
           <div class="excursions-country__excursions-wrap">
-            <card-excursion
+            <router-link
               v-for="(excursion, index) in excursions"
               :key="index"
-              :excursion="excursion"
-            />
+              :to="{
+                name: `ExcursionPage`,
+                params: {
+                  id: excursion.id,
+                },
+              }"
+            >
+              <card-excursion :excursion="excursion" />
+            </router-link>
           </div>
           <button
             class="excursions-country__excursions-more"
@@ -485,13 +492,13 @@ export default {
     min-height: 100vh;
     color: var(--white);
     background: #023047;
-    @media (min-width: 1500px) {
-      max-width: 1500px;
+    @media (min-width: 1300px) {
+      max-width: 1300px;
       margin-left: auto;
       margin-right: auto;
     }
-    @media (min-height: 770px) {
-      min-height: 770px;
+    @media (min-height: 600px) {
+      min-height: 600px;
     }
     @media (max-width: 991.98px) {
       padding-left: unset;
