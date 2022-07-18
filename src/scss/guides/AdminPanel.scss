@@ -1,0 +1,2172 @@
+:root {
+   --white: #ffffff;
+   --gray: #707070;
+   --black: #000000;
+   --light-green: #41b619;
+   --light-gray: #ececec;
+}
+
+//until========================================================================================================================================================
+.prompt {
+   font-size: 12px;
+   line-height: 16px;
+   letter-spacing: 0.15px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+
+   &_green {
+      color: #41b619;
+      margin-right: 25px;
+   }
+
+   &_red {
+      color: #f43249;
+   }
+
+   &__icon {
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      position: relative;
+      &::after {
+         content: '';
+         position: absolute;
+         width: 9px;
+         height: 9px;
+         border-radius: 50%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+      &_green {
+         display: inline-flex;
+         border: 2px solid #41b619;
+         &::after {
+            content: '';
+            background-color: #41b619;
+         }
+      }
+
+      &_red {
+         display: inline-flex;
+         border: 2px solid #f43249;
+         &::after {
+            content: '';
+            background-color: #f43249;
+         }
+      }
+   }
+}
+.icon-option {
+   background-color: #000;
+   width: 3px;
+   height: 3px;
+   border-radius: 50%;
+   position: relative;
+   display: inline-flex;
+   &::before,
+   &::after {
+      content: '';
+      position: absolute;
+      background-color: #000;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+   }
+   &::after {
+      content: '';
+      top: 6px;
+   }
+   &::before {
+      content: '';
+      bottom: 6px;
+   }
+}
+.general-status {
+   &__title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: 0.15px;
+      margin-bottom: 15px;
+   }
+
+   &__list {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.15px;
+      display: grid;
+      grid-gap: 12px;
+   }
+
+   &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 6px;
+      width: 97px;
+      border: 1px solid #ffffff;
+      border-radius: 5px;
+      &_done {
+         background: #85d95e;
+      }
+
+      &_empty {
+         background: rgba(0, 0, 0, 0.1);
+      }
+
+      &_remove {
+         color: #ffffff;
+         background: #ee0e00;
+      }
+   }
+   &__text {
+   }
+   &__icon {
+   }
+}
+//until========================================================================================================================================================
+
+// AdminPanel ДОБАВЛЯТЬ КО ВСЕМ ========================================================================================================================================================
+.navigation {
+   &__content {
+      padding: 50px 0px;
+      background: #e0e0e0;
+      height: 100%;
+   }
+
+   &__block {
+      &:not(:last-child) {
+         margin-bottom: 50px;
+      }
+   }
+
+   &__block-name {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 0.15px;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+      padding: 0px 0px 15px 20px;
+   }
+
+   &__list {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      padding: 15px 0px 0px 0px;
+      margin: 0px 10px;
+      a {
+         text-align: left;
+      }
+   }
+
+   &__link {
+      display: flex;
+      width: 100%;
+      padding: 7px 0px 7px 20px;
+      &.active {
+         background-color: var(--white);
+         font-weight: 600;
+      }
+   }
+}
+.admin-panel {
+   &__wrapper {
+      background-color: var(--light-gray);
+      height: 10000px;
+   }
+
+   &__container {
+      max-width: 1200px;
+      padding: 0px 20px;
+      height: 100%;
+      margin: 0 auto;
+   }
+
+   &__header {
+      background: #1b4332;
+      height: 65px;
+   }
+
+   &__content {
+      display: flex;
+      gap: 20px;
+      height: 100%;
+   }
+
+   &__navigation-col {
+      flex: 0 0 270px;
+   }
+   &__content-col {
+      padding-top: 32px;
+      flex: auto;
+   }
+}
+//========================================================================================================================================================
+
+//adminPanel-allGuides========================================================================================================================================================
+.all-guides {
+   &__container {
+   }
+
+   &__title {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 33px;
+   }
+
+   &__option {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      gap: 30px 30px;
+      flex-wrap: wrap;
+   }
+
+   &__selects-container {
+      display: flex;
+      gap: 10px;
+   }
+
+   &__select {
+      width: 175px;
+      height: 30px;
+      background-color: #fff;
+   }
+
+   &__prompt-container {
+   }
+
+   &__prompt {
+   }
+
+   &__table {
+   }
+
+   &__table-head {
+      background: #cdffbc;
+      display: flex;
+      padding: 7px 0px;
+      margin-bottom: 5px;
+      gap: 2%;
+   }
+
+   &__head-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.15px;
+      &_id {
+         flex: 0 0 4.7%;
+      }
+
+      &_name {
+         flex: 0 0 25%;
+         text-align: center;
+      }
+
+      &_location {
+         flex: 0 0 20%;
+         text-align: center;
+      }
+
+      &_contacts {
+         flex: 0 0 22.5%;
+      }
+
+      &_status {
+         flex: 0 0 19%;
+      }
+   }
+
+   &__table-body {
+   }
+   &__table-body-list {
+      border-top: 0.5px solid #707070;
+   }
+   &__table-body-item {
+      display: flex;
+      min-height: 55px;
+      gap: 2%;
+      border-bottom: 0.5px solid #707070;
+   }
+
+   &__body-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.15px;
+      word-break: break-all;
+      padding: 10px 0px;
+      &_id {
+         flex: 0 0 4.7%;
+         font-weight: 400;
+      }
+
+      &_name {
+         flex: 0 0 26%;
+         display: flex;
+         justify-content: start;
+      }
+
+      &_location {
+         flex: 0 0 20%;
+      }
+
+      &_contacts {
+         flex: 0 0 22.5%;
+      }
+
+      &_status {
+         flex: 0 0 19%;
+      }
+   }
+   &__body-name-content {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+   }
+
+   &__body-name-img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex: none;
+      img {
+         border-radius: 50%;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__body-name-info {
+   }
+
+   &__body-name-name {
+      margin-bottom: 2px;
+   }
+
+   &__body-name-post {
+      font-size: 10px;
+      line-height: 14px;
+   }
+
+   &__body-location-content {
+   }
+
+   &__body-location-coutry {
+      margin-bottom: 2px;
+   }
+
+   &__body-location-city {
+      font-size: 10px;
+      line-height: 14px;
+   }
+
+   &__body-contacts-content {
+   }
+
+   &__body-contacts-phone {
+      margin-bottom: 2px;
+   }
+
+   &__body-contacts-email {
+      font-size: 10px;
+      line-height: 14px;
+   }
+
+   &__body-status-content {
+      padding: 0px 15px 0px 15px;
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+}
+//========================================================================================================================================================
+
+//adminPanel-allExcursions========================================================================================================================================================
+.all-excursions {
+   &__container {
+   }
+
+   &__title {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 33px;
+   }
+
+   &__option {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      gap: 30px 30px;
+      flex-wrap: wrap;
+   }
+
+   &__selects-container {
+      display: flex;
+      gap: 10px;
+   }
+
+   &__select {
+      width: 175px;
+      height: 30px;
+      background-color: #fff;
+   }
+
+   &__prompt-container {
+   }
+
+   &__prompt {
+   }
+
+   &__table {
+   }
+
+   &__table-head {
+      background: #cdffbc;
+      display: flex;
+      padding: 7px 0px;
+      margin-bottom: 5px;
+      gap: 2%;
+   }
+
+   &__head-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.15px;
+
+      &_id {
+         flex: 0 0 5.7%;
+      }
+
+      &_excursion-name {
+         flex: 0 0 30%;
+         text-align: center;
+      }
+
+      &_route {
+         flex: 0 0 10%;
+      }
+
+      &_location {
+         flex: 0 0 10%;
+         text-align: center;
+      }
+
+      &_guide-name {
+         flex: 0 0 22%;
+      }
+
+      &_status {
+         flex: 0 0 12.6%;
+      }
+   }
+
+   &__table-body {
+   }
+   &__table-body-list {
+      border-top: 0.5px solid #707070;
+   }
+   &__table-body-item {
+      display: flex;
+      min-height: 55px;
+      gap: 2%;
+      border-bottom: 0.5px solid #707070;
+   }
+
+   &__body-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.15px;
+      word-break: break-all;
+      padding: 10px 0px;
+
+      &_id {
+         flex: 0 0 5.7%;
+         font-weight: 700;
+      }
+
+      &_excursion-name {
+         flex: 0 0 30%;
+         display: flex;
+         justify-content: start;
+      }
+
+      &_route {
+         flex: 0 0 10%;
+      }
+
+      &_location {
+         flex: 0 0 10%;
+      }
+
+      &_guide-name {
+         flex: 0 0 22%;
+         display: flex;
+         justify-content: start;
+      }
+
+      &_status {
+         flex: 0 0 12.6%;
+      }
+   }
+   &__body-excursion-name-content {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+   }
+
+   &__body-excursion-name-img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex: none;
+      img {
+         border-radius: 50%;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__body-excursion-name-info {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+   }
+   &__body-route-content {
+   }
+
+   &__body-location-content {
+   }
+
+   &__body-location-coutry {
+      margin-bottom: 2px;
+   }
+
+   &__body-location-city {
+      font-size: 10px;
+      line-height: 14px;
+   }
+   &__body-guide-name-content {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      word-break: break-all;
+   }
+
+   &__body-guide-name-img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex: none;
+      img {
+         border-radius: 50%;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__body-guide-name-info {
+   }
+
+   &__body-guide-name-name {
+      margin-bottom: 2px;
+   }
+
+   &__body-guide-name-post {
+      font-size: 10px;
+      line-height: 14px;
+   }
+
+   &__body-status-content {
+      padding: 0px 15px 0px 15px;
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+   }
+}
+//========================================================================================================================================================
+
+//adminPanel-profile&excursion========================================================================================================================================================
+.profile-excursion {
+   &__container {
+   }
+
+   &__title {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 33px;
+   }
+
+   &__navigation {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+   }
+
+   &__nav-item {
+      text-transform: uppercase;
+      padding: 0px 10px;
+      &:first-child {
+         padding-left: 0;
+      }
+      &:not(:last-child) {
+         border-right: 1px solid #000000;
+      }
+      &.active {
+         font-weight: 700;
+         line-height: 22px;
+      }
+   }
+
+   &__row {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+   }
+
+   &__tour-guide-profile {
+   }
+
+   &__general-status {
+   }
+
+   &__table {
+   }
+
+   &__table-head {
+      background: #cdffbc;
+      display: flex;
+      padding: 7px 0px;
+      margin-bottom: 5px;
+      gap: 2%;
+   }
+
+   &__head-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.15px;
+
+      &_id {
+         flex: 0 0 4%;
+      }
+
+      &_excursion-name {
+         flex: 0 0 30%;
+         text-align: center;
+      }
+      &_excursion-descr {
+         flex: 0 0 26%;
+         text-align: center;
+      }
+
+      &_route {
+         flex: 0 0 9%;
+      }
+
+      &_location {
+         flex: 0 0 12%;
+         text-align: center;
+      }
+
+      &_status {
+         flex: 0 0 9%;
+      }
+   }
+
+   &__table-body {
+   }
+   &__table-body-list {
+      border-top: 0.5px solid #707070;
+   }
+   &__table-body-item {
+      display: flex;
+      min-height: 55px;
+      gap: 2%;
+      border-bottom: 0.5px solid #707070;
+   }
+
+   &__body-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.15px;
+      word-break: break-all;
+      &_id {
+         flex: 0 0 4%;
+      }
+
+      &_excursion-name {
+         flex: 0 0 30%;
+         display: flex;
+         justify-content: start;
+      }
+      &_excursion-descr {
+         flex: 0 0 26%;
+         display: flex;
+         justify-content: start;
+      }
+
+      &_route {
+         flex: 0 0 9%;
+      }
+
+      &_location {
+         flex: 0 0 12%;
+      }
+
+      &_status {
+         flex: 0 0 9%;
+      }
+   }
+   &__body-excursion-name-content {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+   }
+
+   &__body-excursion-name-img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex: none;
+      img {
+         border-radius: 50%;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__body-excursion-name-info {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      padding-right: 10px;
+   }
+   &__body-excursion-descr-content {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 14px;
+      letter-spacing: 0.15px;
+   }
+
+   &__body-route-content {
+   }
+
+   &__body-location-content {
+   }
+
+   &__body-location-coutry {
+      margin-bottom: 2px;
+   }
+
+   &__body-location-city {
+      font-size: 10px;
+      line-height: 14px;
+   }
+
+   &__body-status-content {
+      padding: 0px 15px 0px 15px;
+      width: 100%;
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+   }
+}
+
+.tour-guide-profile {
+   &__content {
+      max-width: 620px;
+      padding: 40px 0px 15px 0px;
+      @media (max-width: 767.98px) {
+         padding: 0px 25px;
+      }
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 55px;
+      @media (max-width: 767.98px) {
+         font-size: 18px;
+         line-height: 22px;
+         padding: 0px 0px 0px 0px;
+      }
+   }
+
+   &__about-me {
+      display: flex;
+      column-gap: 30px;
+      margin-bottom: 30px;
+      @media (max-width: 500.98px) {
+         justify-content: center;
+      }
+   }
+
+   &__photo-guide {
+      border-radius: 50%;
+      overflow: hidden;
+      height: 146px;
+      flex: 0 0 146px;
+      margin-bottom: 17px;
+      @media (max-width: 767.98px) {
+         flex: 0 0 140px;
+         height: 140px;
+         margin-bottom: 11px;
+      }
+
+      img {
+         object-fit: cover;
+         width: 100%;
+         height: 100%;
+      }
+   }
+
+   &__text-about {
+      @media (max-width: 500.98px) {
+         display: none;
+      }
+   }
+
+   &__subtitle {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.15px;
+   }
+
+   &__descr {
+      font-size: 14px;
+      line-height: 19px;
+
+      color: rgba(26, 27, 32, 0.6);
+   }
+   &__table {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      width: 100%;
+      border-spacing: 0 4px;
+      margin-bottom: 15px;
+   }
+
+   &__tbody {
+   }
+
+   &__row {
+      &:nth-child(odd) {
+         background: #e5e5e5;
+      }
+      &:nth-child(even) {
+         background: rgba(33, 158, 188, 0.15);
+      }
+   }
+
+   &__data {
+      height: 30px;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+      }
+      &:first-child {
+         width: 375px;
+         padding-left: 20px;
+      }
+      &:last-child {
+         width: 244px;
+         padding-left: 30px;
+         @media (max-width: 500.98px) {
+            font-weight: 600;
+         }
+         @media (max-width: 360px) {
+            font-size: 12px;
+         }
+      }
+   }
+   &__edit-table {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+      color: #219ebc;
+      cursor: default;
+      @media (max-width: 500.98px) {
+         line-height: 13px;
+         letter-spacing: 0.2px;
+         font-weight: 400;
+      }
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+}
+//========================================================================================================================================================
+
+//adminPanel-excursion&edit========================================================================================================================================================
+.excursion-edit {
+   &__container {
+      max-width: 760px;
+      height: 100%;
+   }
+
+   &__top-column {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__left-row {
+   }
+   &__right-row {
+   }
+
+   &__title {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 30px;
+   }
+
+   &__navigation {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 30px;
+   }
+
+   &__nav-item {
+      padding: 0px 10px;
+      text-transform: uppercase;
+      &:first-child {
+         padding-left: 0;
+      }
+      &:not(:last-child) {
+         border-right: 1px solid #000000;
+      }
+      &.active {
+         font-weight: 700;
+         line-height: 22px;
+      }
+   }
+
+   &__page-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+   }
+   &__prompt {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: rgba(26, 27, 32, 0.6);
+   }
+
+   &__general-status {
+   }
+}
+//========================================================================================================================================================
+
+//adminPanel-orders========================================================================================================================================================
+.date-option {
+   &__content {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+   }
+
+   &__title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: 0.1px;
+      @media (max-width: 767.98px) {
+         display: none;
+      }
+   }
+   &__list {
+      display: flex;
+      gap: 12px;
+   }
+
+   &__date-pick-item {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 11px;
+      @media (max-width: 500.98px) {
+         gap: 0;
+      }
+   }
+
+   &__from-to {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 0.1px;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 17px;
+         font-weight: 400;
+      }
+   }
+
+   &__date-picker {
+      background: #ffffff;
+      border: 2px solid #41b619;
+      padding: 8px 14px;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      @media (max-width: 500.98px) {
+         border: none;
+         background-color: transparent;
+         font-size: 12px;
+         padding: 0px 6px;
+      }
+      .icon-calendar {
+         font-size: 24px;
+         @media (max-width: 500.98px) {
+            font-size: 19px;
+         }
+      }
+   }
+}
+.order-list-pc {
+   &__list {
+   }
+
+   &__top-line {
+      display: flex;
+      background: #cdffbc;
+      padding: 7px 0px;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 11px;
+   }
+
+   &__top-line-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &_img {
+         flex: 0 0 80px;
+      }
+
+      &_number {
+         flex: 0 1 56px;
+      }
+
+      &_route {
+         flex: 0 1 225px;
+      }
+
+      &_date {
+         flex: 0 1 180px;
+      }
+
+      &_client-amount-contact {
+         flex: 0 1 383px;
+         display: flex;
+         justify-content: space-evenly;
+         gap: 10px;
+      }
+
+      &_status {
+         flex: 0 1 135px;
+      }
+   }
+
+   &__content {
+      display: flex;
+      background: #ffffff;
+      height: 125px;
+      &:not(:last-child) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__content-image {
+      flex: none;
+      width: 80px;
+      height: 125px;
+      border-radius: 5px 0px 0px 5px;
+      overflow: hidden;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__text-content {
+      flex: auto;
+      display: flex;
+      border: 0.5px solid #bebdbd;
+      border-left: none;
+      border-radius: 0 5px 5px 0;
+      padding: 8px 0px;
+   }
+
+   &__content-item {
+      border-right: 1px solid #000000;
+      &:last-child {
+         border: none;
+      }
+      &_number {
+         flex: 0 1 56px;
+         font-size: 12px;
+         line-height: 16px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      &_route {
+         flex: 0 1 225px;
+         padding: 0px 16px;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         gap: 14px;
+      }
+
+      &_date {
+         flex: 0 1 180px;
+         padding: 20px 12px;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+      }
+
+      &_client-amount-contact {
+         display: flex;
+         flex-direction: column;
+         padding: 20px 20px;
+         overflow: auto;
+         flex: 0 1 383px;
+         gap: 10px;
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+         &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+         }
+      }
+
+      &_status {
+         flex: 0 1 135px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         gap: 25px;
+      }
+   }
+
+   &__number-order {
+   }
+
+   &__order-city {
+      display: inline-flex;
+      align-items: center;
+      font-family: 'Inter';
+      font-size: 12px;
+      line-height: 15px;
+      .icon-mark {
+         font-size: 24px;
+      }
+   }
+
+   &__order-location {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 16px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+   }
+
+   &__order-date-info {
+      font-family: 'Inter';
+      font-size: 12px;
+      line-height: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .icon-calendar {
+         font-size: 19px;
+      }
+      .icon-watch {
+         font-size: 21px;
+      }
+   }
+
+   &__list-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 10px;
+      align-items: center;
+   }
+   &__client {
+      word-break: break-all;
+      font-family: 'Inter';
+      font-size: 12px;
+      line-height: 15px;
+   }
+   &__amount-person {
+      word-break: break-all;
+      display: flex;
+      gap: 15px;
+   }
+   &__person {
+      word-break: break-all;
+      font-family: 'Inter';
+      font-size: 12px;
+      line-height: 15px;
+   }
+
+   &__contact {
+      font-family: 'Inter';
+      font-size: 12px;
+      line-height: 15px;
+   }
+
+   &__status {
+      font-family: 'Inter';
+      font-size: 12px;
+      line-height: 15px;
+      text-align: center;
+      padding: 0px 5px;
+      &.active {
+         color: #41b619;
+      }
+      &.cancel {
+         color: #707070;
+      }
+      &.completed {
+         color: #023047;
+      }
+   }
+
+   &__price-label {
+      font-family: 'Roboto';
+   }
+
+   &__price-sign {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.1px;
+   }
+
+   &__sum {
+      font-size: 14px;
+      line-height: 16px;
+      color: #3e3d3d;
+      .icon-euro {
+         font-size: 18px;
+      }
+   }
+}
+.orders {
+   &__container {
+   }
+
+   &__title {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 30px;
+   }
+
+   &__navigation {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 30px;
+   }
+
+   &__nav-item {
+      text-transform: uppercase;
+      padding: 0px 10px;
+      text-transform: uppercase;
+      &:first-child {
+         padding-left: 0;
+      }
+      &:not(:last-child) {
+         border-right: 1px solid #000000;
+      }
+      &.active {
+         font-weight: 700;
+         line-height: 22px;
+      }
+   }
+
+   &__page-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+   }
+
+   &__options {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 57px;
+      gap: 20px;
+      @media (max-width: 1100px) {
+         flex-direction: column;
+      }
+   }
+
+   &__options-sorting {
+      font-family: 'Inter';
+      font-size: 14px;
+      line-height: 17px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      @media (max-width: 767.98px) {
+         gap: 10px;
+         font-size: 13px;
+      }
+   }
+
+   &__sorting-item {
+      &.active {
+         font-weight: 600;
+      }
+   }
+}
+//adminPanel-balance-guid========================================================================================================================================================
+.date-option {
+   &__content {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+   }
+
+   &__title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: 0.1px;
+      @media (max-width: 767.98px) {
+         display: none;
+      }
+   }
+   &__list {
+      display: flex;
+      gap: 12px;
+   }
+
+   &__date-pick-item {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 11px;
+      @media (max-width: 500.98px) {
+         gap: 0;
+      }
+   }
+
+   &__from-to {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 0.1px;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 17px;
+         font-weight: 400;
+      }
+   }
+
+   &__date-picker {
+      background: #ffffff;
+      border: 2px solid #41b619;
+      padding: 8px 14px;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      @media (max-width: 500.98px) {
+         border: none;
+         background-color: transparent;
+         font-size: 12px;
+         padding: 0px 6px;
+      }
+      .icon-calendar {
+         font-size: 24px;
+         @media (max-width: 500.98px) {
+            font-size: 19px;
+         }
+      }
+   }
+}
+.balance-list-pc {
+   &__top-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0px;
+      margin-bottom: 5px;
+      gap: 10px;
+      background: #cdffbc;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.15px;
+   }
+
+   &__top-line-item {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      &_number {
+         flex: 0 1 75px;
+      }
+
+      &_tour {
+         flex: 0 1 420px;
+      }
+
+      &_date {
+         display: inline-flex;
+         align-items: center;
+         flex: 0 1 102px;
+         .icon-calendar {
+            font-size: 19px;
+            margin-right: 12px;
+         }
+      }
+
+      &_time {
+         flex: 0 1 87px;
+         display: inline-flex;
+         align-items: center;
+         .icon-watch {
+            font-size: 21px;
+            margin-right: 8px;
+         }
+      }
+
+      &_amount {
+         flex: 0 1 115px;
+      }
+
+      &_price-for-one {
+         flex: 0 1 100px;
+      }
+
+      &_sum {
+         flex: 0 1 55px;
+      }
+
+      &_commission {
+         flex: 0 1 97px;
+      }
+
+      &_earned {
+         flex: 0 1 97px;
+      }
+
+      &_status {
+         flex: 0 1 97px;
+      }
+   }
+   &__main-line {
+      border-top: 0.5px solid #707070;
+   }
+   &__content {
+   }
+
+   &__list {
+   }
+
+   &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0px;
+      gap: 10px;
+      border-bottom: 0.5px solid #707070;
+   }
+
+   &__col {
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      span {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+      }
+      &_number {
+         flex: 0 1 62px;
+      }
+
+      &_tour {
+         flex: 0 1 270px;
+      }
+
+      &_date {
+         flex: 0 1 102px;
+      }
+
+      &_time {
+         flex: 0 1 87px;
+      }
+
+      &_amount {
+         flex: 0 1 115px;
+      }
+
+      &_price-for-one {
+         flex: 0 1 100px;
+      }
+
+      &_sum {
+         flex: 0 1 55px;
+      }
+
+      &_commission {
+         flex: 0 1 97px;
+      }
+
+      &_earned {
+         flex: 0 1 97px;
+      }
+
+      &_status {
+         flex: 0 1 97px;
+      }
+      .icon-euro {
+         font-size: 13px;
+      }
+   }
+
+   &__image {
+      width: 70px;
+      height: 45px;
+      border-radius: 5px;
+      overflow: hidden;
+      flex: none;
+      img {
+         border-radius: 5px;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}
+.balance-guid {
+   &__container {
+   }
+
+   &__title {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 30px;
+   }
+   &__sub-title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.1px;
+      display: flex;
+      align-items: center;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+      }
+      &_on-account {
+         margin-bottom: 16px;
+         @media (max-width: 500.98px) {
+            margin-bottom: 5px;
+         }
+      }
+
+      &_earn {
+         margin-bottom: 46px;
+         @media (max-width: 500.98px) {
+            margin-bottom: 15px;
+         }
+      }
+      .icon-euro {
+         font-size: 18px;
+      }
+      span {
+         margin-left: 7px;
+      }
+   }
+
+   &__sub-title-sum {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+   }
+
+   &__navigation {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 30px;
+   }
+
+   &__nav-item {
+      text-transform: uppercase;
+      padding: 0px 10px;
+      text-transform: uppercase;
+      &:first-child {
+         padding-left: 0;
+      }
+      &:not(:last-child) {
+         border-right: 1px solid #000000;
+      }
+      &.active {
+         font-weight: 700;
+         line-height: 22px;
+      }
+   }
+
+   &__page-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+   }
+
+   &__options {
+      margin-bottom: 30px;
+   }
+}
+//adminPanel-full-balance========================================================================================================================================================
+.date-option {
+   &__content {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+   }
+
+   &__title {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: 0.1px;
+      @media (max-width: 767.98px) {
+         display: none;
+      }
+   }
+   &__list {
+      display: flex;
+      gap: 12px;
+   }
+
+   &__date-pick-item {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 11px;
+      @media (max-width: 500.98px) {
+         gap: 0;
+      }
+   }
+
+   &__from-to {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: 0.1px;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 17px;
+         font-weight: 400;
+      }
+   }
+
+   &__date-picker {
+      background: #ffffff;
+      border: 2px solid #41b619;
+      padding: 8px 14px;
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      @media (max-width: 500.98px) {
+         border: none;
+         background-color: transparent;
+         font-size: 12px;
+         padding: 0px 6px;
+      }
+      .icon-calendar {
+         font-size: 24px;
+         @media (max-width: 500.98px) {
+            font-size: 19px;
+         }
+      }
+   }
+
+   &__download {
+      margin-left: 20px;
+      .icon-download {
+         font-size: 24px;
+      }
+   }
+}
+.balance-list-pc {
+   &__top-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0px;
+      margin-bottom: 5px;
+      gap: 10px;
+      background: #cdffbc;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.15px;
+   }
+
+   &__top-line-item {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      &_number {
+         flex: 0 1 75px;
+      }
+
+      &_tour {
+         flex: 0 1 420px;
+      }
+
+      &_date {
+         display: inline-flex;
+         align-items: center;
+         flex: 0 1 102px;
+         .icon-calendar {
+            font-size: 19px;
+            margin-right: 12px;
+         }
+      }
+
+      &_time {
+         flex: 0 1 87px;
+         display: inline-flex;
+         align-items: center;
+         .icon-watch {
+            font-size: 21px;
+            margin-right: 8px;
+         }
+      }
+
+      &_amount {
+         flex: 0 1 115px;
+      }
+
+      &_price-for-one {
+         flex: 0 1 100px;
+      }
+
+      &_sum {
+         flex: 0 1 55px;
+      }
+
+      &_commission {
+         flex: 0 1 97px;
+      }
+
+      &_earned {
+         flex: 0 1 97px;
+      }
+
+      &_status {
+         flex: 0 1 97px;
+      }
+   }
+   &__main-line {
+      border-top: 0.5px solid #707070;
+   }
+   &__content {
+   }
+
+   &__list {
+   }
+
+   &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0px;
+      gap: 10px;
+      border-bottom: 0.5px solid #707070;
+   }
+
+   &__col {
+      font-size: 12px;
+      line-height: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      span {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+      }
+      &_number {
+         flex: 0 1 62px;
+      }
+
+      &_tour {
+         flex: 0 1 270px;
+      }
+
+      &_date {
+         flex: 0 1 102px;
+      }
+
+      &_time {
+         flex: 0 1 87px;
+      }
+
+      &_amount {
+         flex: 0 1 115px;
+      }
+
+      &_price-for-one {
+         flex: 0 1 100px;
+      }
+
+      &_sum {
+         flex: 0 1 55px;
+      }
+
+      &_commission {
+         flex: 0 1 97px;
+      }
+
+      &_earned {
+         flex: 0 1 97px;
+      }
+
+      &_status {
+         flex: 0 1 97px;
+      }
+      .icon-euro {
+         font-size: 13px;
+      }
+   }
+
+   &__image {
+      width: 70px;
+      height: 45px;
+      border-radius: 5px;
+      overflow: hidden;
+      flex: none;
+      img {
+         border-radius: 5px;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}
+.full-balance {
+   &__container {
+   }
+
+   &__title {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 25px;
+   }
+   &__sub-title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.1px;
+      display: flex;
+      align-items: center;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+      }
+      &_on-account {
+         margin-bottom: 16px;
+         @media (max-width: 500.98px) {
+            margin-bottom: 5px;
+         }
+      }
+
+      &_earn {
+         margin-bottom: 46px;
+         @media (max-width: 500.98px) {
+            margin-bottom: 15px;
+         }
+      }
+      .icon-euro {
+         font-size: 18px;
+      }
+      span {
+         margin-left: 7px;
+      }
+   }
+
+   &__sub-title-sum {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+   }
+
+   &__page-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+   }
+
+   &__options {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px 20px;
+   }
+
+   &__select-list {
+      display: flex;
+      gap: 10px;
+   }
+
+   &__select {
+      background-color: #fff;
+      width: 175px;
+      height: 30px;
+   }
+}
+//adminPanel-commissions========================================================================================================================================================
+.allowance {
+   background: #ffc4cb;
+   border-radius: 5px;
+   display: flex;
+   padding: 25px 20px;
+   gap: 40px;
+   align-items: center;
+   margin-bottom: 27px;
+   &__title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+   }
+   &__input-wrap {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      gap: 7px;
+   }
+
+   &__input {
+      background: #ffffff;
+      border: 1px solid rgba(26, 27, 32, 0.6);
+      border-radius: 5px;
+      width: 53px;
+      height: 50px;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 27px;
+      padding: 0px 13px;
+   }
+
+   &__prompt {
+      font-size: 14px;
+      line-height: 19px;
+      color: rgba(26, 27, 32, 0.6);
+   }
+
+   &__btn {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 16px;
+      text-transform: uppercase;
+      background: #41b619;
+      border-radius: 6px;
+      padding: 12px 32px;
+   }
+}
+.commissions {
+   &__container {
+   }
+
+   &__title {
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 27px;
+   }
+
+   &__page-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+   }
+
+   &__prompt {
+      display: inline-flex;
+      background: #cdffbc;
+      border-radius: 5px;
+      padding: 10px 20px;
+      margin-bottom: 25px;
+      .icon-info {
+         font-size: 24px;
+         color: #41b619;
+         margin-right: 10px;
+      }
+   }
+
+   &__select-content {
+   }
+
+   &__select-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 27px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+   }
+
+   &__select-list {
+      display: flex;
+      gap: 10px;
+      &:first-child {
+         margin-bottom: 20px;
+      }
+      &:last-child {
+         margin-bottom: 30px;
+      }
+   }
+
+   &__select {
+      width: 175px;
+      height: 30px;
+      background-color: #fff;
+   }
+
+   &__allowance-content {
+   }
+
+   &__table {
+      max-width: 564px;
+      font-size: 12px;
+      line-height: 16px;
+      text-transform: capitalize;
+   }
+
+   &__top-row {
+      display: flex;
+      background: #c7c4c4;
+      padding: 7px 20px;
+   }
+
+   &__top-item {
+      flex: 0 0 33.333%;
+      text-align: center;
+   }
+
+   &__main-list {
+   }
+
+   &__city {
+      display: flex;
+      padding: 7px 20px;
+      border-bottom: 0.5px solid #707070;
+   }
+
+   &__list-item {
+      flex: 0 0 33.333%;
+      text-align: center;
+   }
+}
+//========================================================================================================================================================

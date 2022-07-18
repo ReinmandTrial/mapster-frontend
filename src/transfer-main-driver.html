@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+   @@include('html/head.html',{ "title":"ГЛАВНЫЙ ТРАНСФЕР ВОДИТЕЛЬ" })
+   <body>
+      @@include('html/header.html',{})
+      <main class="main">
+         <div class="transfer">
+            <section class="transfer__top top-transfer">
+               <div class="top-transfer__wrapper">
+                  <div class="top-transfer__container container-xl">
+                     <div class="top-transfer__content">
+                        <p class="top-transfer__title">Зарегистрируйте транспортное средство</p>
+                        <p class="top-transfer__reg-time">Регистрация займет всего 15 минут - начните прямо сейчас</p>
+                        <p class="top-transfer__reg-check">
+                           <span class="icon icon-check-circle"></span>
+                           Бесплатная регистрация
+                        </p>
+                        <p class="top-transfer__reg-check top-transfer__reg-check_last">
+                           <span class="icon icon-check-circle"></span>
+                           Поддержка по телефону и e-mail
+                        </p>
+                        <button type="button" class="top-transfer__btn" @click.stop="getRights">ДОБАВИТЬ транспорт</button>
+                        <p class="top-transfer__btn-descr">Создайте аккаунт, чтобы начать</p>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="transfer__benefit benefit-transfer">
+               <div class="benefit-transfer__container container-xl">
+                  <div class="benefit-transfer__title">УДОБНО И ВЫГОДНО</div>
+                  <div class="benefit-transfer__block">
+                     <div class="benefit-transfer__item">
+                        <div class="benefit-transfer__item-title">УДОБНАЯ РЕГИСТРАЦИЯ</div>
+                        <div class="benefit-transfer__item-descr">
+                           Зарегистрируйте свой транспорт, добавте информацию о себе, фотографии машины и получайте заказы.
+                        </div>
+                     </div>
+                     <div class="benefit-transfer__item">
+                        <div class="benefit-transfer__item-title">КОНТРОЛИруйте ЗАКАЗЫ</div>
+                        <div class="benefit-transfer__item-descr">Наблюдайте все рабочие процессы, заказы</div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="transfer__howstart howstart-transfer">
+               <div class="howstart-transfer__container container-xl">
+                  <div class="howstart-transfer__content">
+                     <p class="howstart-transfer__title">Как начать работу ?</p>
+                     <div class="howstart-transfer__steps">
+                        <div class="howstart-transfer__step">
+                           <p class="howstart-transfer__number-step">1</p>
+                           <p class="howstart-transfer__text-step">ПРОЙДИТЕ РЕГИСТРАЦИЯ</p>
+                        </div>
+                        <span class="howstart-transfer__arrow icon icon-arrow-right"></span>
+                        <div class="howstart-transfer__step">
+                           <p class="howstart-transfer__number-step">2</p>
+                           <p class="howstart-transfer__text-step">Мы позвоним вам, И уточниМ детали</p>
+                        </div>
+                        <span class="howstart-transfer__arrow icon icon-arrow-right"></span>
+                        <div class="howstart-transfer__step">
+                           <p class="howstart-transfer__number-step">3</p>
+                           <p class="howstart-transfer__text-step">ПОЛУЧАЙТЕ ЗАКАЗЫ</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="transfer__mob-app mob-app">
+               <div class="mob-app__wrapper">
+                  <div class="mob-app__container container-xl">
+                     <div class="mob-app__content">
+                        <p class="mob-app__title"><span>THE</span> MAPSTER TRANSFER</p>
+                        <p class="mob-app__text">В нужное время - в нужном месте!</p>
+                     </div>
+
+                     <div class="mob-app__phone">
+                        <img class="" src="" alt="phone" />
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="transfer__download-app download-app">
+               <div class="download-app__container container-xl">
+                  <div class="download-app__content">
+                     <div class="download-app__text-block">
+                        <p class="download-app__title">
+                           Получите еще больше возможностей с мобильным приложением <span>Mapster TRASNFER</span>
+                        </p>
+                        <p class="download-app__descr">
+                           Загружайте мобильное приложение <span>Mapster Transfer</span> для загрузки транспортного средства и контроля
+                           поступления заказов. Мобильное приложение <span>Mapster Transfer</span> дает вам доступ к скрытым функциям и
+                           специальным предложениям.
+                        </p>
+                     </div>
+                     <div class="download-app__links-block">
+                        <div class="download-app__phone">
+                           <img class="" src="" alt="phone" />
+                        </div>
+                        <p class="download-app__links-title">Приложение доступно на платформах</p>
+                        <div class="download-app__links-btns">
+                           <a href="#" class="download-app__links-item">
+                              <img class="download-app__link" src="" alt="google-play" />
+                           </a>
+                           <a href="#" class="download-app__links-item">
+                              <img class="download-app__link" src="" alt="app-store" />
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+      </main>
+      @@include('html/footer.html',{})
+   </body>
+</html>

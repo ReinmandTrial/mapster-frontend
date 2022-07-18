@@ -1,0 +1,588 @@
+.admin-sections {
+   background-color: var(--light-gray);
+   //========================================================================================================================================================
+
+   .select {
+      position: relative;
+      &__head {
+         background: #ffffff;
+         border: 1px solid rgba(26, 27, 32, 0.6);
+         border-radius: 5px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 0px 12px;
+         height: 50px;
+         .icon-triangle-down-line {
+            font-size: 14px;
+         }
+      }
+
+      &__head-text {
+         font-weight: 400;
+         font-size: 14px;
+         line-height: 19px;
+         letter-spacing: 0.4px;
+      }
+
+      &__body {
+         display: none;
+         background: #ffffff;
+         border-radius: 5px;
+         position: absolute;
+         width: 100%;
+         top: 55px;
+         z-index: 50;
+      }
+
+      &__option {
+         height: 40px;
+         display: flex;
+         align-items: center;
+         padding: 0px 18px;
+         width: 100%;
+         &:hover {
+            background: #ececec;
+         }
+      }
+   }
+   //СТИЛИ САНИ РУКУ АТАРВУ========================================================================================================================================================
+   .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 100;
+      &__body {
+         width: 100%;
+         min-height: 100vh;
+         display: flex;
+         overflow: hidden;
+         justify-content: center;
+         align-items: center;
+         background: rgba(0, 0, 0, 0.3);
+      }
+
+      &__content {
+         width: 100%;
+         background: #ececec;
+         border-radius: 5px;
+         max-width: 450px;
+         padding: 25px 20px 30px;
+         margin: 40px 10px;
+         color: var(--black);
+         @media (max-width: 575.98px) {
+            padding: 20px 10px 20px;
+         }
+      }
+
+      &__title {
+         font-weight: 700;
+         font-size: 20px;
+         text-transform: uppercase;
+         margin-bottom: 10px;
+      }
+
+      &__inputs {
+         margin-bottom: 20px;
+      }
+
+      &__input {
+         &:not(:last-child) {
+            margin-bottom: 15px;
+         }
+      }
+
+      &__btn {
+         background: #41b619;
+         border-radius: 8px;
+         font-weight: 600;
+         font-size: 18px;
+         padding: 10px;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         letter-spacing: 1.25px;
+         text-transform: uppercase;
+         &:not(:last-child) {
+            margin-bottom: 23px;
+         }
+      }
+
+      &__info {
+         padding: 14px 7px !important;
+         column-gap: 6px !important;
+         align-items: center !important;
+         &:not(:last-child) {
+            margin-bottom: 20px;
+         }
+      }
+
+      &__info-btn {
+         font-weight: 600;
+         text-decoration-line: underline;
+         &:hover {
+            text-decoration-line: none;
+         }
+      }
+
+      &__flex-row {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         gap: 10px;
+         @media (max-width: 575.98px) {
+            flex-direction: column;
+            gap: 15px;
+            align-items: flex-start;
+         }
+      }
+
+      &__check-block {
+         display: flex;
+         align-items: center;
+         column-gap: 10px;
+         cursor: pointer;
+      }
+
+      &__check-box {
+         flex: none;
+         display: flex;
+         position: relative;
+      }
+
+      &__check-none {
+         position: absolute;
+         width: 1px;
+         height: 1px;
+         overflow: hidden;
+         clip: rect(0 0 0 0);
+      }
+
+      &__check-style {
+         flex: none;
+         width: 17px;
+         height: 17px;
+         border-radius: 2px;
+         border: 2px solid rgba(0, 0, 0, 0.87);
+         box-sizing: border-box;
+
+         .popup__check-none:checked + & {
+            background: url('~@/assets/images/svg-icons/check.svg') center center/100% 100% no-repeat;
+            border: none;
+         }
+      }
+
+      &__check-text {
+         font-size: 14px;
+         letter-spacing: 0.2px;
+      }
+
+      &__forget-pass {
+         font-size: 14px;
+         letter-spacing: 0.2px;
+      }
+      &__error {
+         margin: 10px 0;
+         color: #ff0000;
+      }
+      &__success {
+         margin: 10px 0;
+         color: var(--light-green);
+      }
+   }
+   .input-popup {
+      &__title {
+         margin-bottom: 7px;
+         font-weight: 600;
+         font-size: 14px;
+         letter-spacing: 0.15px;
+      }
+
+      &__input {
+         background: #ffffff;
+         border: 1px solid rgba(26, 27, 32, 0.6);
+         border-radius: 5px;
+         padding: 11px;
+         font-size: 12px;
+         line-height: 16px;
+         width: 100%;
+         &::placeholder {
+            color: rgba(26, 27, 32, 0.6);
+         }
+      }
+   }
+   //СТИЛИ САНИ========================================================================================================================================================
+
+   // МОИ ПОПАПЫ========================================================================================================================================================
+   .popup {
+      display: none;
+      &__body {
+      }
+
+      &__content {
+         background-color: #fff;
+         padding: 0px 0px 0px 0px;
+      }
+
+      &__title {
+         font-weight: 400;
+         font-size: 14px;
+         line-height: 16px;
+         letter-spacing: 0.4px;
+         padding: 29px 18px;
+         background: #ececec;
+         margin-bottom: 21px;
+         color: #000;
+         text-transform: none;
+      }
+      &__wrap {
+         padding: 0px 25px 27px 25px;
+      }
+
+      &__select {
+         margin-bottom: 20px;
+      }
+
+      &__input {
+         margin-bottom: 40px !important;
+      }
+
+      &__buttons {
+         display: flex;
+         justify-content: end;
+         gap: 10px;
+      }
+
+      &__cancel-btn {
+         width: 156px;
+         font-weight: 600;
+         font-size: 14px;
+         line-height: 16px;
+         letter-spacing: 0.4px;
+         color: #1b4332;
+         background: #ffffff;
+         border: 1px solid #707070;
+         border-radius: 5px;
+      }
+
+      &__btn {
+         max-width: 156px;
+         font-weight: 600;
+         font-size: 14px;
+         line-height: 16px;
+         letter-spacing: 0.4px;
+         color: #1b4332;
+      }
+   }
+   .input-popup {
+      &__title {
+         font-weight: 400;
+         font-size: 14px;
+         line-height: 20px;
+         letter-spacing: 0.4px;
+      }
+
+      &__input {
+         height: 50px;
+      }
+   }
+   //========================================================================================================================================================
+   .filter {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      &__label {
+         font-size: 12px;
+      }
+
+      &__category-list {
+         display: flex;
+         gap: 11px;
+      }
+
+      &__category {
+         font-size: 14px;
+         &.active {
+            font-weight: 600;
+         }
+      }
+   }
+   .checkbox {
+      &__input {
+         width: 1px;
+         height: 1px;
+         visibility: hidden;
+         clip: rect(0 0 0 0);
+         position: absolute;
+         &:checked + .checkbox__style {
+            .icon-check {
+               display: block;
+            }
+         }
+      }
+
+      &__style {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 16.5px;
+         height: 16.5px;
+         border: 2px solid #707070;
+         border-radius: 2px;
+         .icon-check {
+            display: none;
+            font-size: 19px;
+         }
+      }
+   }
+
+   .slader-checkbox {
+      &__label {
+         background: #ffffff;
+         border-radius: 50px;
+         width: 37px;
+         height: 15px;
+         display: flex;
+         align-items: center;
+         margin: 0px 0px 0px 0px;
+      }
+
+      &__input {
+         width: 1px;
+         height: 1px;
+         visibility: hidden;
+         clip: rect(0 0 0 0);
+         position: absolute;
+         &:checked + .slader-checkbox__style {
+            transition: all 0.3s ease 0s;
+            transform: translate(16px, 0px);
+            background-color: #000;
+         }
+      }
+
+      &__style {
+         background: #bababa;
+         width: 20px;
+         height: 20px;
+         display: inline-block;
+         border-radius: 50%;
+         transition: all 0.3s ease 0s;
+      }
+   }
+   .checkbox-menu {
+      &__content {
+         background: #ffffff;
+         border-radius: 5px;
+         position: relative;
+         padding: 20px 90px;
+         text-align: center;
+         max-width: 560px;
+      }
+      &__icon {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         font-size: 24px;
+      }
+
+      &__label {
+         font-size: 12px;
+         line-height: 16px;
+         letter-spacing: 0.4px;
+         color: #003566;
+         margin-bottom: 16px;
+      }
+
+      &__actions-list {
+         display: flex;
+         gap: 10px 30px;
+         flex-wrap: wrap;
+      }
+
+      &__action {
+         font-size: 12px;
+         line-height: 16px;
+         letter-spacing: 0.15px;
+      }
+   }
+   .articles-table {
+      &__head {
+         margin-bottom: 5px;
+      }
+
+      &__body {
+      }
+   }
+   .table-head {
+      display: grid;
+      grid-template-columns: 4% 14% 31% 13% 10% 8% 7% 6%;
+      gap: 1%;
+      background: #cdffbc;
+      padding: 7px 0px;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.15px;
+      align-items: center;
+
+      &__checkbox {
+         display: block;
+         margin: 0 auto;
+      }
+
+      &__name-section {
+         padding-left: 20px;
+      }
+
+      &__name-sub-section {
+         padding-left: 20px;
+      }
+
+      &__date {
+         padding-left: 10px;
+      }
+
+      &__views {
+         text-align: center;
+      }
+
+      &__visibility {
+         text-align: center;
+      }
+
+      &__edit {
+         text-align: center;
+      }
+
+      &__remove {
+         text-align: center;
+      }
+   }
+
+   .table-body {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+
+      &__row {
+         display: grid;
+         grid-template-columns: 4% 14% 31% 13% 10% 8% 7% 6%;
+         grid-gap: 1%;
+         padding: 16px 0px;
+         border-bottom: 0.5px solid #707070;
+      }
+
+      &__checkbox {
+         display: grid;
+         align-items: center;
+         justify-content: center;
+      }
+
+      &__name-section {
+         display: flex;
+         align-items: center;
+         padding-left: 20px;
+         word-break: break-word;
+      }
+
+      &__name-sub-section {
+         display: inline-flex;
+         align-items: center;
+         padding-left: 5px;
+         word-break: break-word;
+         .icon-three-dots-vertical {
+            font-size: 20px;
+         }
+      }
+
+      &__date {
+         color: #003566;
+         font-size: 12px;
+         line-height: 16px;
+         letter-spacing: 0.4px;
+         padding-left: 10px;
+         display: flex;
+         align-items: center;
+         span {
+            padding-right: 8px;
+         }
+      }
+
+      &__views {
+         font-size: 12px;
+         line-height: 16px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         word-break: break-all;
+         text-align: center;
+      }
+
+      &__visibility {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      &__edit {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+
+      &__delete {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 16px;
+      }
+   }
+
+   //========================================================================================================================================================
+   &__wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+   }
+
+   &__container {
+   }
+
+   &__header {
+      background: #1b4332;
+      height: 65px;
+   }
+
+   &__content {
+      max-width: 1045px;
+      margin: 0 auto;
+      padding: 15px 0px 0px 0px;
+   }
+
+   &__title {
+      font-size: 14px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 22px;
+   }
+
+   &__filter {
+      margin-bottom: 30px;
+   }
+   &__table {
+      margin-bottom: 80px;
+   }
+   &__checkbox-menu {
+      display: grid;
+      justify-content: center;
+      margin-bottom: 44px;
+   }
+
+   &__popup {
+   }
+}

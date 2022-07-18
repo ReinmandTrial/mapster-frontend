@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+   />
+   <link rel="stylesheet" href="css/style.min.css?_v=20220715221615" />
+   <script src="js/app.min.js?_v=20220715221615" defer></script>
+
+   <title>Главная</title>
+</head>
+
+   <body style="background-color: #ececec">
+      <header>
+</header>
+      <main class="main-tag">
+         <div class="container-m">
+            <div class="add-tag">
+               <div class="add-tag__content">
+                  <p class="add-tag__title">Теги *</p>
+                  <div class="add-tag__list-wrap">
+                     <p class="add-tag__holder">Добавьте теги</p>
+                     <ul class="add-tag__list">
+                        <span class="add-tag__icon-add"><img src="img/tag/add_plus.svg" alt="" /></span>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="popup">
+            <div class="popup__body">
+               <form class="popup__content" v-click-outside="emitClose">
+                  <h2 class="popup__title">Добавить тег</h2>
+                  <div class="popup__inputs">
+                     <div class="popup__input input-popup">
+                        <input type="text" class="input-popup__input" />
+                     </div>
+                  </div>
+                  <div class="popup__input-dropdown">
+                     <ul class="popup__dropdown-list">
+                        <li class="popup__dropdown-item">Тбилиси</li>
+                        <li class="popup__dropdown-item">Тбилиси</li>
+                        <li class="popup__dropdown-item">Тбилиси</li>
+                        <li class="popup__dropdown-item">Тбилиси</li>
+                        <li class="popup__dropdown-item">Тбилиси</li>
+                     </ul>
+                  </div>
+                  <div class="popup__btn-wrap">
+                     <button class="popup__btn-cancel">ОТМЕНА</button>
+                     <button class="popup__btn-add">ДОБАВИТЬ ТЕГ</button>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <script id="tempTagItem" type="text/template">
+            <li data-id ="{{id}}" class="add-tag__item">
+               <span class="add-tag__item-name">{{tagName}}</span>
+               <span class="add-tag__item-delete"><img src="img/tag/trash.svg" alt="" /></span>
+            </li>
+         </script>
+      </main>
+      <footer></footer>
+   </body>
+</html>

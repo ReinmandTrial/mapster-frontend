@@ -1,0 +1,500 @@
+.main {
+   background-color: var(--light-gray);
+   height: 10000px;
+}
+:root {
+   --white: #ffffff;
+   --gray: #707070;
+   --black: #000000;
+   --light-green: #41b619;
+   --light-gray: #ececec;
+}
+
+.temp-textinput {
+   &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: 500.98px) {
+         display: block;
+      }
+   }
+
+   &__name-input {
+      font-size: 18px;
+      line-height: 25px;
+      flex: 0 0 200px;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+         margin-bottom: 10px;
+      }
+   }
+
+   &__wrap {
+      flex: 0 1 380px;
+   }
+
+   &__input {
+      font-family: 'Inter';
+      background: var(--white);
+      border: 1px solid rgba(26, 27, 32, 0.6);
+      border-radius: 5px;
+      padding: 14px 15px;
+      width: 100%;
+      font-size: 16px;
+      line-height: 19px;
+      @media (max-width: 500.98px) {
+         padding: 9px 15px;
+         font-weight: 600;
+         font-size: 15px;
+         line-height: 20px;
+      }
+   }
+}
+
+.temp-textarea {
+   &__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @media (max-width: 500.98px) {
+         display: block;
+      }
+   }
+
+   &__name-input {
+      font-size: 18px;
+      line-height: 25px;
+      flex: 0 0 200px;
+      align-self: flex-start;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+         margin-bottom: 14px;
+      }
+   }
+
+   &__wrap {
+      flex: 0 1 380px;
+   }
+
+   &__textarea {
+      font-family: 'Inter';
+      background: var(--white);
+      border: 1px solid rgba(26, 27, 32, 0.6);
+      border-radius: 5px;
+      padding: 14px 15px;
+      width: 100%;
+      height: 200px;
+      @media (max-width: 500.98px) {
+         height: 180px;
+         font-size: 14px;
+         line-height: 19px;
+      }
+   }
+}
+
+.birthday-picker {
+   &__content {
+      display: flex;
+      align-items: center;
+      @media (max-width: 500.98px) {
+         display: block;
+      }
+   }
+
+   &__title {
+      font-size: 18px;
+      line-height: 25px;
+      flex: 0 0 204px;
+      margin-bottom: 12px;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+      }
+   }
+
+   &__date {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      background: var(--white);
+      border: 1px solid rgba(26, 27, 32, 0.6);
+      border-radius: 5px;
+      padding: 10px 15px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 257px;
+
+      @media (max-width: 500.98px) {
+         max-width: 181px;
+         font-weight: 600;
+         font-size: 14px;
+         line-height: 19px;
+         height: 40px;
+         justify-content: start;
+         column-gap: 10px;
+      }
+      span {
+         &:first-child {
+            display: none;
+            @media (max-width: 500.98px) {
+               display: block;
+            }
+         }
+         &:last-child {
+            @media (max-width: 500.98px) {
+               display: none;
+            }
+         }
+      }
+      .icon-calendar-2 {
+         font-size: 29px;
+         @media (max-width: 500.98px) {
+            font-size: 24px;
+         }
+      }
+   }
+}
+.select-gender {
+   &__content {
+      display: flex;
+      align-items: center;
+   }
+
+   &__title {
+      font-size: 18px;
+      line-height: 25px;
+      flex: 0 0 204px;
+      @media (max-width: 500.98px) {
+         display: none;
+      }
+   }
+
+   &__wrap {
+   }
+
+   &__text-point {
+      font-size: 14px;
+      line-height: 19px;
+      margin-bottom: 7px;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+      }
+   }
+
+   &__buttons {
+   }
+
+   &__label {
+      font-size: 18px;
+      line-height: 25px;
+      display: inline-flex;
+      align-items: center;
+      column-gap: 8px;
+      position: relative;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+      }
+      &:first-child {
+         margin-right: 25px;
+      }
+   }
+
+   &__style {
+      width: 20px;
+      height: 20px;
+      border-radius: 50px;
+      border: 2px solid rgba(0, 0, 0, 0.87);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      .select-gender__radio:checked + &::after {
+         content: '';
+         width: 10px;
+         height: 10px;
+         background-color: var(--black);
+         border-radius: 50%;
+         transition: all 0.3s ease 0s;
+         position: absolute;
+      }
+   }
+
+   &__radio {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+   }
+}
+
+.tour-guide-edit-profile {
+   margin-top: 60px;
+   &__wrap {
+   }
+
+   &__container {
+      max-width: 800px;
+      height: 100%;
+      margin: 0 auto;
+      background-color: var(--white);
+      @media (max-width: 767.98px) {
+         background-color: transparent;
+      }
+   }
+
+   &__content {
+      margin: 0 auto;
+      max-width: 584px;
+      padding-top: 40px;
+      @media (max-width: 767.98px) {
+         padding: 0px 25px;
+      }
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 30px;
+      padding-left: 28px;
+      @media (max-width: 767.98px) {
+         font-size: 18px;
+         line-height: 22px;
+         padding: 0px 0px 0px 0px;
+      }
+   }
+
+   &__photo-guide {
+      border-radius: 50%;
+      overflow: hidden;
+      height: 146px;
+      width: 146px;
+      margin: 0 auto;
+      margin-bottom: 17px;
+      @media (max-width: 767.98px) {
+         width: 140px;
+         height: 140px;
+         margin-bottom: 11px;
+      }
+      img {
+         object-fit: cover;
+         width: 100%;
+         height: 100%;
+      }
+   }
+
+   &__edit-photo {
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      color: #219ebc;
+      cursor: default;
+      margin-bottom: 60px;
+      @media (max-width: 500.98px) {
+         margin-bottom: 32px;
+      }
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+
+   &__text-input {
+      margin-bottom: 20px;
+   }
+   &__birthday {
+      margin-bottom: 20px;
+   }
+   &__gender {
+      margin-bottom: 23px;
+      @media (max-width: 500.98px) {
+         margin-bottom: 16px;
+      }
+   }
+   &__about-me {
+      margin-bottom: 25px;
+   }
+   &__button-wrap {
+      display: flex;
+      justify-content: center;
+      @media (max-width: 500.98px) {
+         display: block;
+      }
+   }
+
+   &__button {
+      flex: 0 1 280px;
+      height: 45px;
+      margin: 0 auto;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 16px;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      background: var(--light-green);
+      border-radius: 5px;
+      @media (max-width: 500.98px) {
+         width: 100%;
+         height: 40px;
+      }
+   }
+}
+//tour-guide-edit-profile END========================================================================================================================================================
+
+//tour-guide-profile START========================================================================================================================================================
+.tour-guide-profile {
+   margin-top: 60px;
+   &__wrap {
+   }
+
+   &__container {
+      max-width: 767px;
+      height: 100%;
+      margin: 0 auto;
+      background-color: var(--white);
+      @media (max-width: 767.98px) {
+         background-color: transparent;
+      }
+   }
+
+   &__content {
+      margin: 0 auto;
+      max-width: 620px;
+      padding: 40px 0px 15px 0px;
+      @media (max-width: 767.98px) {
+         padding: 0px 25px;
+      }
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 30px;
+      padding-left: 47px;
+      @media (max-width: 767.98px) {
+         font-size: 18px;
+         line-height: 22px;
+         padding: 0px 0px 0px 0px;
+      }
+   }
+
+   &__about-me {
+      display: flex;
+      column-gap: 30px;
+      margin-bottom: 30px;
+      @media (max-width: 500.98px) {
+         justify-content: center;
+      }
+   }
+
+   &__photo-guide {
+      border-radius: 50%;
+      overflow: hidden;
+      height: 146px;
+      flex: 0 0 146px;
+      margin-bottom: 17px;
+      @media (max-width: 767.98px) {
+         flex: 0 0 140px;
+         height: 140px;
+         margin-bottom: 11px;
+      }
+
+      img {
+         object-fit: cover;
+         width: 100%;
+         height: 100%;
+      }
+   }
+
+   &__text-about {
+      @media (max-width: 500.98px) {
+         display: none;
+      }
+   }
+
+   &__subtitle {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.15px;
+   }
+
+   &__descr {
+      font-size: 14px;
+      line-height: 19px;
+
+      color: rgba(26, 27, 32, 0.6);
+   }
+   &__table {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      width: 100%;
+      border-spacing: 0 4px;
+      margin-bottom: 15px;
+   }
+
+   &__tbody {
+   }
+
+   &__row {
+      &:nth-child(odd) {
+         background: #e5e5e5;
+      }
+      &:nth-child(even) {
+         background: rgba(33, 158, 188, 0.15);
+      }
+   }
+
+   &__data {
+      height: 30px;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+      }
+      &:first-child {
+         width: 375px;
+         padding-left: 20px;
+      }
+      &:last-child {
+         width: 244px;
+         padding-left: 30px;
+         @media (max-width: 500.98px) {
+            font-weight: 600;
+         }
+         @media (max-width: 360px) {
+            font-size: 12px;
+         }
+      }
+   }
+   &__edit-table {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 19px;
+      color: #219ebc;
+      cursor: default;
+      @media (max-width: 500.98px) {
+         line-height: 13px;
+         letter-spacing: 0.2px;
+         font-weight: 400;
+      }
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+}
+
+//tour-guide-profile END========================================================================================================================================================
