@@ -1,258 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
-   @@include('html/head.html',{ "title":"Админка блог разделы" })
-   <body>
-      @@include('html/header.html',{})
-      <div class="admin-sections">
-         <div class="admin-sections__wrapper">
-            <div class="admin-sections__container container-l">
-               <div class="admin-sections__header"></div>
-               <div class="admin-sections__content">
-                  <p class="admin-sections__title">Главная/разделы</p>
-                  <div class="admin-sections__filter filter">
-                     <p class="filter__label">По разделам</p>
-                     <div class="filter__category-list">
-                        <button class="filter__category active">Все</button>
-                        <button class="filter__category">Туры</button>
-                        <button class="filter__category">Жилье</button>
-                        <button class="filter__category">Трансфер</button>
-                        <button class="filter__category">Экскурсии</button>
-                     </div>
-                  </div>
-                  <div class="admin-sections__table articles-table">
-                     <div class="articles-table__head table-head">
-                        <label class="table-head__checkbox checkbox">
-                           <input type="checkbox" class="checkbox__input" />
-                           <span class="checkbox__style"><span class="icon icon-check"></span></span>
+@@include('html/head.html',{ "title":"Админка блог разделы" })
+
+<body>
+   @@include('html/header.html',{})
+   <div class="admin-sections">
+      <div class="admin-sections__wrapper">
+         <div class="admin-sections__container container-l">
+            <div class="admin-sections__header"></div>
+            <div class="admin-sections__content">
+               <p class="admin-sections__title">Главная/разделы</p>
+               <div class="admin-sections__filter filter-articles">
+                  <p class="filter-articles__title">По разделам</p>
+                  <div class="blog-all-articles__filter  filter-articles">
+                     <div class="filter-articles__list">
+                        <label class="filter-articles__item-label">
+                           <input checked class="filter-articles__input" type="radio" name="criterion">
+                           <span class="filter-articles__style">Все</span>
                         </label>
-                        <p class="table-head__name-section">Название раздела</p>
-                        <p class="table-head__name-sub-section">Название подраздела</p>
-                        <p class="table-head__date">Дата</p>
-                        <p class="table-head__views">Просмотров</p>
-                        <p class="table-head__visibility">Видимость</p>
-                        <p class="table-head__edit">Изменить</p>
-                        <p class="table-head__remove">Удалить</p>
-                     </div>
-                     <div class="articles-table__body table-body">
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__name-section">Туры</div>
-                           <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-
-                           <button class="table-body__edit icon icon-pencil"></button>
-                           <button class="table-body__delete icon icon-trash"></button>
-                        </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__name-section">Туры</div>
-                           <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-
-                           <button class="table-body__edit icon icon-pencil"></button>
-                           <button class="table-body__delete icon icon-trash"></button>
-                        </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__name-section">Туры</div>
-                           <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-
-                           <button class="table-body__edit icon icon-pencil"></button>
-                           <button class="table-body__delete icon icon-trash"></button>
-                        </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__name-section">Туры</div>
-                           <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-
-                           <button class="table-body__edit icon icon-pencil"></button>
-                           <button class="table-body__delete icon icon-trash"></button>
-                        </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__name-section">Туры</div>
-                           <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-
-                           <button class="table-body__edit icon icon-pencil"></button>
-                           <button class="table-body__delete icon icon-trash"></button>
-                        </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__name-section">Туры</div>
-                           <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-
-                           <button class="table-body__edit icon icon-pencil"></button>
-                           <button class="table-body__delete icon icon-trash"></button>
-                        </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__name-section">Туры lorem</div>
-                           <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-
-                           <button class="table-body__edit icon icon-pencil"></button>
-                           <button class="table-body__delete icon icon-trash"></button>
-                        </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__name-section">Туры</div>
-                           <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-
-                           <button class="table-body__edit icon icon-pencil"></button>
-                           <button class="table-body__delete icon icon-trash"></button>
-                        </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__name-section">Туры</div>
-                           <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-
-                           <button class="table-body__edit icon icon-pencil"></button>
-                           <button class="table-body__delete icon icon-trash"></button>
-                        </div>
+                        <label class="filter-articles__item-label">
+                           <input class="filter-articles__input" type="radio" name="criterion">
+                           <span class="filter-articles__style">Туры</span>
+                        </label>
+                        <label class="filter-articles__item-label">
+                           <input class="filter-articles__input" type="radio" name="criterion">
+                           <span class="filter-articles__style">Жилье</span>
+                        </label>
+                        <label class="filter-articles__item-label">
+                           <input class="filter-articles__input" type="radio" name="criterion">
+                           <span class="filter-articles__style">Трансфер</span>
+                        </label>
+                        <label class="filter-articles__item-label">
+                           <input class="filter-articles__input" type="radio" name="criterion">
+                           <span class="filter-articles__style">Экскурсии</span>
+                        </label>
                      </div>
                   </div>
-                  <div class="admin-sections__checkbox-menu checkbox-menu">
-                     <div class="checkbox-menu__content">
-                        <button class="checkbox-menu__icon icon icon-close"></button>
-                        <p class="checkbox-menu__label">Количество выбраных постов: <span>2</span></p>
-                        <div class="checkbox-menu__actions-list">
-                           <button class="checkbox-menu__action">Удалить</button>
-                           <button class="checkbox-menu__action">Выключить</button>
-                           <button class="checkbox-menu__action">Включить</button>
-                           <button class="checkbox-menu__action">Выбрать разделы</button>
+               </div>
+               <div class="admin-sections__table articles-table">
+                  <div class="articles-table__head table-head">
+                     <label class="table-head__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                     </label>
+                     <p class="table-head__name-section">Название раздела</p>
+                     <p class="table-head__name-sub-section">Название подраздела</p>
+                     <p class="table-head__date">Дата</p>
+                     <p class="table-head__views">Просмотров</p>
+                     <p class="table-head__visibility">Видимость</p>
+                     <p class="table-head__edit">Изменить</p>
+                     <p class="table-head__remove">Удалить</p>
+                  </div>
+                  <div class="articles-table__body table-body">
+                     <div class="table-body__row">
+                        <label class="table-head__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__none" />
+                           <span class="checkbox__style"></span>
+                        </label>
+                        <div class="table-body__name-section">Туры</div>
+                        <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">12342767</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
                         </div>
+
+                        <button class="table-body__edit icon icon-pencil"></button>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-head__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__none" />
+                           <span class="checkbox__style"></span>
+                        </label>
+                        <div class="table-body__name-section">Туры</div>
+                        <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">12342767</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
+                        </div>
+
+                        <button class="table-body__edit icon icon-pencil"></button>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-head__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__none" />
+                           <span class="checkbox__style"></span>
+                        </label>
+                        <div class="table-body__name-section">Туры</div>
+                        <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">12342767</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
+                        </div>
+
+                        <button class="table-body__edit icon icon-pencil"></button>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-head__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__none" />
+                           <span class="checkbox__style"></span>
+                        </label>
+                        <div class="table-body__name-section">Туры</div>
+                        <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">12342767</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
+                        </div>
+
+                        <button class="table-body__edit icon icon-pencil"></button>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-head__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__none" />
+                           <span class="checkbox__style"></span>
+                        </label>
+                        <div class="table-body__name-section">Туры</div>
+                        <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">12342767</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
+                        </div>
+
+                        <button class="table-body__edit icon icon-pencil"></button>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-head__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__none" />
+                           <span class="checkbox__style"></span>
+                        </label>
+                        <div class="table-body__name-section">Туры</div>
+                        <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">12342767</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
+                        </div>
+
+                        <button class="table-body__edit icon icon-pencil"></button>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-head__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__none" />
+                           <span class="checkbox__style"></span>
+                        </label>
+                        <div class="table-body__name-section">Туры</div>
+                        <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">12342767</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
+                        </div>
+
+                        <button class="table-body__edit icon icon-pencil"></button>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-head__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__none" />
+                           <span class="checkbox__style"></span>
+                        </label>
+                        <div class="table-body__name-section">Туры</div>
+                        <div class="table-body__name-sub-section"><span class="icon icon-three-dots-vertical"></span> Путешествия</div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">12342767</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
+                        </div>
+
+                        <button class="table-body__edit icon icon-pencil"></button>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="admin-sections__checkbox-menu checkbox-menu">
+                  <div class="checkbox-menu__content">
+                     <button class="checkbox-menu__icon icon icon-close"></button>
+                     <p class="checkbox-menu__label">Количество выбраных постов: <span>2</span></p>
+                     <div class="checkbox-menu__actions-list">
+                        <button class="checkbox-menu__action">Удалить</button>
+                        <button class="checkbox-menu__action">Выключить</button>
+                        <button class="checkbox-menu__action">Включить</button>
+                        <button class="checkbox-menu__action">Выбрать разделы</button>
                      </div>
                   </div>
                </div>
             </div>
          </div>
-         <div class="admin-sections__popup popup">
-            <div class="popup__body">
-               <form class="popup__content">
-                  <h2 class="popup__title">Разделы</h2>
-                  <div class="popup__wrap">
-                     <div class="popup__select select">
-                        <div class="select__head">
-                           <span class="select__head-text">Выберите раздел</span>
-                           <span class="icon icon-triangle-down-line"></span>
-                        </div>
-                        <div class="select__body">
-                           <button class="select__option">Туры: Раздел 1</button>
-                           <button class="select__option">Туры: Раздел 2</button>
-                           <button class="select__option">Экскурсии: Раздел 1</button>
-                           <button class="select__option">Экскурсии: Раздел 2</button>
-                        </div>
+      </div>
+      <div class="admin-sections__popup-add-section popup">
+         <div class="popup__body">
+            <form class="popup__content">
+               <h2 class="popup__title">Разделы</h2>
+               <div class="popup__wrap">
+                  <div class="popup__select select">
+                     <div class="select__head">
+                        <span class="select__head-text">Выберите раздел</span>
+                        <span class="icon icon-triangle-down-line"></span>
                      </div>
-                     <div class="popup__input input-popup">
-                        <p class="input-popup__title">Название подраздела</p>
-                        <input type="text" class="input-popup__input" />
-                     </div>
-                     <div class="popup__buttons">
-                        <button class="popup__cancel-btn">Отмена</button>
-                        <button class="popup__btn">Добавить</button>
+                     <div class="select__body">
+                        <button class="select__option">Туры: Раздел 1</button>
+                        <button class="select__option">Туры: Раздел 2</button>
+                        <button class="select__option">Экскурсии: Раздел 1</button>
+                        <button class="select__option">Экскурсии: Раздел 2</button>
                      </div>
                   </div>
-               </form>
+                  <div class="popup__input input-popup">
+                     <p class="input-popup__title">Название подраздела</p>
+                     <input type="text" class="input-popup__input" />
+                  </div>
+                  <div class="popup__buttons">
+                     <button class="popup__cancel-btn">Отмена</button>
+                     <button class="popup__btn">Добавить</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+      <div class="admin-sections__popup-choose-section popup">
+         <div class="popup__body">
+            <div class="popup__content">
+               <div class="popup__list-section">
+                  <div class="popup__item-section">
+                     <label class="popup__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                        Туры: Раздел 1
+                     </label>
+                  </div>
+                  <div class="popup__item-section">
+                     <label class="popup__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                        Туры: Раздел 1
+                     </label>
+                  </div>
+                  <div class="popup__item-section">
+                     <label class="popup__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                        Туры: Раздел 1
+                     </label>
+                  </div>
+                  <div class="popup__item-section">
+                     <label class="popup__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                        Туры: Раздел 1
+                     </label>
+                  </div>
+                  <div class="popup__item-section">
+                     <label class="popup__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                        Туры: Раздел 1
+                     </label>
+                  </div>
+                  <div class="popup__item-section">
+                     <label class="popup__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                        Туры: Раздел 1 Туры: Раздел 1Туры: Раздел 1Туры: Раздел 1Туры: Раздел 1
+                     </label>
+                  </div>
+                  <div class="popup__item-section">
+                     <label class="popup__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                        Туры: Раздел 1
+                     </label>
+                  </div>
+                  <div class="popup__item-section">
+                     <label class="popup__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                        Туры: Раздел 1
+                     </label>
+                  </div>
+                  <div class="popup__item-section">
+                     <label class="popup__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__none" />
+                        <span class="checkbox__style"></span>
+                        Туры: Раздел 1
+                     </label>
+                  </div>
+               </div>
+               <div class="popup__wrap-buttons">
+                  <button class="popup__cancel-btn">Отмена</button>
+                  <button class="popup__save-btn">Сохранить</button>
+               </div>
+               <button class="popup__add-btn">Добавить подраздел</button>
             </div>
          </div>
       </div>
+   </div>
 
-      @@include('html/footer.html',{})
-   </body>
+   @@include('html/footer.html',{})
+</body>
+
 </html>

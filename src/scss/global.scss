@@ -244,7 +244,7 @@ body {
       box-sizing: border-box;
    }
    .checkbox__none:checked + .checkbox__style {
-      background: url('~@/assets/images/svg-icons/check.svg') center center/100% 100% no-repeat;
+      background: url('@img/check_box_done.svg') center center/100% 100% no-repeat;
       border: none;
    }
 }
