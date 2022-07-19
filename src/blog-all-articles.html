@@ -1,46 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-   @@include('html/head.html',{ "title":"Блог статья" })
-   <body>
-      @@include('html/header.html',{})
-      <div class="blog-all-articles">
-         <div class="blog-all-articles__wrapper">
-            <div class="blog-all-articles__head"></div>
-            <div class="blog-all-articles__container container-m">
-               <div class="blog-all-articles__card-list card-list">
-                  <div class="card-list__filter">
-                     <button class="card-list__criterion active">Все 52</button>
-                     <button class="card-list__criterion">Туризм</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                     <button class="card-list__criterion">Путешествия</button>
-                  </div>
-                  <div class="card-list__body">
-                     <div class="card-list__card"></div>
-                     <div class="card-list__card"></div>
-                     <div class="card-list__card"></div>
-                     <div class="card-list__card"></div>
-                  </div>
-                  <p class="card-list__more">Еще статьи ...</p>
+@@include('html/head.html',{ "title":"Блог статья" })
+
+<body>
+   @@include('html/header.html',{})
+   <div class="blog-all-articles">
+      <div class="blog-all-articles__wrapper">
+         <div class="blog-all-articles__head"></div>
+         <div class="blog-all-articles__container container-m">
+            <div class="blog-all-articles__filter  filter-articles">
+               <div class="filter-articles__list">
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
+                  <label class="filter-articles__item-label">
+                     <input class="filter-articles__input" type="radio" name="criterion">
+                     <span class="filter-articles__style">Туризм</span>
+                  </label>
                </div>
+            </div>
+            <div class="blog-all-articles__card-list card-list">
+               <div class="card-list__body">
+                  <div class="card-list__card"></div>
+                  <div class="card-list__card"></div>
+                  <div class="card-list__card"></div>
+                  <div class="card-list__card"></div>
+               </div>
+               <p class="card-list__more">Еще статьи ...</p>
             </div>
          </div>
       </div>
-      @@include('html/footer.html',{})
-   </body>
+   </div>
+   @@include('html/footer.html',{})
+</body>
+
 </html>
