@@ -7,33 +7,43 @@
       justify-content: space-between;
       gap: 30px 30px;
       flex-wrap: wrap;
-      &__filter {
+      &__filter-articles {
       }
 
       &__select {
       }
    }
-   .filter {
-      font-size: 14px;
-      line-height: 20px;
-      letter-spacing: 0.4px;
+   .filter-articles {
       display: flex;
       align-items: center;
-      gap: 30px;
-      &__label {
+      gap: 10px 30px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      &__title {
          font-size: 12px;
       }
-
-      &__category-list {
+      &__list {
          display: flex;
-         gap: 11px;
+         gap: 10px 10px;
+         flex-wrap: wrap;
       }
 
-      &__category {
-         font-size: 14px;
-         &.active {
+      &__item-label {
+      }
+
+      &__input {
+         width: 1px;
+         height: 1px;
+         position: absolute;
+         visibility: hidden;
+         clip: rect(0 0 0 0);
+         &:checked + .filter-articles__style {
             font-weight: 600;
          }
+      }
+      &__style {
+         font-weight: 400;
+         font-size: 14px;
       }
    }
    .select {
@@ -76,13 +86,13 @@
          height: 16.5px;
          border: 2px solid #707070;
          border-radius: 2px;
+         background-color: transparent;
          .icon-check {
             display: none;
             font-size: 19px;
          }
       }
    }
-
    .slader-checkbox {
       &__label {
          background: #ffffff;
@@ -155,7 +165,6 @@
          text-align: center;
       }
    }
-
    .table-body {
       border-top: 0.5px solid #707070;
       &__row {
@@ -228,9 +237,9 @@
          display: flex;
          align-items: center;
          justify-content: center;
+         font-size: 16px;
       }
    }
-
    .articles-table {
       &__head {
          margin-bottom: 5px;

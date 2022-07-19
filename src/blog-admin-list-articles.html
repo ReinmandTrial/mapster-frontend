@@ -1,219 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-   @@include('html/head.html',{ "title":"Админка блог список статей" })
-   <body>
-      @@include('html/header.html',{})
-      <div class="admin-list-articles">
-         <div class="admin-list-articles__wrapper">
-            <div class="admin-list-articles__container container-l">
-               <div class="admin-list-articles__header"></div>
-               <div class="admin-list-articles__content">
-                  <p class="admin-list-articles__title">Главная/статьи</p>
-                  <div class="admin-list-articles__filter-select filter-select">
-                     <div class="filter-select__filter filter">
-                        <p class="filter__label">По разделам</p>
-                        <div class="filter__category-list">
-                           <button class="filter__category active">Все</button>
-                           <button class="filter__category">Туры</button>
-                           <button class="filter__category">Жилье</button>
-                           <button class="filter__category">Трансфер</button>
-                           <button class="filter__category">Экскурсии</button>
+@@include('html/head.html',{ "title":"Админка блог список статей" })
+
+<body>
+   @@include('html/header.html',{})
+   <div class="admin-list-articles">
+      <div class="admin-list-articles__wrapper">
+         <div class="admin-list-articles__container container-l">
+            <div class="admin-list-articles__header"></div>
+            <div class="admin-list-articles__content">
+               <p class="admin-list-articles__title">Главная/статьи</p>
+               <div class="admin-list-articles__filter-select filter-select">
+                  <div class="filter-select__filter filter-articles">
+                     <p class="filter-articles__title">По разделам</p>
+                     <div class="blog-all-articles__filter  filter-articles">
+                        <div class="filter-articles__list">
+                           <label class="filter-articles__item-label">
+                              <input class="filter-articles__input" type="radio" name="criterion">
+                              <span class="filter-articles__style">Все</span>
+                           </label>
+                           <label class="filter-articles__item-label">
+                              <input class="filter-articles__input" type="radio" name="criterion">
+                              <span class="filter-articles__style">Туры</span>
+                           </label>
+                           <label class="filter-articles__item-label">
+                              <input class="filter-articles__input" type="radio" name="criterion">
+                              <span class="filter-articles__style">Жилье</span>
+                           </label>
+                           <label class="filter-articles__item-label">
+                              <input class="filter-articles__input" type="radio" name="criterion">
+                              <span class="filter-articles__style">Трансфер</span>
+                           </label>
+                           <label class="filter-articles__item-label">
+                              <input class="filter-articles__input" type="radio" name="criterion">
+                              <span class="filter-articles__style">Экскурсии</span>
+                           </label>
                         </div>
                      </div>
-                     <div class="filter-select__select select">
-                        <button class="select__head">
-                           <span class="select__text"></span>
-                           <span class="select__arrow"></span>
-                        </button>
-                        <div class="select__body"></div>
-                     </div>
                   </div>
-                  <div class="admin-list-articles__table articles-table">
-                     <div class="articles-table__head table-head">
-                        <label class="table-head__checkbox checkbox">
+                  <div class="filter-select__select select">
+                     <button class="select__head">
+                        <span class="select__text"></span>
+                        <span class="select__arrow"></span>
+                     </button>
+                     <div class="select__body"></div>
+                  </div>
+               </div>
+               <div class="admin-list-articles__table articles-table">
+                  <div class="articles-table__head table-head">
+                     <label class="table-head__checkbox checkbox">
+                        <input type="checkbox" class="checkbox__input" />
+                        <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                     </label>
+                     <p class="table-head__photo">Фото</p>
+                     <p class="table-head__title">Заголовок</p>
+                     <p class="table-head__date">Дата</p>
+                     <p class="table-head__views">Просмотров</p>
+                     <p class="table-head__visibility">Видимость</p>
+                     <p class="table-head__remove">Удалить</p>
+                  </div>
+                  <div class="articles-table__body table-body">
+                     <div class="table-body__row">
+                        <label class="table-body__checkbox checkbox">
                            <input type="checkbox" class="checkbox__input" />
                            <span class="checkbox__style"><span class="icon icon-check"></span></span>
                         </label>
-                        <p class="table-head__photo">Фото</p>
-                        <p class="table-head__title">Заголовок</p>
-                        <p class="table-head__date">Дата</p>
-                        <p class="table-head__views">Просмотров</p>
-                        <p class="table-head__visibility">Видимость</p>
-                        <p class="table-head__remove">Удалить</p>
+                        <div class="table-body__image">
+                           <div class="table-body__image-wrap"><img src="" alt="" /></div>
+                        </div>
+                        <div class="table-body__title">
+                           Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+                           quod eveniet dicta. Cons
+                        </div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">12342767</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
+                        </div>
+                        <button class="table-body__delete icon icon-trash"></button>
                      </div>
-                     <div class="articles-table__body table-body">
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__image">
-                              <div class="table-body__image-wrap"><img src="" alt="" /></div>
-                           </div>
-                           <div class="table-body__title">
-                              Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-                              quod eveniet dicta. Cons
-                           </div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">12342767</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-                           <button class="table-body__delete icon icon-trash"></button>
+                     <div class="table-body__row">
+                        <label class="table-body__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__input" />
+                           <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        </label>
+                        <div class="table-body__image">
+                           <div class="table-body__image-wrap"><img src="" alt="" /></div>
                         </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
-                           </label>
-                           <div class="table-body__image">
-                              <div class="table-body__image-wrap"><img src="" alt="" /></div>
-                           </div>
-                           <div class="table-body__title">
-                              Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-                              quod eveniet dicta. Cons
-                           </div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">14</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-                           <button class="table-body__delete icon icon-trash"></button>
+                        <div class="table-body__title">
+                           Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+                           quod eveniet dicta. Cons
                         </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">14</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
                            </label>
-                           <div class="table-body__image">
-                              <div class="table-body__image-wrap"><img src="" alt="" /></div>
-                           </div>
-                           <div class="table-body__title">
-                              Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-                              quod eveniet dicta. Cons
-                           </div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">14</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-                           <button class="table-body__delete icon icon-trash"></button>
                         </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-body__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__input" />
+                           <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        </label>
+                        <div class="table-body__image">
+                           <div class="table-body__image-wrap"><img src="" alt="" /></div>
+                        </div>
+                        <div class="table-body__title">
+                           Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+                           quod eveniet dicta. Cons
+                        </div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">14</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
                            </label>
-                           <div class="table-body__image">
-                              <div class="table-body__image-wrap"><img src="" alt="" /></div>
-                           </div>
-                           <div class="table-body__title">
-                              Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-                              quod eveniet dicta. Cons
-                           </div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">14</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-                           <button class="table-body__delete icon icon-trash"></button>
                         </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-body__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__input" />
+                           <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        </label>
+                        <div class="table-body__image">
+                           <div class="table-body__image-wrap"><img src="" alt="" /></div>
+                        </div>
+                        <div class="table-body__title">
+                           Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+                           quod eveniet dicta. Cons
+                        </div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">14</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
                            </label>
-                           <div class="table-body__image">
-                              <div class="table-body__image-wrap"><img src="" alt="" /></div>
-                           </div>
-                           <div class="table-body__title">
-                              Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-                              quod eveniet dicta. Cons
-                           </div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">14</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-                           <button class="table-body__delete icon icon-trash"></button>
                         </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-body__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__input" />
+                           <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        </label>
+                        <div class="table-body__image">
+                           <div class="table-body__image-wrap"><img src="" alt="" /></div>
+                        </div>
+                        <div class="table-body__title">
+                           Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+                           quod eveniet dicta. Cons
+                        </div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">14</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
                            </label>
-                           <div class="table-body__image">
-                              <div class="table-body__image-wrap"><img src="" alt="" /></div>
-                           </div>
-                           <div class="table-body__title">
-                              Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-                              quod eveniet dicta. Cons
-                           </div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">14</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-                           <button class="table-body__delete icon icon-trash"></button>
                         </div>
-                        <div class="table-body__row">
-                           <label class="table-body__checkbox checkbox">
-                              <input type="checkbox" class="checkbox__input" />
-                              <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-body__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__input" />
+                           <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        </label>
+                        <div class="table-body__image">
+                           <div class="table-body__image-wrap"><img src="" alt="" /></div>
+                        </div>
+                        <div class="table-body__title">
+                           Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+                           quod eveniet dicta. Cons
+                        </div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">14</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
                            </label>
-                           <div class="table-body__image">
-                              <div class="table-body__image-wrap"><img src="" alt="" /></div>
-                           </div>
-                           <div class="table-body__title">
-                              Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-                              quod eveniet dicta. Cons
-                           </div>
-                           <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
-                           <div class="table-body__views">14</div>
-                           <div class="table-body__visibility slader-checkbox">
-                              <label class="slader-checkbox__label">
-                                 <input type="checkbox" class="slader-checkbox__input" />
-                                 <span class="slader-checkbox__style"></span>
-                              </label>
-                           </div>
-                           <button class="table-body__delete icon icon-trash"></button>
                         </div>
+                        <button class="table-body__delete icon icon-trash"></button>
+                     </div>
+                     <div class="table-body__row">
+                        <label class="table-body__checkbox checkbox">
+                           <input type="checkbox" class="checkbox__input" />
+                           <span class="checkbox__style"><span class="icon icon-check"></span></span>
+                        </label>
+                        <div class="table-body__image">
+                           <div class="table-body__image-wrap"><img src="" alt="" /></div>
+                        </div>
+                        <div class="table-body__title">
+                           Страны, открытые для туристов из России Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit
+                           quod eveniet dicta. Cons
+                        </div>
+                        <div class="table-body__date"><span>01.04.2022</span> 00:07</div>
+                        <div class="table-body__views">14</div>
+                        <div class="table-body__visibility slader-checkbox">
+                           <label class="slader-checkbox__label">
+                              <input type="checkbox" class="slader-checkbox__input" />
+                              <span class="slader-checkbox__style"></span>
+                           </label>
+                        </div>
+                        <button class="table-body__delete icon icon-trash"></button>
                      </div>
                   </div>
-                  <div class="admin-list-articles__checkbox-menu checkbox-menu">
-                     <div class="checkbox-menu__content">
-                        <button class="checkbox-menu__icon icon icon-close"></button>
-                        <p class="checkbox-menu__label">Количество выбраных постов: <span>2</span></p>
-                        <div class="checkbox-menu__actions-list">
-                           <button class="checkbox-menu__action">Удалить</button>
-                           <button class="checkbox-menu__action">Выключить</button>
-                           <button class="checkbox-menu__action">Включить</button>
-                           <button class="checkbox-menu__action">Выбрать разделы</button>
-                        </div>
+               </div>
+               <div class="admin-list-articles__checkbox-menu checkbox-menu">
+                  <div class="checkbox-menu__content">
+                     <button class="checkbox-menu__icon icon icon-close"></button>
+                     <p class="checkbox-menu__label">Количество выбраных постов: <span>2</span></p>
+                     <div class="checkbox-menu__actions-list">
+                        <button class="checkbox-menu__action">Удалить</button>
+                        <button class="checkbox-menu__action">Выключить</button>
+                        <button class="checkbox-menu__action">Включить</button>
+                        <button class="checkbox-menu__action">Выбрать разделы</button>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      @@include('html/footer.html',{})
-   </body>
+   </div>
+   @@include('html/footer.html',{})
+</body>
+
 </html>

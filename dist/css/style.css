@@ -7296,42 +7296,40 @@ body {
     padding: 0px 0px;
   }
 }
-.filter-articles__list {
+.blog-all-articles .filter-articles__list {
   display: flex;
   gap: 20px 20px;
   flex-wrap: wrap;
 }
-.filter-articles__input {
+.blog-all-articles .filter-articles__input {
   width: 1px;
   height: 1px;
   position: absolute;
   visibility: hidden;
   clip: rect(0 0 0 0);
 }
-.filter-articles__input:checked + .filter-articles__style {
+.blog-all-articles .filter-articles__input:checked + .filter-articles__style {
   font-weight: 700;
   line-height: 16px;
 }
-.filter-articles__style {
+.blog-all-articles .filter-articles__style {
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   letter-spacing: 0.4px;
   color: #023047;
 }
-
-.card-list__body {
+.blog-all-articles .card-list__body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   grid-gap: 30px 20px;
   margin-bottom: 27px;
 }
-.card-list__more {
+.blog-all-articles .card-list__more {
   font-weight: 700;
   font-size: 16px;
   line-height: 27px;
 }
-
 .blog-all-articles__wrapper {
   max-width: 1300px;
   margin: 0 auto;
@@ -7355,26 +7353,34 @@ body {
   gap: 30px 30px;
   flex-wrap: wrap;
 }
-.admin-list-articles .filter {
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.4px;
+.admin-list-articles .filter-articles {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 10px 30px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
 }
-.admin-list-articles .filter__label {
+.admin-list-articles .filter-articles__title {
   font-size: 12px;
 }
-.admin-list-articles .filter__category-list {
+.admin-list-articles .filter-articles__list {
   display: flex;
-  gap: 11px;
+  gap: 10px 10px;
+  flex-wrap: wrap;
 }
-.admin-list-articles .filter__category {
-  font-size: 14px;
+.admin-list-articles .filter-articles__input {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  visibility: hidden;
+  clip: rect(0 0 0 0);
 }
-.admin-list-articles .filter__category.active {
+.admin-list-articles .filter-articles__input:checked + .filter-articles__style {
   font-weight: 600;
+}
+.admin-list-articles .filter-articles__style {
+  font-weight: 400;
+  font-size: 14px;
 }
 .admin-list-articles .select__head {
   background: #ffffff;
@@ -7401,6 +7407,7 @@ body {
   height: 16.5px;
   border: 2px solid #707070;
   border-radius: 2px;
+  background-color: transparent;
 }
 .admin-list-articles .checkbox__style .icon-check {
   display: none;
@@ -7533,6 +7540,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 16px;
 }
 .admin-list-articles .articles-table__head {
   margin-bottom: 5px;
@@ -7894,6 +7902,7 @@ body {
   height: 16.5px;
   border: 2px solid #707070;
   border-radius: 2px;
+  background-color: transparent;
 }
 .admin-sections .checkbox__style .icon-check {
   display: none;
