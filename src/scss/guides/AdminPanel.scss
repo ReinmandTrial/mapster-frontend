@@ -1057,7 +1057,9 @@
    }
 
    &__top-line {
-      display: flex;
+      display: grid;
+      grid-template-columns: 80px 5% 20% 14% 38% 11%;
+      align-items: center;
       background: #cdffbc;
       padding: 7px 0px;
       font-weight: 700;
@@ -1067,34 +1069,39 @@
    }
 
    &__top-line-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       &_img {
-         flex: 0 0 80px;
       }
 
       &_number {
-         flex: 0 1 56px;
+         text-align: center;
       }
 
       &_route {
-         flex: 0 1 225px;
+         margin-left: 20px;
       }
 
       &_date {
-         flex: 0 1 180px;
+         margin-left: 15px;
       }
 
       &_client-amount-contact {
-         flex: 0 1 383px;
          display: flex;
-         justify-content: space-evenly;
+         justify-content: space-between;
+         align-items: center;
          gap: 10px;
+         margin: 0px 25px;
+         text-align: center;
+         @media (max-width: 1080px) {
+            margin-left: 10px;
+            gap: 5px;
+         }
       }
 
       &_status {
-         flex: 0 1 135px;
+         text-align: center;
+         @media (max-width: 991.98px) {
+            text-align: left;
+         }
       }
    }
 
@@ -1102,6 +1109,9 @@
       display: flex;
       background: #ffffff;
       height: 125px;
+      border: 0.5px solid #bebdbd;
+      border-radius: 5px;
+      overflow: hidden;
       &:not(:last-child) {
          margin-bottom: 10px;
       }
@@ -1111,7 +1121,6 @@
       flex: none;
       width: 80px;
       height: 125px;
-      border-radius: 5px 0px 0px 5px;
       overflow: hidden;
       img {
          width: 100%;
@@ -1121,11 +1130,9 @@
    }
 
    &__text-content {
+      display: grid;
+      grid-template-columns: 6% 22% 15% 42% 15%;
       flex: auto;
-      display: flex;
-      border: 0.5px solid #bebdbd;
-      border-left: none;
-      border-radius: 0 5px 5px 0;
       padding: 8px 0px;
    }
 
@@ -1135,7 +1142,6 @@
          border: none;
       }
       &_number {
-         flex: 0 1 56px;
          font-size: 12px;
          line-height: 16px;
          display: flex;
@@ -1144,7 +1150,6 @@
       }
 
       &_route {
-         flex: 0 1 225px;
          padding: 0px 16px;
          display: flex;
          flex-direction: column;
@@ -1153,7 +1158,6 @@
       }
 
       &_date {
-         flex: 0 1 180px;
          padding: 20px 12px;
          display: flex;
          flex-direction: column;
@@ -1165,7 +1169,6 @@
          flex-direction: column;
          padding: 20px 20px;
          overflow: auto;
-         flex: 0 1 383px;
          gap: 10px;
          -ms-overflow-style: none;
          scrollbar-width: none;
@@ -1176,7 +1179,6 @@
       }
 
       &_status {
-         flex: 0 1 135px;
          display: flex;
          flex-direction: column;
          align-items: center;
@@ -1218,6 +1220,9 @@
       gap: 10px;
       .icon-calendar {
          font-size: 19px;
+         @media (max-width: 1150px) {
+            display: none;
+         }
       }
       .icon-watch {
          font-size: 21px;
@@ -1237,12 +1242,13 @@
       line-height: 15px;
    }
    &__amount-person {
-      word-break: break-all;
+      // word-break: break-word;
       display: flex;
       gap: 15px;
    }
    &__person {
-      word-break: break-all;
+      text-align: center;
+      // word-break: break-all;
       font-family: 'Inter';
       font-size: 12px;
       line-height: 15px;
@@ -1291,6 +1297,7 @@
       }
    }
 }
+
 .orders {
    &__container {
    }
