@@ -1,5 +1,4 @@
 .admin-sections {
-   background-color: var(--light-gray);
    //========================================================================================================================================================
 
    .filter-articles {
@@ -430,7 +429,7 @@
       }
    }
    &__popup-choose-section {
-      // display: none;
+      display: none;
       & .popup {
          &__body {
          }

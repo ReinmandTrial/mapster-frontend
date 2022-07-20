@@ -97,6 +97,7 @@ body {
   color: var(--black);
   overflow-x: hidden;
   font-size: 16px;
+  background-color: var(--light-gray);
 }
 
 .container-xl {
@@ -2760,9 +2761,6 @@ body {
   margin-bottom: 44px;
 }
 
-.admin-sections {
-  background-color: var(--light-gray);
-}
 .admin-sections .filter-articles {
   display: flex;
   align-items: center;
@@ -3127,6 +3125,9 @@ body {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.4px;
+}
+.admin-sections__popup-choose-section {
+  display: none;
 }
 .admin-sections__popup-choose-section .popup__content {
   display: block;
