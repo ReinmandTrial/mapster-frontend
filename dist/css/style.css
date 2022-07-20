@@ -3351,83 +3351,69 @@ body {
   background-color: #fff;
 }
 .all-excursions__table-head {
+  display: grid;
+  grid-template-columns: 5% 31% 12% 12% 24% 11%;
+  grid-gap: 1%;
+  align-items: center;
   background: #cdffbc;
-  display: flex;
   padding: 7px 0px;
   margin-bottom: 5px;
-  gap: 2%;
 }
 .all-excursions__head-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-weight: 700;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.15px;
 }
 .all-excursions__head-item_id {
-  flex: 0 0 5.7%;
+  text-align: center;
 }
 .all-excursions__head-item_excursion-name {
-  flex: 0 0 30%;
   text-align: center;
 }
 .all-excursions__head-item_route {
-  flex: 0 0 10%;
+  text-align: center;
 }
 .all-excursions__head-item_location {
-  flex: 0 0 10%;
   text-align: center;
 }
 .all-excursions__head-item_guide-name {
-  flex: 0 0 22%;
+  margin-left: 15px;
 }
 .all-excursions__head-item_status {
-  flex: 0 0 12.6%;
+  text-align: center;
 }
 .all-excursions__table-body-list {
   border-top: 0.5px solid #707070;
 }
 .all-excursions__table-body-item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 5% 31% 12% 12% 24% 11%;
+  grid-gap: 1%;
+  align-items: center;
   min-height: 55px;
-  gap: 2%;
   border-bottom: 0.5px solid #707070;
 }
 .all-excursions__body-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 600;
   font-size: 14px;
   line-height: 19px;
   letter-spacing: 0.15px;
-  word-break: break-all;
+  word-break: break-word;
   padding: 10px 0px;
 }
 .all-excursions__body-item_id {
-  flex: 0 0 5.7%;
   font-weight: 700;
-}
-.all-excursions__body-item_excursion-name {
-  flex: 0 0 30%;
-  display: flex;
-  justify-content: start;
+  text-align: center;
 }
 .all-excursions__body-item_route {
-  flex: 0 0 10%;
+  text-align: center;
 }
 .all-excursions__body-item_location {
-  flex: 0 0 10%;
+  text-align: center;
 }
 .all-excursions__body-item_guide-name {
-  flex: 0 0 22%;
-  display: flex;
-  justify-content: start;
-}
-.all-excursions__body-item_status {
-  flex: 0 0 12.6%;
+  margin-left: 15px;
 }
 .all-excursions__body-excursion-name-content {
   display: flex;
@@ -3481,6 +3467,10 @@ body {
 }
 .all-excursions__body-guide-name-name {
   margin-bottom: 2px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .all-excursions__body-guide-name-post {
   font-size: 10px;
@@ -3488,11 +3478,15 @@ body {
 }
 .all-excursions__body-status-content {
   padding: 0px 15px 0px 15px;
-  width: 100%;
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
-  align-items: center;
   gap: 10px;
+}
+.all-excursions__body-status-content .icon {
+  font-size: 18px;
+}
+.all-excursions__body-status-content .prompt__icon {
+  flex: none;
 }
 
 .profile-excursion__title {

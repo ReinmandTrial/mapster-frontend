@@ -364,7 +364,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 0px 15px;
-      .icon{
+      .icon {
          font-size: 18px;
       }
    }
@@ -412,46 +412,43 @@
    }
 
    &__table-head {
+      display: grid;
+      grid-template-columns: 5% 31% 12% 12% 24% 11%;
+      grid-gap: 1%;
+      align-items: center;
       background: #cdffbc;
-      display: flex;
       padding: 7px 0px;
       margin-bottom: 5px;
-      gap: 2%;
    }
 
    &__head-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-weight: 700;
       font-size: 12px;
       line-height: 16px;
       letter-spacing: 0.15px;
 
       &_id {
-         flex: 0 0 5.7%;
+         text-align: center;
       }
 
       &_excursion-name {
-         flex: 0 0 30%;
          text-align: center;
       }
 
       &_route {
-         flex: 0 0 10%;
+         text-align: center;
       }
 
       &_location {
-         flex: 0 0 10%;
          text-align: center;
       }
 
       &_guide-name {
-         flex: 0 0 22%;
+         margin-left: 15px;
       }
 
       &_status {
-         flex: 0 0 12.6%;
+         text-align: center;
       }
    }
 
@@ -461,50 +458,43 @@
       border-top: 0.5px solid #707070;
    }
    &__table-body-item {
-      display: flex;
+      display: grid;
+      grid-template-columns: 5% 31% 12% 12% 24% 11%;
+      grid-gap: 1%;
+      align-items: center;
       min-height: 55px;
-      gap: 2%;
       border-bottom: 0.5px solid #707070;
    }
 
    &__body-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-weight: 600;
       font-size: 14px;
       line-height: 19px;
       letter-spacing: 0.15px;
-      word-break: break-all;
+      word-break: break-word;
       padding: 10px 0px;
 
       &_id {
-         flex: 0 0 5.7%;
          font-weight: 700;
+         text-align: center;
       }
 
       &_excursion-name {
-         flex: 0 0 30%;
-         display: flex;
-         justify-content: start;
       }
 
       &_route {
-         flex: 0 0 10%;
+         text-align: center;
       }
 
       &_location {
-         flex: 0 0 10%;
+         text-align: center;
       }
 
       &_guide-name {
-         flex: 0 0 22%;
-         display: flex;
-         justify-content: start;
+         margin-left: 15px;
       }
 
       &_status {
-         flex: 0 0 12.6%;
       }
    }
    &__body-excursion-name-content {
@@ -573,6 +563,10 @@
 
    &__body-guide-name-name {
       margin-bottom: 2px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
    }
 
    &__body-guide-name-post {
@@ -582,11 +576,16 @@
 
    &__body-status-content {
       padding: 0px 15px 0px 15px;
-      width: 100%;
-      display: inline-flex;
+      display: flex;
       justify-content: space-between;
-      align-items: center;
       gap: 10px;
+
+      .icon {
+         font-size: 18px;
+      }
+      .prompt__icon {
+         flex: none;
+      }
    }
 }
 //========================================================================================================================================================
