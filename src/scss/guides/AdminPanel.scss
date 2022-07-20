@@ -59,31 +59,6 @@
       }
    }
 }
-.icon-option {
-   background-color: #000;
-   width: 3px;
-   height: 3px;
-   border-radius: 50%;
-   position: relative;
-   display: inline-flex;
-   &::before,
-   &::after {
-      content: '';
-      position: absolute;
-      background-color: #000;
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-   }
-   &::after {
-      content: '';
-      top: 6px;
-   }
-   &::before {
-      content: '';
-      bottom: 6px;
-   }
-}
 .general-status {
    &__title {
       font-weight: 600;
@@ -252,41 +227,37 @@
    }
 
    &__table-head {
+      display: grid;
+      grid-template-columns: 6% 30% 20% 23% 17%;
       background: #cdffbc;
-      display: flex;
       padding: 7px 0px;
       margin-bottom: 5px;
-      gap: 2%;
+      gap: 1%;
    }
 
    &__head-item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-weight: 700;
       font-size: 12px;
       line-height: 16px;
       letter-spacing: 0.15px;
       &_id {
-         flex: 0 0 4.7%;
+         text-align: center;
       }
 
       &_name {
-         flex: 0 0 25%;
          text-align: center;
       }
 
       &_location {
-         flex: 0 0 20%;
-         text-align: center;
+         margin-left: 15px;
       }
 
       &_contacts {
-         flex: 0 0 22.5%;
+         margin-left: 15px;
       }
 
       &_status {
-         flex: 0 0 19%;
+         margin-left: 15px;
       }
    }
 
@@ -296,49 +267,44 @@
       border-top: 0.5px solid #707070;
    }
    &__table-body-item {
-      display: flex;
+      display: grid;
+      grid-template-columns: 6% 30% 20% 23% 17%;
+      gap: 1%;
+      align-items: center;
       min-height: 55px;
-      gap: 2%;
       border-bottom: 0.5px solid #707070;
    }
 
    &__body-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-weight: 600;
       font-size: 14px;
       line-height: 19px;
       letter-spacing: 0.15px;
-      word-break: break-all;
+      word-break: break-word;
       padding: 10px 0px;
       &_id {
-         flex: 0 0 4.7%;
          font-weight: 400;
+         text-align: center;
       }
 
       &_name {
-         flex: 0 0 26%;
-         display: flex;
-         justify-content: start;
+         margin-left: 15px;
       }
 
       &_location {
-         flex: 0 0 20%;
+         margin-left: 15px;
       }
 
       &_contacts {
-         flex: 0 0 22.5%;
+         margin-left: 15px;
       }
 
       &_status {
-         flex: 0 0 19%;
       }
    }
    &__body-name-content {
       display: flex;
       gap: 10px;
-      align-items: center;
    }
 
    &__body-name-img {
@@ -392,11 +358,14 @@
    }
 
    &__body-status-content {
-      padding: 0px 15px 0px 15px;
       width: 100%;
       display: inline-flex;
       justify-content: space-between;
       align-items: center;
+      padding: 0px 15px;
+      .icon{
+         font-size: 18px;
+      }
    }
 }
 //========================================================================================================================================================
