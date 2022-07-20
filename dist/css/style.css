@@ -3220,6 +3220,7 @@ body {
 .all-guides__table-head {
   display: grid;
   grid-template-columns: 6% 30% 20% 23% 17%;
+  align-items: center;
   background: #cdffbc;
   padding: 7px 0px;
   margin-bottom: 5px;
