@@ -2024,7 +2024,7 @@
       font-weight: 600;
       font-size: 20px;
       line-height: 27px;
-      padding: 0px 13px;
+      text-align: center;
    }
 
    &__prompt {
@@ -2114,28 +2114,28 @@
    }
 
    &__top-row {
-      display: flex;
+      display: grid;
+      grid-template-columns: 40% 40% 20%;
       background: #c7c4c4;
-      padding: 7px 20px;
+      padding: 7px 0px;
    }
 
    &__top-item {
-      flex: 0 0 33.333%;
-      text-align: center;
+      margin-left: 20px;
    }
 
    &__main-list {
    }
 
    &__city {
-      display: flex;
-      padding: 7px 20px;
+      display: grid;
+      grid-template-columns: 40% 40% 20%;
+      padding: 7px 0px;
       border-bottom: 0.5px solid #707070;
    }
 
    &__list-item {
-      flex: 0 0 33.333%;
-      text-align: center;
+      margin-left: 20px;
    }
 }
 //========================================================================================================================================================
