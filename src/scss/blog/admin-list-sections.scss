@@ -430,23 +430,29 @@
       }
    }
    &__popup-choose-section {
-      display: none;
-      .popup {
+      // display: none;
+      & .popup {
          &__body {
          }
 
          &__content {
-            display: block !important;
+            display: block;
             padding: 0px 0px 0px 0px;
             max-width: 315px;
             font-size: 14px;
             line-height: 16px;
-            display: flex;
-            align-items: center;
             letter-spacing: 0.4px;
             background-color: var(--white);
             border-radius: 6px;
             overflow: hidden;
+         }
+         &__title {
+            font-size: 14px;
+            line-height: 16px;
+            padding: 12px 0px 12px 23px;
+            margin: 0px 0px 0px 0px;
+            background-color: var(--light-gray);
+            border-bottom: 1px dashed #000;
          }
 
          &__list-section {
@@ -473,15 +479,14 @@
          }
 
          &__checkbox {
-            flex: auto;
             display: inline-flex;
             align-items: center;
-            .checkbox {
-               &__style {
-                  display: inline-flex;
-                  margin-right: 14px;
-                  flex: none;
-               }
+            width: 100%;
+            .checkbox__style {
+               display: inline-flex;
+               margin-right: 14px;
+               align-items: center;
+               flex: none;
             }
          }
 
