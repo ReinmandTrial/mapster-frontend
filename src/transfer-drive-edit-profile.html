@@ -1,13 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-   @@include('html/head.html',{ "title":"Главная" })
-   <body>
-      @@include('html/header.html',{})
-      <main class="main">
-         <div class="transfer">
-            
+@@include('html/head.html',{ "title":"Водитель редактировать профиль" })
+
+<body>
+   @@include('html/header.html',{})
+   <main class="main">
+      <div class="transfer-drive-edit-profile">
+         <div class="transfer-drive-edit-profile__container container-l">
+            <div class="transfer-drive-edit-profile__content">
+               <div class="transfer-drive-edit-profile__column transfer-drive-edit-profile__column_1">
+                  <div class="transfer-drive-edit-profile__contact-data contact-data">
+                     <h3 class="contact-data__title title-block">Контактные данные</h3>
+                     <div class="contact-data__profil-photo profil-photo">
+                        <div class="profil-photo__photo">
+                           <img src="@img/main-guide/mapster-bg-pc.png" alt="user">
+                        </div>
+                        <label class="profil-photo__label">
+                           <input class="profil-photo__input" type="file">
+                           <span class="profil-photo__style">Изменить фото</span>
+                        </label>
+                     </div>
+                     <div class="contact-data__name temp-input profile">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Имя</p>
+                              <input placeholder="Введите ваше имя " type="text" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="contact-data__surname temp-input profile">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Фамилия</p>
+                              <input placeholder="Введите вашу фамилию " type="text" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="contact-data__phone temp-input profile">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Телефон</p>
+                              <input placeholder="Укажите ваш телефон" type="tel" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="contact-data__password temp-input profile">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Пароль</p>
+                              <input placeholder="********" type="password" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="contact-data__email temp-input profile">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">E-mail</p>
+                              <input placeholder="Укажите ваш E-mail" type="email" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="transfer-drive-edit-profile__identification identification">
+                     <h3 class="identification__title title-block">Удостоверение личности</h3>
+                     <div class="identification__passport-number temp-input profile">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Номер паспорта</p>
+                              <input placeholder="Введите номер " type="text" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="identification__person-pasport-front profile-file-input">
+                        <div class="profile-file-input__image"><img src="@img/main-guide/mapster-bg-pc.png" alt="passport"></div>
+                        <label class="profile-file-input__label">
+                           <input type="file" class="profile-file-input__input">
+                           <span class="profile-file-input__style">Лицевая сторона <span class="icon icon-pen"></span></span>
+                        </label>
+                     </div>
+                     <div class="identification__person-pasport-back profile-file-input">
+                        <div class="profile-file-input__image"><img src="@img/main-guide/mapster-bg-pc.png" alt="passport"></div>
+                        <label class="profile-file-input__label">
+                           <input type="file" class="profile-file-input__input">
+                           <span class="profile-file-input__style">Оборотная сторона <span class="icon icon-pen"></span></span>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="transfer-drive-edit-profile__driver-location driver-location">
+                     <h3 class="driver-location__title title-block">Где вы находитесь?</h3>
+                     <div class="driver-location__select-country temp-select profile">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Страна/территория</p>
+                              <button class="temp-select__button">Выберите страну<span class="icon icon-triangle-down"></span></button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">Страна 1</div>
+                                 <div class="temp-select__body-item">Страна 2</div>
+                                 <div class="temp-select__body-item">Страна 3</div>
+                                 <div class="temp-select__body-item">Страна 4</div>
+                                 <div class="temp-select__body-item">Страна 5</div>
+                                 <div class="temp-select__body-item">Страна 6</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="driver-location__select-city temp-select profile">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Город</p>
+                              <button class="temp-select__button">Выберите город <span class="icon icon-triangle-down"></span></button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">Город 1</div>
+                                 <div class="temp-select__body-item">Город 2</div>
+                                 <div class="temp-select__body-item">Город 3</div>
+                                 <div class="temp-select__body-item">Город 4</div>
+                                 <div class="temp-select__body-item">Город 5</div>
+                                 <div class="temp-select__body-item">Город 6</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="transfer-drive-edit-profile__driver-license driver-license">
+                     <h3 class="driver-license__title title-block">Права</h3>
+                     <div class="driver-license__passport-number temp-input profile">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Номер и серия прав</p>
+                              <input placeholder="Введите данные" type="text" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="driver-license__person-pasport-front profile-file-input">
+                        <div class="profile-file-input__image"><img src="@img/main-guide/mapster-bg-pc.png" alt="passport"></div>
+                        <label class="profile-file-input__label">
+                           <input type="file" class="profile-file-input__input">
+                           <span class="profile-file-input__style">Лицевая сторона <span class="icon icon-pen"></span></span>
+                        </label>
+                     </div>
+                     <div class="driver-license__person-pasport-back profile-file-input">
+                        <div class="profile-file-input__image"><img src="@img/main-guide/mapster-bg-pc.png" alt="passport"></div>
+                        <label class="profile-file-input__label">
+                           <input type="file" class="profile-file-input__input">
+                           <span class="profile-file-input__style">Оборотная сторона <span class="icon icon-pen"></span></span>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+               <div class="transfer-drive-edit-profile__column transfer-drive-edit-profile__column_2">
+                  <div class="transfer-drive-edit-profile__main-car-photo main-car-photo">
+                     <h3 class="main-car-photo__title title-block">Транспортное средство</h3>
+                     <div class="main-car-photo__photo car-photo-input">
+                        <div class="car-photo-input__image">
+                           <img src="@img/main-guide/mapster-bg-mob.png" alt="car">
+                        </div>
+                        <label class="car-photo-input__label">
+                           <input type="file" class="car-photo-input__input">
+                           <span class="car-photo-input__icon icon icon-pen"></span>
+                        </label>
+                     </div>
+                  </div>
+                  <div class="transfer-drive-edit-profile__car-data car-data">
+                     <div class="car-data__select-mark temp-select profile">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Марка машины</p>
+                              <button class="temp-select__button">Выберите марку<span class="icon icon-triangle-down"></span></button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">Страна 1</div>
+                                 <div class="temp-select__body-item">Страна 2</div>
+                                 <div class="temp-select__body-item">Страна 3</div>
+                                 <div class="temp-select__body-item">Страна 4</div>
+                                 <div class="temp-select__body-item">Страна 5</div>
+                                 <div class="temp-select__body-item">Страна 6</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="car-data__select-model temp-select profile">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Модель машины</p>
+                              <button class="temp-select__button">Выберите модель <span class="icon icon-triangle-down"></span></button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">Город 1</div>
+                                 <div class="temp-select__body-item">Город 2</div>
+                                 <div class="temp-select__body-item">Город 3</div>
+                                 <div class="temp-select__body-item">Город 4</div>
+                                 <div class="temp-select__body-item">Город 5</div>
+                                 <div class="temp-select__body-item">Город 6</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="car-data__car-number temp-input profile">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Государственный номер машины</p>
+                              <input placeholder="Введите номер " type="text" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="car-data__select-year-issue temp-select profile">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Год выпуска машины</p>
+                              <button class="temp-select__button">Выберите год <span class="icon icon-triangle-down"></span></button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">Город 1</div>
+                                 <div class="temp-select__body-item">Город 2</div>
+                                 <div class="temp-select__body-item">Город 3</div>
+                                 <div class="temp-select__body-item">Город 4</div>
+                                 <div class="temp-select__body-item">Город 5</div>
+                                 <div class="temp-select__body-item">Город 6</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="transfer-drive-edit-profile__car-gallery car-gallery">
+                     <div class="car-gallery__big-photo">
+                        <div class="car-gallery__big-photo car-photo-input">
+                           <div class="car-photo-input__image">
+                              <img src="@img/main-guide/mapster-bg-mob.png" alt="car">
+                           </div>
+                           <label class="car-photo-input__label">
+                              <input type="file" class="car-photo-input__input">
+                              <span class="car-photo-input__icon icon icon-pen"></span>
+                           </label>
+                        </div>
+                     </div>
+                     <div class="car-gallery__small-photos">
+                        <div class="car-gallery__photo car-photo-input small">
+                           <div class="car-photo-input__image">
+                              <img src="@img/main-guide/mapster-bg-mob.png" alt="car">
+                           </div>
+                           <label class="car-photo-input__label">
+                              <input type="file" class="car-photo-input__input">
+                              <span class="car-photo-input__icon icon icon-pen"></span>
+                           </label>
+                        </div>
+                        <div class="car-gallery__photo car-photo-input small">
+                           <div class="car-photo-input__image">
+                              <img src="@img/main-guide/mapster-bg-mob.png" alt="car">
+                           </div>
+                           <label class="car-photo-input__label">
+                              <input type="file" class="car-photo-input__input">
+                              <span class="car-photo-input__icon icon icon-pen"></span>
+                           </label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="transfer-drive-edit-profile__price-per-one price-per-one">
+                     <h3 class="price-per-one__title title-block">Стоимость в Вашем районе за 1 км</h3>
+                     <div class="price-per-one__price">
+                        <input class="price-per-one__input" type="text">
+                        <span class="icon icon-euro"></span>
+                     </div>
+                  </div>
+                  <div class="transfer-drive-edit-profile__datepicker datepick-schedule"></div>
+                  <div class="transfer-drive-edit-profile__travel-distance  travel-distance">
+                     <h3 class="travel-distance__title title-block">Как далеко вы готовы поехать?</h3>
+                     <div class="travel-distance__distance">
+                        <span class="travel-distance__radius">Укажите радиус</span>
+                        <input class="travel-distance__input" type="text">
+                        <span class="travel-distance__km">км</span>
+                     </div>
+                  </div>
+                  <div class="transfer-drive-edit-profile__registration-certificate registration-certificate">
+                     <h3 class="registration-certificate__title title-block">Тех паспорт</h3>
+                     <div class="registration-certificate__number temp-input profile">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Номер и серия техпаспорта</p>
+                              <input placeholder="Введите данные" type="text" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="registration-certificate__front profile-file-input">
+                        <div class="profile-file-input__image"><img src="@img/main-guide/mapster-bg-pc.png" alt="passport"></div>
+                        <label class="profile-file-input__label">
+                           <input type="file" class="profile-file-input__input">
+                           <span class="profile-file-input__style">Лицевая сторона <span class="icon icon-pen"></span></span>
+                        </label>
+                     </div>
+                     <div class="registration-certificate__back profile-file-input">
+                        <div class="profile-file-input__image"><img src="@img/main-guide/mapster-bg-pc.png" alt="passport"></div>
+                        <label class="profile-file-input__label">
+                           <input type="file" class="profile-file-input__input">
+                           <span class="profile-file-input__style">Оборотная сторона <span class="icon icon-pen"></span></span>
+                        </label>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <button class="transfer-drive-edit-profile__save-btn">СОХРАНИТЬ</button>
          </div>
-      </main>
-      @@include('html/footer.html',{})
-   </body>
+      </div>
+   </main>
+   @@include('html/footer.html',{})
+</body>
+
 </html>

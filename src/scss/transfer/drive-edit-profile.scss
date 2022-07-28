@@ -6,3 +6,449 @@
    --light-gray: #ececec;
    --yellow: #ffb703;
 }
+
+//========================================================================================================================================================
+.contact-data {
+   &__title {
+      margin-bottom: 36px;
+   }
+
+   &__profil-photo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 124px;
+      @media (max-width: $mobile) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__name {
+      margin-bottom: 25px;
+      @media (max-width: $tablet) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__surname {
+      margin-bottom: 25px;
+      @media (max-width: $tablet) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__phone {
+      margin-bottom: 25px;
+      @media (max-width: $tablet) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__password {
+      margin-bottom: 25px;
+      @media (max-width: $tablet) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__email {
+   }
+}
+.identification {
+   &__title {
+      margin-bottom: 20px;
+      @media (max-width: $tablet) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__passport-number {
+      margin-bottom: 38px;
+      @media (max-width: $tablet) {
+         margin-bottom: 25px;
+      }
+   }
+
+   &__person-pasport-front {
+      margin-bottom: 25px;
+   }
+   &__person-pasport-back {
+   }
+}
+.driver-location {
+   // .driver-location__title
+   &__title {
+      margin-bottom: 38px;
+      @media (max-width: $tablet) {
+         margin-bottom: 20px;
+      }
+   }
+   // .driver-location__select-country
+   &__select-country {
+      margin-bottom: 28px;
+      @media (max-width: $tablet) {
+         margin-bottom: 15px;
+      }
+   }
+   // .driver-location__select-city
+   &__select-city {
+   }
+}
+.driver-license {
+   // .driver-license__title
+   &__title {
+      margin-bottom: 20px;
+      @media (max-width: $tablet) {
+         margin-bottom: 10px;
+      }
+   }
+
+   // .driver-license__passport-number
+   &__passport-number {
+      margin-bottom: 38px;
+      @media (max-width: $tablet) {
+         margin-bottom: 25px;
+      }
+   }
+
+   // .driver-license__person-pasport-front
+   &__person-pasport-front {
+      margin-bottom: 25px;
+   }
+
+   // .driver-license__person-pasport-back
+   &__person-pasport-back {
+   }
+}
+.main-car-photo {
+   // .main-car-photo__title
+
+   &__title {
+      margin-bottom: 38px;
+      @media (max-width: $tablet) {
+         margin-bottom: 15px;
+      }
+   }
+
+   // .main-car-photo__photo
+
+   &__photo {
+   }
+}
+.car-data {
+   // .car-data__select-mark
+
+   &__select-mark {
+      margin-bottom: 25px;
+      @media (max-width: $tablet) {
+         margin-bottom: 15px;
+      }
+   }
+
+   // .car-data__select-model
+
+   &__select-model {
+      margin-bottom: 25px;
+      @media (max-width: $tablet) {
+         margin-bottom: 15px;
+      }
+   }
+
+   // .car-data__car-number
+
+   &__car-number {
+      margin-bottom: 25px;
+      .temp-input__name {
+         font-size: 16px;
+      }
+      @media (max-width: $tablet) {
+         margin-bottom: 15px;
+      }
+   }
+
+   // .car-data__select-year-issue
+
+   &__select-year-issue {
+   }
+}
+.car-gallery {
+   // .car-gallery__big-photo
+
+   &__big-photo {
+      margin-bottom: 20px;
+      @media (max-width: $mobileSmall) {
+         margin-bottom: 10px;
+      }
+   }
+
+   // .car-gallery__small-photos
+
+   &__small-photos {
+      display: flex;
+      gap: 20px;
+      @media (max-width: $mobileSmall) {
+         gap: 10px;
+      }
+   }
+
+   // .car-gallery__photo
+
+   &__photo {
+      flex: auto;
+   }
+}
+.price-per-one {
+   // .price-per-one__title
+
+   &__title {
+      margin-bottom: 11px;
+      @media (max-width: $mobileSmall) {
+         font-size: 14px;
+      }
+   }
+
+   // .price-per-one__price
+
+   &__price {
+      @media (max-width: $mobileSmall) {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .icon-euro {
+         font-size: 18px;
+         margin-left: 8px;
+      }
+   }
+
+   // .price-per-one__input
+
+   &__input {
+      background: #ffffff;
+      border: 1px solid rgba(26, 27, 32, 0.6);
+      border-radius: 5px;
+      width: 65px;
+      height: 50px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 20px;
+   }
+}
+.travel-distance {
+   // .travel-distance__title
+
+   &__title {
+      margin-bottom: 23px;
+      @media (max-width: $mobileSmall) {
+         font-size: 14px;
+         margin-bottom: 10px;
+      }
+   }
+
+   // .travel-distance__distance
+
+   &__distance {
+   }
+
+   // .travel-distance__radius
+
+   &__radius {
+      font-size: 18px;
+      line-height: 25px;
+      @media (max-width: $mobileSmall) {
+         font-size: 14px;
+      }
+   }
+
+   // .travel-distance__input
+
+   &__input {
+      background: #ffffff;
+      border: 1px solid rgba(26, 27, 32, 0.6);
+      border-radius: 5px;
+      width: 65px;
+      height: 50px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 20px;
+      margin-left: 30px;
+      @media (max-width: $mobileSmall) {
+         margin-left: 15px;
+      }
+   }
+
+   // .travel-distance__km
+
+   &__km {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 25px;
+      margin-left: 15px;
+      @media (max-width: $mobileSmall) {
+         margin-left: 7px;
+      }
+   }
+}
+.registration-certificate {
+   // .registration-certificate__title
+
+   &__title {
+      margin-bottom: 22px;
+      @media (max-width: $tablet) {
+         margin-bottom: 15px;
+      }
+   }
+
+   // .registration-certificate__passport-number
+
+   &__number {
+      margin-bottom: 30px;
+      @media (max-width: $tablet) {
+         margin-bottom: 20px;
+      }
+   }
+
+   // .registration-certificate__person-pasport-front
+
+   &__front {
+      margin-bottom: 25px;
+   }
+
+   // .registration-certificate__person-pasport-back
+
+   &__back {
+   }
+}
+
+//========================================================================================================================================================
+
+.transfer-drive-edit-profile {
+   &__container {
+      padding-top: 53px;
+      margin-bottom: 65px;
+   }
+
+   &__content {
+      display: flex;
+      gap: 100px;
+      margin-bottom: 30px;
+      @media (max-width: $tablet) {
+         gap: 50px;
+      }
+      @media (max-width: $mobile) {
+         flex-direction: column;
+         gap: 0;
+      }
+   }
+
+   &__column {
+      &_1 {
+         flex: 0 1 506px;
+      }
+      &_2 {
+         flex: 0 1 560px;
+         @media (max-width: $mobile) {
+            display: flex;
+            flex-direction: column;
+         }
+      }
+   }
+
+   &__contact-data {
+      margin-bottom: 60px;
+      @media (max-width: $mobile) {
+         margin-bottom: 30px;
+      }
+   }
+   &__identification {
+      margin-bottom: 45px;
+      @media (max-width: $tablet) {
+         margin-bottom: 20px;
+      }
+   }
+   &__driver-location {
+      margin-bottom: 60px;
+      @media (max-width: $tablet) {
+         margin-bottom: 30px;
+      }
+   }
+   &__driver-license {
+      @media (max-width: $mobile) {
+         margin-bottom: 20px;
+      }
+   }
+   //---------------------
+   &__main-car-photo {
+      margin-bottom: 77px;
+      @media (max-width: $mobile) {
+         order: 1;
+         margin-bottom: 10px;
+      }
+   }
+   &__car-data {
+      margin-bottom: 50px;
+      @media (max-width: $tablet) {
+         margin-bottom: 30px;
+      }
+      @media (max-width: $mobile) {
+         order: 3;
+      }
+   }
+   &__car-gallery {
+      margin-bottom: 30px;
+      @media (max-width: $tablet) {
+         margin-bottom: 20px;
+      }
+      @media (max-width: $mobile) {
+         order: 2;
+      }
+   }
+   &__price-per-one {
+      margin-bottom: 26px;
+      @media (max-width: $tablet) {
+         margin-bottom: 20px;
+      }
+      @media (max-width: $mobile) {
+         order: 4;
+      }
+   }
+   &__datepicker {
+      height: 340px;
+      margin-bottom: 30px;
+      @media (max-width: $mobile) {
+         order: 5;
+      }
+   }
+   &__travel-distance {
+      margin-bottom: 30px;
+      @media (max-width: $mobile) {
+         order: 6;
+      }
+   }
+   &__registration-certificate {
+      @media (max-width: $mobile) {
+         order: 7;
+      }
+   }
+   &__save-btn {
+      font-weight: 700;
+      font-size: 14px;
+      color: #ffffff;
+      background: #000000;
+      border-radius: 6px;
+      padding: 13px 0px;
+      max-width: 280px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      @media (max-width: $mobile) {
+         margin: 0 auto;
+      }
+      @media (max-width: $mobileSmall) {
+         max-width: none;
+         padding: 8px 0px;
+      }
+   }
+}
