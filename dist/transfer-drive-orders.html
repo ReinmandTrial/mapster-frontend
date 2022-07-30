@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
+<head>
    <meta charset="UTF-8" />
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta
@@ -10,17 +10,216 @@
    <link rel="stylesheet" href="css/style.min.css" />
    <script src="js/app.min.js" defer></script>
 
-   <title>Главная</title>
+   <title>Мои заказы</title>
 </head>
 
-   <body>
-      <header>
+
+<body>
+   <header>
 </header>
-      <main class="main">
-         <div class="transfer">
-            
+   <div class="transfer-driver-orders">
+      <div class="transfer-driver-orders__container container-l">
+         <div class="transfer-driver-orders__content">
+            <h1 class="transfer-driver-orders__title title-page">мои заказы</h1>
+            <h2 class="transfer-driver-orders__sub-title title-page_sub">Здесь представлены ваши заказы</h2>
+            <div class="transfer-driver-orders__options">
+               <div class="transfer-driver-orders__date date-range">
+                  <p class="date-range__title">Дата</p>
+                  <div class="date-range__list">
+                     <div class="date-range__date-pick-item">
+                        <span class="date-range__from-to">с</span>
+                        <div class="date-range__block">
+                           <button class="date-range__head">
+                              <span class=" date-range__icon icon icon-calendar"></span> <span class="date-range__date">01.04.2022</span>
+                           </button>
+                           <div class="date-range__body"></div>
+                        </div>
+                     </div>
+                     <div class="date-range__date-pick-item">
+                        <span class="date-range__from-to">до</span>
+                        <div class="date-range__block">
+                           <button class="date-range__head">
+                              <span class=" date-range__icon icon icon-calendar"></span> <span class="date-range__date">01.04.2022</span>
+                           </button>
+                           <div class="date-range__body"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="transfer-driver-orders__sorting radio-list">
+                  <label class="radio-list__item ">
+                     <input class="radio-list__input" type="radio" name="sort">
+                     <span class="radio-list__text">Все</span>
+                  </label>
+                  <label class="radio-list__item ">
+                     <input class="radio-list__input" type="radio" name="sort">
+                     <span class="radio-list__text">Текущие</span>
+                  </label>
+                  <label class="radio-list__item ">
+                     <input class="radio-list__input" type="radio" name="sort">
+                     <span class="radio-list__text">Отмененые</span>
+                  </label>
+                  <label class="radio-list__item ">
+                     <input class="radio-list__input" type="radio" name="sort">
+                     <span class="radio-list__text">Завершеные</span>
+                  </label>
+
+               </div>
+            </div>
+            <div class="transfer-driver-orders__order-list driver-order-list">
+               <div class="driver-order-list__top-line">
+                  <p class="driver-order-list__top-line-column driver-order-list__top-line-column_number">№</p>
+                  <p class="driver-order-list__top-line-column">Маршрут</p>
+                  <p class="driver-order-list__top-line-column">Заказчик</p>
+                  <p class="driver-order-list__top-line-column">Контакты</p>
+                  <p class="driver-order-list__top-line-column">Статус</p>
+               </div>
+               <div class="driver-order-list__item driver-order-item">
+                  <div class="driver-order-item-pc">
+                     <div class="driver-order-item-pc__number-col">0002</div>
+                     <div class="driver-order-item-pc__route-col">
+                        <div class="driver-order-item-pc__route-top-line">
+                           <div data-full="1 Меликишвили, Батуми, Грузия" class="driver-order-item-pc__route-top-line-where">
+                              <span class="driver-order-item-pc__route-top-line-where-icon">A</span>
+                              <span class="driver-order-item-pc__route-top-line-where-address">1
+                                 Меликишвили, Батуми, Грузия</span>
+                           </div>
+                           <span class="driver-order-item-pc__route-top-line-arrow icon icon-arrow-right"></span>
+                           <div data-full="1 Меликишвили, Батуми, Грузия" class="driver-order-item-pc__route-top-line-where">
+                              <span class="driver-order-item-pc__route-top-line-where-icon">B</span>
+                              <span class="driver-order-item-pc__route-top-line-where-address">1
+                                 Меликишвили, Батуми, Грузия</span>
+                           </div>
+                        </div>
+                        <div class="driver-order-item-pc__route-bottom-line">
+                           <div class="driver-order-item-pc__route-bottom-line-block">
+                              <p class="driver-order-item-pc__route-bottom-line-block-title">Дата</p>
+                              <p class="driver-order-item-pc__route-bottom-line-block-text">Сб, 14 мая 2022</p>
+                           </div>
+                           <div class="driver-order-item-pc__route-bottom-line-block">
+                              <p class="driver-order-item-pc__route-bottom-line-block-title">Время встречи</p>
+                              <p class="driver-order-item-pc__route-bottom-line-block-text">в 12:00</p>
+                           </div>
+                           <div class="driver-order-item-pc__route-bottom-line-block">
+                              <p class="driver-order-item-pc__route-bottom-line-block-title">Стоимость</p>
+                              <p class="driver-order-item-pc__route-bottom-line-block-text">15 <span class="icon icon-euro"></span></p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="driver-order-item-pc__client-col">
+                        <div class="driver-order-item-pc__client-top-line">
+                           <span class="driver-order-item-pc__client-top-line-user-icon icon icon-person-edit"></span>
+                           <span class="driver-order-item-pc__client-top-line-name">Петр Иванов</span>
+                        </div>
+                        <div class="driver-order-item-pc__client-bottom-line">
+                           <div
+                              class="driver-order-item-pc__client-bottom-line-block driver-order-item-pc__client-bottom-line-block_baggage">
+                              <p class="driver-order-item-pc__client-bottom-line-block-title">Багаж</p>
+                              <p class="driver-order-item-pc__client-bottom-line-block-text">Да</p>
+                           </div>
+                           <div
+                              class="driver-order-item-pc__client-bottom-line-block driver-order-item-pc__client-bottom-line-block_passenger">
+                              <p class="driver-order-item-pc__client-bottom-line-block-title">Пассажиры</p>
+                              <p class="driver-order-item-pc__client-bottom-line-block-text">
+                                 <span class="driver-order-item-pc__client-bottom-line-block-text-addults">Взрослые <span>2</span></span>
+                                 <span class="driver-order-item-pc__client-bottom-line-block-text-childs">Детские кресла
+                                    <span>0</span></span>
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="driver-order-item-pc__contact-col">
+                        <p class="driver-order-item-pc__contact-phone-number">
+                           577 11 11 11
+                        </p>
+                     </div>
+                     <div class="driver-order-item-pc__status-col">
+                        <div class="driver-order-item-pc__status-top-line">
+                           <button class="driver-order-item-pc__status-top-line-button " type="button">отказаться </button>
+                        </div>
+                        <div class="driver-order-item-pc__status-bottom-line">
+                           <p class="driver-order-item-pc__status-bottom-line-state active">Осталось 5 дней</p>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="driver-order-item-mob">
+                     <div class="driver-order-item-mob__row-date">
+                        <div class="driver-order-item-mob__date-block">
+                           <p class="driver-order-item-mob__date-title">№</p>
+                           <p class="driver-order-item-mob__date-text">0002</p>
+                        </div>
+                        <div class="driver-order-item-mob__date-block">
+                           <p class="driver-order-item-mob__date-title">Дата и время</p>
+                           <p class="driver-order-item-mob__date-text">Сб, 14 мая 2022 в 12:00</p>
+                        </div>
+                     </div>
+                     <div class="driver-order-item-mob__row-route">
+                        <p class="driver-order-item-mob__route-title">Маршрут</p>
+                        <div class="driver-order-item-mob__route-block  ">
+                           <div class="driver-order-item-mob__route-where">
+                              <span class="driver-order-item-mob__route-icon">A</span>
+                              <span class="driver-order-item-mob__route-address">1
+                                 Меликишвили, Батуми, Грузия </span>
+                           </div>
+                           <span class="driver-order-item-mob__route-arrow icon icon-arrow-right"></span>
+                           <div class="driver-order-item-mob__route-where">
+                              <span class="driver-order-item-mob__route-icon">B</span>
+                              <span class="driver-order-item-mob__route-address">1
+                                 Меликишвили, Батуми, Грузия</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="driver-order-item-mob__row-trip-info">
+                        <div class="driver-order-item-mob__trip-info-block">
+                           <p class="driver-order-item-mob__trip-info-title">Пассажиры</p>
+                           <p class="driver-order-item-mob__trip-info-text driver-order-item-mob__trip-info-text_passenger">
+                              <span class="driver-order-item-mob__trip-info-text-addults">Взрослые <span>2</span></span>
+                              <span class="driver-order-item-mob__trip-info-text-childs">Детские кресла
+                                 <span>0</span></span>
+                           </p>
+                        </div>
+                        <div class="driver-order-item-mob__trip-info-block">
+                           <p class="driver-order-item-mob__trip-info-title">Багаж</p>
+                           <p class="driver-order-item-mob__trip-info-text">Да</p>
+                        </div>
+                        <div class="driver-order-item-mob__trip-info-block">
+                           <p class="driver-order-item-mob__trip-info-title">Стоимость</p>
+                           <p class="driver-order-item-mob__trip-info-text">15 <span class="icon icon-euro"></span></p>
+                        </div>
+                     </div>
+                     <div class="driver-order-item-mob__row-client">
+                        <div class="driver-order-item-mob__client-block">
+                           <p class="driver-order-item-mob__client-title">Заказчик</p>
+                           <p class="driver-order-item-mob__client-text">
+                              <span class="icon icon-person-edit"></span>
+                              <span class="driver-order-item-mob__client-name">Петр ИвановПетИванов Петр Иванов</span>
+                           </p>
+                        </div>
+                        <div class="driver-order-item-mob__client-block">
+                           <p class="driver-order-item-mob__client-title">Контакты</p>
+                           <p class="driver-order-item-mob__client-text">
+                              57711111132432423423423
+                           </p>
+                        </div>
+                        <div class="driver-order-item-mob__client-block">
+                           <p class="driver-order-item-mob__client-title">Статус</p>
+                           <p class="driver-order-item-mob__client-text active">
+                              Осталось 5 дней
+                           </p>
+                        </div>
+                     </div>
+                     <div class="driver-order-item-mob__row-button">
+                        <button class="driver-order-item-mob__button">отказаться</button>
+                     </div>
+                  </div>
+               </div>
+
+
+            </div>
          </div>
-      </main>
-      <footer></footer>
-   </body>
+      </div>
+   </div>
+   <footer></footer>
+</body>
+
 </html>

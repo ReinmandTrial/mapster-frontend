@@ -337,6 +337,24 @@
    }
 }
 
+.title-page {
+   font-weight: 700;
+   font-size: 24px;
+   line-height: 33px;
+   text-transform: uppercase;
+   &_sub {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      @media (max-width: $mobile) {
+         font-size: 12px;
+         line-height: 15px;
+      }
+   }
+   @media (max-width: $mobile) {
+      font-size: 18px;
+   }
+}
 .title-block {
    font-weight: 700;
    font-size: 20px;
@@ -480,9 +498,110 @@
       .car-photo-input__image {
          height: 136px;
          max-width: 270px;
-         @media (max-width:$mobileSmall){
-             height: 120px; 
+         @media (max-width: $mobileSmall) {
+            height: 120px;
          }
       }
+   }
+}
+
+.date-range {
+   display: flex;
+   align-items: center;
+   gap: 26px;
+   &__title {
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 0.1px;
+      @media (max-width: 767.98px) {
+         display: none;
+      }
+   }
+
+   &__list {
+      display: flex;
+      gap: 12px;
+   }
+
+   &__date-pick-item {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      @media (max-width: 500.98px) {
+         gap: 0;
+      }
+   }
+
+   &__from-to {
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.1px;
+      line-height: 100%;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         font-weight: 400;
+      }
+   }
+   &__block {
+      display: flex;
+      align-items: center;
+   }
+
+   &__head {
+      background: #ffffff;
+      border: 2px solid #f2994a;
+      padding: 4px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      @media (max-width: 500.98px) {
+         border: none;
+         background-color: transparent;
+         padding: 0px 6px;
+      }
+   }
+
+   &__icon {
+      font-size: 24px;
+      @media (max-width: 500.98px) {
+         font-size: 18px;
+      }
+   }
+
+   &__date {
+      font-size: 16px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+      @media (max-width: $mobileSmall) {
+         font-size: 12px;
+      }
+   }
+
+   &__body {
+   }
+}
+
+.radio-list {
+   display: flex;
+   gap: 10px;
+   flex-wrap: wrap;
+
+   &__item {
+   }
+
+   &__input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      clip: rect(0 0 0 0);
+      &:checked + .radio-list__text {
+         font-weight: 600;
+      }
+   }
+
+   &__text {
+      font-size: 14px;
+      line-height: 17px;
    }
 }
