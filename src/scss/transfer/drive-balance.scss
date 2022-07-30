@@ -6,3 +6,74 @@
    --light-gray: #ececec;
    --yellow: #ffb703;
 }
+
+//========================================================================================================================================================
+
+.transfer-driver-balance {
+   &__container {
+   }
+
+   &__content {
+      padding-top: 50px;
+      @media (max-width: 767.98px) {
+         padding-top: 28px;
+      }
+   }
+
+   &__title {
+      margin-bottom: 10px;
+   }
+
+   &__sub-title {
+      margin-bottom: 15px;
+   }
+
+   &__state {
+      margin-bottom: 16px;
+      font-weight: 600;
+      font-size: 16px;
+      letter-spacing: 0.1px;
+      color: #000000;
+      .icon-euro {
+         font-size: 18px;
+         @media (max-width: 767.98px) {
+            font-size: 14px;
+         }
+      }
+      @media (max-width: 767.98px) {
+         margin-bottom: 10px;
+         font-weight: 400;
+         font-size: 14px;
+         line-height: 19px;
+      }
+   }
+
+   &__state-sum {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 16px;
+      margin-left: 6px;
+      @media (max-width: 767.98px) {
+         font-weight: 600;
+         font-size: 16px;
+         line-height: 16px;
+      }
+   }
+
+   &__options {
+      margin-bottom: 20px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 10px;
+      }
+   }
+   &__date {
+      @media (max-width: 991.98px) {
+         margin-bottom: 17px;
+      }
+   }
+   &__state {
+   }
+
+   &__balance-list {
+   }
+}
