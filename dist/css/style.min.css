@@ -3801,7 +3801,7 @@ body {
 }
 
 .client-main-head__wrapper {
-  background: url("../img/transfer-client-img/main-bg.jpg") center/cover no-repeat;
+  background: url("") center/cover no-repeat;
 }
 .client-main-head__content {
   padding-top: 190px;
@@ -3981,4 +3981,13 @@ body {
     display: none;
     height: 330px;
   }
+}
+
+:root {
+  --white: #ffffff;
+  --gray: #707070;
+  --black: #000000;
+  --light-green: #41b619;
+  --light-gray: #ececec;
+  --yellow: #ffb703;
 }
