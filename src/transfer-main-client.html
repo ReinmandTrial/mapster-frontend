@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{ "title":"Главная Клиент" })
+
+<body>
+   @@include('html/header.html',{})
+
+   <div class="transfer-main-client">
+      <section class="transfer-main-client__head client-main-head">
+         <div class="client-main-head__wrapper">
+            <div class="client-main-head__container container-l">
+               <div class="client-main-head__content">
+                  <div class="client-main-head__block-search search-client-car">
+                     <h2 class="search-client-car__title">НАЙТИ ТРАНСФЕР</h2>
+                     <div class="search-client-car__inputs">
+                        <div class="search-client-car__input-dropdown  ">
+                           <div class="search-client-car__input-dropdown-head search-client-car__input-dropdown-head_a">
+                              <input placeholder="Откуда, адрес, аэропорт, отель" type="text" class="search-client-car__input">
+                              <button class="search-client-car__input-icon icon icon-mark"></button>
+                           </div>
+                           <div class="search-client-car__input-dropdown-body">
+                              <button type="button" class="search-client-car__body-btn"><span class="icon icon-mark"></span> Текущее
+                                 местонахождение</button>
+                              <button type="button" class="search-client-car__body-btn"> <span class="icon icon-mark"></span>Выбрать на
+                                 карте</button>
+                           </div>
+                        </div>
+                        <div class="search-client-car__input-dropdown ">
+                           <div class="search-client-car__input-dropdown-head search-client-car__input-dropdown-head_b">
+                              <input placeholder="Куда, адрес, аэропорт, отель" type="text" class="search-client-car__input">
+                              <button class="search-client-car__input-icon icon icon-mark"></button>
+                           </div>
+                           <div class="search-client-car__input-dropdown-body">
+                              <button type="button" class="search-client-car__body-btn"><span class="icon icon-mark"></span> Текущее
+                                 местонахождение</button>
+                              <button type="button" class="search-client-car__body-btn"> <span class="icon icon-mark"></span>Выбрать на
+                                 карте</button>
+                           </div>
+                        </div>
+                        <button class="search-client-car__get-offer-btn" type="button">ПОЛУЧИТЬ ПРЕДЛОЖЕНИЕ</button>
+                     </div>
+                  </div>
+                  <div class="client-main-head__block-car-park car-park">
+                     <h2 class="car-park__title">НАШ ПАРК</h2>
+                     <div class="car-park__list">
+                        <label class="car-park__radio">
+                           <input class="car-park__none" type="radio" name="park">
+                           <span class="car-park__item">
+                              <span class="car-park__img"><img src="@img/transfer-client-img/econom.png" alt="econom"></span>
+                              <span class="car-park__name">Легковая</span>
+                              <span class="car-park__amount">
+                                 <span class="car-park__amount-person"><span class="icon icon-person"></span>х 3</span>
+                                 <span class="car-park__amount-baggage"><span class="icon icon-baggage"></span>x 3</span>
+                              </span>
+                           </span>
+                        </label>
+                        <label class="car-park__radio">
+                           <input class="car-park__none" type="radio" name="park">
+                           <span class="car-park__item">
+                              <span class="car-park__img"><img src="@img/transfer-client-img/mini-bus.png" alt="mini-bus"></span>
+                              <span class="car-park__name">Микроавтобус</span>
+                              <span class="car-park__amount">
+                                 <span class="car-park__amount-person"><span class="icon icon-person"></span>х 8</span>
+                                 <span class="car-park__amount-baggage"><span class="icon icon-baggage"></span>x 6</span>
+                              </span>
+                           </span>
+                        </label>
+                        <label class="car-park__radio">
+                           <input class="car-park__none" type="radio" name="park">
+                           <span class="car-park__item">
+                              <span class="car-park__img"><img src="@img/transfer-client-img/mini-van.png" alt="mini-van"></span>
+                              <span class="car-park__name">Минивен</span>
+                              <span class="car-park__amount">
+                                 <span class="car-park__amount-person"><span class="icon icon-person"></span>х 16</span>
+                                 <span class="car-park__amount-baggage"><span class="icon icon-baggage"></span>x 16</span>
+                              </span>
+                           </span>
+                        </label>
+                        <label class="car-park__radio">
+                           <input class="car-park__none" type="radio" name="park">
+                           <span class="car-park__item">
+                              <span class="car-park__img"><img src="@img/transfer-client-img/bus.png" alt="bus"></span>
+                              <span class="car-park__name">Автобус</span>
+                              <span class="car-park__amount">
+                                 <span class="car-park__amount-person"><span class="icon icon-person"></span>х 50</span>
+                                 <span class="car-park__amount-baggage"><span class="icon icon-baggage"></span>x 50</span>
+                              </span>
+                           </span>
+                        </label>
+                     </div>
+                  </div>
+                  <p class="client-main-head__brand-name"><span>THE</span> MAPSTER</p>
+                  <div class="client-main-head__mob-small"><img src="@img/main-guide/iphone.svg" alt="phone"></div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <section class="transfer-main-client__download-app transfer-client-download-app">
+         <div class="transfer-client-download-app__container container-l">
+            <div class="transfer-client-download-app__content">
+               <div class="transfer-client-download-app__text-block">
+                  <p class="transfer-client-download-app__title">
+                     Получите еще больше возможностей с мобильным приложением <span>Mapster Tours</span>
+                  </p>
+                  <p class="transfer-client-download-app__descr">
+                     Загружайте мобильное приложение <span>Mapster Tours</span> для мгновенного доступа к своему увлекательному путешествию.
+                     Мобильное приложение <span>Mapster Tours</span> дает вам доступ к скрытым функциям и специальным предложениям.
+                  </p>
+               </div>
+               <div class="transfer-client-download-app__links-block">
+                  <div class="transfer-client-download-app__phone">
+                     <img class="" src="@img/main-guide/iphone.svg" alt="phone" />
+                  </div>
+                  <p class="transfer-client-download-app__links-title">Приложение доступно на платформах</p>
+                  <div class="transfer-client-download-app__links-btns">
+                     <a href="#" class="transfer-client-download-app__links-item">
+                        <img class="transfer-client-download-app__link" src="@img/main-guide/google-play.svg" alt="google-play" />
+                     </a>
+                     <a href="#" class="transfer-client-download-app__links-item">
+                        <img class="transfer-client-download-app__link" src="@img/main-guide/app-store.svg" alt="app-store" />
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+
+   @@include('html/footer.html',{})
+</body>
+
+</html>
