@@ -1681,6 +1681,17 @@
          gap: 10px;
       }
    }
+   &.details {
+      .car-park__item {
+         display: none;
+      }
+      .car-park__item {
+         max-width: 250px;
+         &.active {
+            display: grid;
+         }
+      }
+   }
    &__title {
       font-weight: 700;
       font-size: 24px;

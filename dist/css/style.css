@@ -2175,6 +2175,15 @@ body {
 .car-park.search .car-park__list {
   gap: 10px;
 }
+.car-park.details .car-park__item {
+  display: none;
+}
+.car-park.details .car-park__item {
+  max-width: 250px;
+}
+.car-park.details .car-park__item.active {
+  display: grid;
+}
 .car-park__title {
   font-weight: 700;
   font-size: 24px;
@@ -4424,4 +4433,292 @@ body {
 }
 .thanks-for-booking__btn {
   background: #ffb703;
+}
+
+:root {
+  --white: #ffffff;
+  --gray: #707070;
+  --black: #000000;
+  --light-green: #41b619;
+  --light-gray: #ececec;
+  --yellow: #ffb703;
+}
+
+.transfer-client-car-booking__head {
+  background: url("") 50%/cover no-repeat;
+  height: 253px;
+}
+@media (max-width: 991.98px) {
+  .transfer-client-car-booking__head {
+    display: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .transfer-client-car-booking__container {
+    padding: 0px 0px 0px 0px;
+  }
+}
+.transfer-client-car-booking__content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  padding-bottom: 107px;
+  gap: 20px;
+}
+@media (max-width: 1100px) {
+  .transfer-client-car-booking__content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 991.98px) {
+  .transfer-client-car-booking__content {
+    padding-top: 143px;
+  }
+}
+.transfer-client-car-booking__column {
+  flex: 0 1 560px;
+}
+@media (max-width: 1100px) {
+  .transfer-client-car-booking__column {
+    max-width: 560px;
+    width: 100%;
+  }
+}
+@media (max-width: 575.98px) {
+  .transfer-client-car-booking__column_left {
+    padding: 0px 22px;
+  }
+}
+.transfer-client-car-booking__column_right {
+  padding: 0px 5px;
+}
+.transfer-client-car-booking__main-photo-car {
+  height: 200px;
+  background: #ffffff;
+  border: 1px dashed #000000;
+  border-radius: 5px;
+  padding: 5px 5px;
+  margin-bottom: 30px;
+}
+.transfer-client-car-booking__main-photo-car img {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.transfer-client-car-booking__info-car-driver {
+  margin-bottom: 30px;
+}
+@media (max-width: 575.98px) {
+  .transfer-client-car-booking__info-car-driver {
+    margin-bottom: 20px;
+  }
+}
+.transfer-client-car-booking__map {
+  border-radius: 10px;
+  height: 350px;
+  width: 100%;
+  background-color: #ffffff;
+  margin-bottom: 25px;
+}
+.car-driver-info {
+  display: flex;
+}
+@media (max-width: 575.98px) {
+  .car-driver-info {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
+}
+.car-driver-info__car-info-list {
+  flex: 0 0 305px;
+}
+@media (max-width: 575.98px) {
+  .car-driver-info__car-info-list {
+    flex: auto;
+  }
+}
+.car-driver-info__car-item {
+  display: flex;
+  word-break: break-word;
+  align-items: center;
+}
+.car-driver-info__car-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+@media (max-width: 575.98px) {
+  .car-driver-info__car-item {
+    font-size: 14px;
+  }
+}
+.car-driver-info__car-name {
+  flex: 0 0 200px;
+}
+.car-driver-info__car-data {
+  flex: auto;
+  font-weight: 600;
+}
+.car-driver-info__drive-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.car-driver-info__drive-photo {
+  flex: none;
+  width: 118px;
+  height: 118px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+}
+@media (max-width: 575.98px) {
+  .car-driver-info__drive-photo {
+    width: 100px;
+    height: 100px;
+  }
+}
+.car-driver-info__drive-photo img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.car-driver-info__drive-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.car-driver-info__drive-name {
+  word-break: break-word;
+}
+
+.car-photo-gallery__big-image {
+  max-width: 560px;
+  width: 100%;
+  height: 295px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+@media (max-width: 575.98px) {
+  .car-photo-gallery__big-image {
+    height: 222px;
+    margin-bottom: 10px;
+  }
+}
+.car-photo-gallery__big-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.car-photo-gallery__images {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+}
+.car-photo-gallery__small-image {
+  max-width: 265px;
+  height: 156px;
+  border-radius: 10px;
+}
+@media (max-width: 575.98px) {
+  .car-photo-gallery__small-image {
+    height: 125px;
+  }
+}
+.car-photo-gallery__small-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.drive-order-details {
+  background: #ffffff;
+  border: 1px dashed #000000;
+  border-radius: 5px;
+  font-weight: 600;
+  padding: 16px 16px 20px 20px;
+  max-width: 560px;
+  width: 100%;
+}
+@media (max-width: 575.98px) {
+  .drive-order-details {
+    border: none;
+    background: transparent;
+  }
+}
+.drive-order-details__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  margin-bottom: 25px;
+}
+.drive-order-details__date-time-title {
+  margin-bottom: 9px;
+}
+.drive-order-details__date-time {
+  margin-bottom: 20px;
+}
+.drive-order-details__route-title {
+  margin-bottom: 10px;
+}
+.drive-order-details__route {
+  margin-bottom: 17px;
+}
+.drive-order-details__route-item {
+  display: flex;
+  align-items: center;
+}
+.drive-order-details__route-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ffb703;
+  width: 31px;
+  height: 31px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 0px;
+  margin-right: 10px;
+  flex: none;
+}
+@media (max-width: 575.98px) {
+  .drive-order-details__route-text {
+    font-size: 14px;
+  }
+}
+.drive-order-details__route-arrow {
+  margin-left: 4px;
+  font-size: 24px;
+  display: inline-flex;
+  margin: 3px 4px;
+}
+.drive-order-details__passengers-title {
+  margin-bottom: 7px;
+}
+.drive-order-details__passengers-amount {
+  font-size: 14px;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.drive-order-details__type-car-title {
+  margin-bottom: 10px;
+}
+.drive-order-details__type-car {
+  margin-bottom: 12px;
+}
+.drive-order-details__price {
+  display: inline-flex;
+  align-items: center;
+}
+.drive-order-details__price-sum {
+  display: inline-flex;
+  align-items: center;
+}
+.drive-order-details__price-sum .icon-euro {
+  font-size: 14px;
+  margin-left: 5px;
 }
