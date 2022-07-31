@@ -1676,6 +1676,11 @@
 }
 
 .car-park {
+   &.search {
+      .car-park__list {
+         gap: 10px;
+      }
+   }
    &__title {
       font-weight: 700;
       font-size: 24px;
