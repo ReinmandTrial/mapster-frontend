@@ -15,7 +15,7 @@
       border-radius: 5px;
       position: relative;
       max-width: 510px;
-      @media (max-width: $mobileSmall) {
+      @media (max-width: 575.98px) {
          border: none;
          &:first-child {
             border-radius: 8px 8px 0px 0px;
@@ -33,7 +33,7 @@
       letter-spacing: 0.4px;
       width: 100%;
       padding: 11px 20px 12px 50px;
-      @media (max-width: $mobileSmall) {
+      @media (max-width: 575.98px) {
          padding: 20px 20px 20px 50px;
          font-weight: 400;
       }
@@ -73,7 +73,7 @@
       margin: 5px 0px;
       font-size: 20px;
       line-height: 0;
-      @media (max-width: $mobileSmall) {
+      @media (max-width: 575.98px) {
          display: none;
       }
    }
@@ -82,13 +82,13 @@
 .client-date-time {
    display: flex;
    gap: 60px;
-   @media (max-width: $mobile) {
+   @media (max-width: 767.98px) {
       display: block;
       max-width: 200px;
    }
    &__date-block {
       flex: 0 0 200px;
-      @media (max-width: $mobile) {
+      @media (max-width: 767.98px) {
          margin-bottom: 20px;
       }
    }
@@ -218,6 +218,7 @@
       background: #e8edf1;
       &:disabled {
          background: #f8fafb;
+         cursor: no-drop;
       }
       &_minus {
       }
@@ -255,10 +256,16 @@
       width: 100%;
       padding: 0px 12px;
       font-weight: 600;
+      @media (max-width: 767.98px) {
+         font-size: 12px;
+      }
       &::placeholder {
          font-size: 14px;
          display: flex;
          align-items: center;
+         @media (max-width: 767.98px) {
+            font-size: 11px;
+         }
       }
    }
 }
@@ -268,7 +275,7 @@
    &__head {
       background: url('') 50% / cover no-repeat;
       height: 253px;
-      @media (max-width: $tablet) {
+      @media (max-width: 991.98px) {
          height: 332px;
          position: relative;
          &::after {
@@ -285,7 +292,7 @@
    }
 
    &__head-content {
-      @media (min-width: $tablet) {
+      @media (min-width: 991.98px) {
          display: none;
       }
       max-width: 510px;
@@ -312,6 +319,9 @@
       max-width: 1044px;
       margin: 0 auto;
       padding: 0px 22px;
+      @media (max-width: 575.98px) {
+         padding: 0px 0px;
+      }
    }
 
    &__content {
@@ -320,7 +330,7 @@
       padding-top: 46px;
       padding-bottom: 67px;
       gap: 20px;
-      @media (max-width: $tablet) {
+      @media (max-width: 991.98px) {
          padding-top: 20px;
          flex-direction: column;
          align-items: center;
@@ -330,9 +340,10 @@
    &__column {
       &_left {
          flex: 0 0 510px;
-         @media (max-width: $tablet) {
+         @media (max-width: 991.98px) {
             flex: auto;
             order: 2;
+            padding: 0px 22px;
          }
       }
 
@@ -341,17 +352,20 @@
          @media (max-width: 1010px) {
             flex: 0 0 420px;
          }
-         @media (max-width: $tablet) {
+         @media (max-width: 991.98px) {
             flex: auto;
             width: 100%;
             order: 1;
+            display: flex;
+            justify-content: center;
+            padding: 0px 5px;
          }
       }
    }
 
    &__route {
       margin-bottom: 33px;
-      @media (max-width: $tablet) {
+      @media (max-width: 991.98px) {
          display: none;
       }
    }
@@ -380,7 +394,7 @@
       font-weight: 700;
       max-width: 280px;
       width: 100%;
-      @media (max-width: $tablet) {
+      @media (max-width: 991.98px) {
          display: block;
          margin: 0 auto;
       }
@@ -389,14 +403,57 @@
    &__map {
       background-color: #fff;
       height: 366px;
-      @media (max-width: $tablet) {
+      @media (max-width: 991.98px) {
          height: 335px;
          max-width: 510px;
          width: 100%;
-         margin: 0 auto;
       }
-      @media (max-width: $mobileSmall) {
+      @media (max-width: 575.98px) {
          height: 335px;
       }
+   }
+}
+
+//POPUP========================================================================================================================================================
+.thanks-for-booking {
+   display: none;
+   &.active {
+      display: block;
+   }
+   &__title {
+      margin-bottom: 12px;
+      @media (max-width: 767.98px) {
+         font-size: 16px;
+      }
+   }
+
+   &__text {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.15px;
+      margin-bottom: 17px;
+      @media (max-width: 767.98px) {
+         font-size: 12px;
+      }
+   }
+
+   &__info {
+      margin-bottom: 30px;
+      background: rgba(255, 183, 3, 0.3);
+      border-radius: 8px;
+      padding: 7px 7px 7px 7px;
+      display: flex;
+      align-items: center;
+      @media (max-width: 767.98px) {
+         font-size: 12px;
+      }
+      .icon-info {
+         margin-right: 8px;
+      }
+   }
+
+   &__btn {
+      background: #ffb703;
    }
 }
