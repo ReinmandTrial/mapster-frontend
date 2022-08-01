@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+   @@include('html/head.html',{ "title":"Главная" })
+   <body>
+      @@include('html/header.html',{})
+      <main class="main">
+         <div class="page-thanks">
+            <div class="page-thanks__wrap">
+               <div class="container-my">
+                  <div class="page-thanks__title">Спасибо за бронирование!</div>
+                  <div class="page-thanks__sub-title">Информация о бронировании выслана вам на почту</div>
+                  <div class="page-thanks__order-number">Заказ № 002</div>
+                  <div class="page-thanks__tour-information tour-info">
+                     <div class="tour-info__img">
+                        <picture>
+                           <source srcset="@img/tour-img.png" type="image/png" media="(min-width:800px)" />
+                           <source srcset="@img/tour-img-mob.png" type="image/png" media="(max-width:800px)" />
+                           <img src="@img/tour-img.png" alt="tour-img" />
+                        </picture>
+                     </div>
+                     <div class="tour-info__content">
+                        <div class="tour-info__block">
+                           <div class="tour-info__item">
+                              <p class="tour-info__subtitle">Маршрут</p>
+                              <p class="tour-info__text tour-info__text_city icon icon-mark">Тбилиси</p>
+                              <p class="tour-info__name-location">Мачахельский заповедник авторская экскурсия от Акаки Беридзе</p>
+                           </div>
+                        </div>
+                        <div class="tour-info__block">
+                           <div class="tour-info__item">
+                              <p class="tour-info__subtitle">Дата</p>
+                              <p class="tour-info__text icon icon-calendar">21.05.2022</p>
+                           </div>
+                           <div class="tour-info__item">
+                              <p class="tour-info__subtitle">Продолжительность</p>
+                              <p class="tour-info__text icon icon-watch">10 часов</p>
+                           </div>
+                        </div>
+                        <div class="tour-info__block">
+                           <div class="tour-info__item">
+                              <p class="tour-info__subtitle">Заказчик</p>
+                              <p class="tour-info__text icon icon-person-edit">Петр Иванов</p>
+                           </div>
+                           <div class="tour-info__item tour-info__item_amount">
+                              <p class="tour-info__subtitle">Кол-во человек</p>
+                              <p class="tour-info__text tour-info__text_amount">2 взрослых 0 детей</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="page-thanks__bottom-content">
+                     <div class="page-thanks__to-pay to-pay">
+                        <p class="to-pay__text">Оплачено</p>
+                        <p class="to-pay__price">60</p>
+                     </div>
+                     <button class="page-thanks__go-main-btn green-btn">на главную</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      @@include('html/footer.html',{})
+   </body>
+</html>

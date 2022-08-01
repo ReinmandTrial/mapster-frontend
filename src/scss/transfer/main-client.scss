@@ -1,0 +1,194 @@
+:root {
+   --white: #ffffff;
+   --gray: #707070;
+   --black: #000000;
+   --light-green: #41b619;
+   --light-gray: #ececec;
+   --yellow: #ffb703;
+}
+
+//========================================================================================================================================================
+.client-main-head {
+   &__wrapper {
+      background: url('') center / cover no-repeat;
+   }
+
+   &__container {
+   }
+
+   &__content {
+      padding-top: 190px;
+      padding-bottom: 113px;
+      position: relative;
+      @media (max-width: 767.98px) {
+         padding-top: 115px;
+      }
+   }
+
+   &__block-search {
+      margin-bottom: 23px;
+      @media (max-width: 575.98px) {
+         margin-bottom: 103px;
+      }
+   }
+   &__block-car-park {
+      margin-bottom: 191px;
+      @media (max-width: 575.98px) {
+         margin-bottom: 80px;
+      }
+   }
+   &__brand-name {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #ffffff;
+      @media (max-width: 575.98px) {
+         font-size: 32px;
+      }
+      @media (max-width: 370px) {
+         font-size: 21px;
+      }
+      span {
+         display: block;
+         font-weight: 300;
+      }
+   }
+   &__mob-small {
+      display: none;
+      @media (max-width: 767.98px) {
+         display: block;
+         position: absolute;
+         right: 0px;
+         top: calc(100% - 220px);
+         img {
+            max-width: 165px;
+         }
+      }
+   }
+}
+//========================================================================================================================================================
+.transfer-client-download-app {
+   &__container {
+   }
+
+   &__content {
+      padding: 80px 0px 73px 0px;
+      display: flex;
+      justify-content: space-between;
+      column-gap: 20px;
+      @media (max-width: 767.98px) {
+         flex-direction: column;
+         row-gap: 30px;
+         padding: 133px 0px 60px 0px;
+      }
+   }
+
+   &__text-block {
+      flex: 0 1 593px;
+      @media (max-width: 767.98px) {
+         flex: 1 1 auto;
+      }
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 33px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      @media (max-width: 767.98px) {
+         font-size: 16px;
+         line-height: 22px;
+         margin-bottom: 10px;
+      }
+      span {
+         color: #432818;
+      }
+   }
+
+   &__descr {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 25px;
+      @media (max-width: 767.98px) {
+         font-size: 14px;
+         line-height: 19px;
+      }
+      span {
+         font-weight: 700;
+      }
+   }
+
+   &__links-block {
+      flex: none;
+      align-self: flex-end;
+      display: flex;
+      flex-direction: column;
+      max-width: 320px;
+      column-gap: 20px;
+      position: relative;
+      margin: 0px 40px 0px 0px;
+      @media (max-width: 991.98px) {
+      }
+      @media (max-width: 767.98px) {
+         align-self: center;
+         margin: 0px 0px 0px 0px;
+         max-width: none;
+         justify-content: center;
+         gap: 10px;
+      }
+   }
+
+   &__links-title {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      text-transform: uppercase;
+      color: #333333;
+      flex: 0 0 100%;
+      align-self: flex-end;
+      margin-bottom: 15px;
+      text-align: center;
+   }
+   &__links-btns {
+      display: flex;
+      justify-content: space-between;
+      column-gap: 10px;
+   }
+   &__links-item {
+      display: block;
+      flex: 0 0 147px;
+      @media (max-width: 360px) {
+         flex: auto;
+      }
+   }
+   &__link {
+      max-height: 44px;
+      width: 100%;
+   }
+   &__phone {
+      position: absolute;
+      bottom: calc(100% + 20px);
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 275px;
+      width: stretch;
+      img {
+         max-width: none;
+      }
+
+      @media (max-width: 767.98px) {
+         display: none;
+         height: 330px;
+      }
+   }
+}
+//========================================================================================================================================================
+.transfer-main-client {
+   &__head {
+   }
+
+   &__download-app {
+   }
+}

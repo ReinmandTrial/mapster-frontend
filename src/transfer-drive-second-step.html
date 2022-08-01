@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+   @@include('html/head.html',{ "title":"Водитель ШАГ 2" })
+   <body>
+      @@include('html/header.html',{})
+      <main class="main">
+         <div class="transfer-second-step">
+            <div class="transfer-second-step__wrapper">
+               <div class="transfer-second-step__container container-l">
+                  <div class="transfer-second-step__content">
+                     <p class="transfer-second-step__title">Транспортное средство</p>
+                     <div class="transfer-second-step__select-mark temp-select">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Марка машины</p>
+                              <button class="temp-select__button">
+                                 Выберите марку вашей машины<span class="icon icon-triangle-down"></span>
+                              </button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">Марка 1</div>
+                                 <div class="temp-select__body-item">Марка 2</div>
+                                 <div class="temp-select__body-item">Марка 3</div>
+                                 <div class="temp-select__body-item">Марка 4</div>
+                                 <div class="temp-select__body-item">Марка 5</div>
+                                 <div class="temp-select__body-item">Марка 6</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="transfer-second-step__mark-prompt-wrap prompt">
+                           <div class="prompt__content">
+                              <span class="icon icon-info"></span>
+                              Загрузите информацию о вашем транспортном средстве
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-second-step__select-model temp-select">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Модель машины</p>
+                              <button class="temp-select__button">
+                                 Выберите модель вашей машины <span class="icon icon-triangle-down"></span>
+                              </button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">Модель 1</div>
+                                 <div class="temp-select__body-item">Модель 2</div>
+                                 <div class="temp-select__body-item">Модель 3</div>
+                                 <div class="temp-select__body-item">Модель 4</div>
+                                 <div class="temp-select__body-item">Модель 5</div>
+                                 <div class="temp-select__body-item">Модель 6</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-second-step__input-car-number temp-input">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Государственный номер машины</p>
+                              <input placeholder="Введите номер вашей машины" type="text" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="transfer-second-step__select-car-year temp-select">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Год выпуска машины</p>
+                              <button class="temp-select__button">Выбери год выпуска <span class="icon icon-triangle-down"></span></button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">1994</div>
+                                 <div class="temp-select__body-item">1994</div>
+                                 <div class="temp-select__body-item">1994</div>
+                                 <div class="temp-select__body-item">1994</div>
+                                 <div class="temp-select__body-item">1994</div>
+                                 <div class="temp-select__body-item">1994</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <p class="transfer-second-step__sub-title">Главное фото машины</p>
+                     <div class="transfer-second-step__car-photo">
+                        <div class="transfer-second-step__car-photo-input input-file">
+                           <div class="input-file__content">
+                              <div class="input-file__body">
+                                 <img src="" alt="" />
+                              </div>
+                              <div class="input-file__head">
+                                 <div class="input-file__head-block">
+                                    <div class="input-file__head-pc-text">Перетащите фотографию</div>
+                                    <div class="input-file__head-pc-text">или</div>
+                                    <label class="input-file__head-lable">
+                                       ДОБАВИТЬ ФОТОГРАФИю
+                                       <input type="file" class="input-file__head-input" />
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="transfer-second-step__car-photo-prompt prompt">
+                           <div class="prompt__content">
+                              <span class="icon icon-info"></span>
+                              Загрузите последнюю фотографию машины
+                           </div>
+                        </div>
+                     </div>
+                     <p class="transfer-second-step__sub-title">Детальный фото машины</p>
+                     <div class="transfer-second-step__car-photo">
+                        <div class="transfer-second-step__car-photo-input input-file">
+                           <div class="input-file__content">
+                              <div class="input-file__body">
+                                 <img src="" alt="" />
+                              </div>
+                              <div class="input-file__head">
+                                 <div class="input-file__head-block">
+                                    <div class="input-file__head-pc-text">Перетащите фотографию</div>
+                                    <div class="input-file__head-pc-text">или</div>
+                                    <label class="input-file__head-lable">
+                                       ДОБАВИТЬ ФОТОГРАФИю
+                                       <input type="file" class="input-file__head-input" />
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="transfer-second-step__car-photo-prompt prompt">
+                           <div class="prompt__content">
+                              <span class="icon icon-info"></span>
+                              Загрузите 3 детальные фото машины
+                           </div>
+                        </div>
+                     </div>
+                     <p class="transfer-second-step__sub-title">Техпаспорт машины</p>
+                     <div class="transfer-second-step__car-passport">
+                        <div class="transfer-second-step__car-passport-input input-file">
+                           <div class="input-file__content">
+                              <div class="input-file__body">
+                                 <img src="" alt="" />
+                              </div>
+                              <div class="input-file__head">
+                                 <div class="input-file__head-block">
+                                    <div class="input-file__head-pc-text">Перетащите фотографию</div>
+                                    <div class="input-file__head-pc-text">или</div>
+                                    <label class="input-file__head-lable">
+                                       ДОБАВИТЬ ФОТОГРАФИю
+                                       <input type="file" class="input-file__head-input" />
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="transfer-second-step__car-passport-prompt prompt">
+                           <div class="prompt__content">
+                              <span class="icon icon-info"></span>
+                              Загрузите фото техпаспорта машины
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-second-step__next-wrap">
+                        <button class="transfer-second-step__next-btn">завершить регистрацию</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      @@include('html/footer.html',{})
+   </body>
+</html>

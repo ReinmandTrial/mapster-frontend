@@ -1,0 +1,122 @@
+:root {
+   --white: #ffffff;
+   --gray: #707070;
+   --black: #000000;
+   --light-green: #41b619;
+   --light-gray: #ececec;
+   --yellow: #ffb703;
+}
+
+.transfer-drive-profile {
+   &__wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+   }
+
+   &__container {
+      @media (max-width: 767.98px) {
+         background-color: transparent;
+      }
+   }
+
+   &__content {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 50px 0px 156px 0px;
+      @media (max-width: 767.98px) {
+         padding: 30px 0px 100px 0px;
+      }
+   }
+
+   &__title {
+      font-weight: 500;
+      font-size: 24px;
+      letter-spacing: 0.15px;
+      margin-bottom: 30px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 20px;
+         font-weight: 600;
+         font-size: 16px;
+      }
+   }
+   &__user-photo {
+      margin: 0 auto;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      img {
+         width: 100%;
+         height: 100%;
+         border-radius: 50%;
+         object-fit: cover;
+      }
+      @media (max-width: 767.98px) {
+         width: 100px;
+         height: 100px;
+         margin-bottom: 35px;
+      }
+   }
+
+   &__table {
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      width: 100%;
+      border-spacing: 1px 4px;
+      margin-bottom: 20px;
+      @media (max-width: 767.98px) {
+         border-spacing: 3px 4px;
+      }
+   }
+
+   &__tbody {
+   }
+
+   &__row {
+      &:nth-child(odd) {
+         background: #e5e5e5;
+      }
+      &:nth-child(even) {
+         background: rgba(33, 158, 188, 0.15);
+      }
+   }
+
+   &__data {
+      height: 30px;
+      @media (max-width: 500.98px) {
+         font-size: 14px;
+         line-height: 19px;
+      }
+      &:first-child {
+         width: 60%;
+         padding-left: 20px;
+         @media (max-width: 500.98px) {
+            width: 50%;
+         }
+      }
+      &:last-child {
+         width: 40%;
+         padding-left: 30px;
+         @media (max-width: 500.98px) {
+            font-weight: 600;
+            width: 50%;
+            padding-left: 10px;
+         }
+         @media (max-width: 360px) {
+            font-size: 12px;
+         }
+      }
+   }
+   &__edit-btn {
+      font-size: 14px;
+      line-height: 13px;
+      letter-spacing: 0.2px;
+      color: #219ebc;
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+}

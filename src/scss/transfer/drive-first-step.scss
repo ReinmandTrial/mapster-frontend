@@ -1,0 +1,230 @@
+:root {
+   --white: #ffffff;
+   --gray: #707070;
+   --black: #000000;
+   --light-green: #41b619;
+   --light-gray: #ececec;
+   --yellow: #ffb703;
+}
+
+.transfer-first-step {
+   &__wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+   }
+
+   &__container {
+   }
+
+   &__content {
+      padding: 50px 0px 162px 0px;
+      @media (max-width: 767.98px) {
+         padding: 21px 0px 46px 0px;
+      }
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 24px;
+      letter-spacing: 0.4px;
+      margin-bottom: 22px;
+      @media (max-width: 767.98px) {
+         font-size: 16px;
+         line-height: 22px;
+         margin-bottom: 15px;
+      }
+   }
+   &__sub-title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 22px;
+      letter-spacing: 0.4px;
+      margin-bottom: 32px;
+      @media (max-width: 767.98px) {
+         font-size: 16px;
+         line-height: 20px;
+         margin-bottom: 11px;
+      }
+   }
+
+   &__input-name {
+      margin-bottom: 22px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 10px;
+      }
+   }
+   &__input-surname {
+      margin-bottom: 22px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 10px;
+      }
+   }
+   &__input-phone {
+      margin-bottom: 22px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 10px;
+      }
+   }
+   &__input-password {
+      margin-bottom: 22px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__input-email {
+      margin-bottom: 37px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__your-photo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 39px;
+      margin-bottom: 30px;
+      @media (max-width: 767.98px) {
+         grid-template-columns: 1fr;
+         margin-bottom: 12px;
+      }
+   }
+
+   &__your-photo-input {
+      @media (max-width: 767.98px) {
+         grid-row: start;
+      }
+   }
+
+   &__your-photo-prompt {
+      max-height: 60px;
+      display: flex;
+      align-items: center;
+   }
+   &__input-passport {
+      margin-bottom: 24px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 12px;
+      }
+   }
+
+   &__first-passport-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 39px;
+      margin-bottom: 22px;
+      @media (max-width: 767.98px) {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   &__first-passport-page-input {
+      @media (max-width: 767.98px) {
+         grid-row: start;
+      }
+   }
+
+   &__first-passport-page-prompt {
+      max-height: 60px;
+      display: flex;
+      align-items: center;
+   }
+
+   &__second-passport-page {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 39px;
+      margin-bottom: 22px;
+      @media (max-width: 767.98px) {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   &__second-passport-page-input {
+   }
+
+   &__input-driving {
+      margin-bottom: 24px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 12px;
+      }
+   }
+
+   &__front-driving {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 39px;
+      margin-bottom: 22px;
+      @media (max-width: 767.98px) {
+         grid-template-columns: 1fr;
+      }
+   }
+
+   &__front-driving-input {
+      @media (max-width: 767.98px) {
+         grid-row: start;
+      }
+   }
+
+   &__front-driving-prompt {
+      max-height: 60px;
+      display: flex;
+      align-items: center;
+   }
+
+   &__back-driving {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 39px;
+      margin-bottom: 30px;
+      @media (max-width: 767.98px) {
+         grid-template-columns: 1fr;
+         margin-bottom: 20px;
+      }
+   }
+
+   &__back-driving-input {
+   }
+
+   &__select-country {
+      .temp-select__head {
+         margin-bottom: 25px;
+         @media (max-width: 767.98px) {
+            margin-bottom: 10px;
+         }
+      }
+   }
+
+   &__select-city {
+      .temp-select__head {
+         margin-bottom: 50px;
+         @media (max-width: 767.98px) {
+            margin-bottom: 30px;
+         }
+      }
+   }
+   &__next-wrap {
+      max-width: 280px;
+      @media (max-width: 767.98px) {
+         max-width: 345px;
+         margin: 0 auto;
+      }
+   }
+
+   &__next-btn {
+      width: 100%;
+      background: #000000;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      color: #ffffff;
+      padding: 14px 0px;
+      @media (max-width: 767.98px) {
+         padding: 9px 0px;
+      }
+   }
+}

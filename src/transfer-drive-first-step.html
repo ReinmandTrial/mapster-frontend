@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+   @@include('html/head.html',{ "title":"Водитель ШАГ 1" })
+   <body>
+      @@include('html/header.html',{})
+      <main class="main">
+         <div class="transfer-first-step">
+            <div class="transfer-first-step__wrapper">
+               <div class="transfer-first-step__container container-l">
+                  <div class="transfer-first-step__content">
+                     <p class="transfer-first-step__title">Андрей, добро пожаловать!</p>
+                     <p class="transfer-first-step__sub-title">Контактные данные</p>
+                     <div class="transfer-first-step__input-name temp-input step">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Имя</p>
+                              <input placeholder="Введите ваше имя " type="text" class="temp-input__input" />
+                           </label>
+                        </div>
+                        <div class="temp-input__prompt-wrap prompt">
+                           <div class="prompt__content">
+                              <span class="icon icon-info"></span>
+                              После регистрации вы все равно сможете вносить изменения в свои данные, прежде чем объект появится на сайте
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__input-surname temp-input step">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Фамилия</p>
+                              <input placeholder="Введите вашу фамилию " type="text" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__input-phone temp-input step">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Телефон</p>
+                              <input placeholder="Укажите ваш телефон" type="tel" class="temp-input__input" />
+                           </label>
+                           <p class="temp-input__info">Контактный номер телефона (чтобы мы могли помочь вам с регистрацией)</p>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__input-password temp-input step">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Пароль</p>
+                              <input placeholder="********" type="password" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__input-email temp-input step">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">E-mail</p>
+                              <input placeholder="Укажите ваш E-mail" type="email" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__your-photo">
+                        <div class="transfer-first-step__your-photo-input input-file">
+                           <div class="input-file__content">
+                              <div class="input-file__body">
+                                 <img src="" alt="" />
+                              </div>
+                              <div class="input-file__head">
+                                 <div class="input-file__head-block">
+                                    <div class="input-file__head-pc-text">Перетащите свою фотографию</div>
+                                    <div class="input-file__head-pc-text">или</div>
+                                    <label class="input-file__head-lable">
+                                       ДОБАВИТЬ ФОТОГРАФИЮ
+                                       <input type="file" class="input-file__head-input" />
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="transfer-first-step__your-photo-prompt prompt">
+                           <div class="prompt__content">
+                              <span class="icon icon-info"></span>
+                              Загрузите вашу фотографию, она будет отображаться в вашем профиле
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__input-passport temp-input step">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Номер паспорта</p>
+                              <input placeholder="Укажите ваш номер паспорта" type="email" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__first-passport-page">
+                        <div class="transfer-first-step__first-passport-page-input input-file">
+                           <div class="input-file__content">
+                              <div class="input-file__body">
+                                 <img src="" alt="" />
+                              </div>
+                              <div class="input-file__head">
+                                 <div class="input-file__head-block">
+                                    <div class="input-file__head-pc-text">Перетащите фото паспорта лицевая сторона</div>
+                                    <div class="input-file__head-pc-text">или</div>
+                                    <div class="input-file__head-mob-text">Фото паспорта лицевая сторона</div>
+                                    <label class="input-file__head-lable">
+                                       ДОБАВИТЬ ФОТОГРАФИЮ
+                                       <input type="file" class="input-file__head-input" />
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="transfer-first-step__first-passport-page-prompt prompt">
+                           <div class="prompt__content">
+                              <span class="icon icon-info"></span>
+                              Загрузите фото вашего паспорта
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__second-passport-page">
+                        <div class="transfer-first-step__second-passport-page-input input-file">
+                           <div class="input-file__content">
+                              <div class="input-file__body">
+                                 <img src="" alt="" />
+                              </div>
+                              <div class="input-file__head">
+                                 <div class="input-file__head-block">
+                                    <div class="input-file__head-pc-text">Перетащите фото паспорта оборотная сторона</div>
+                                    <div class="input-file__head-pc-text">или</div>
+                                    <div class="input-file__head-mob-text">Фото паспорта оборотная сторона</div>
+                                    <label class="input-file__head-lable">
+                                       ДОБАВИТЬ ФОТОГРАФИЮ
+                                       <input type="file" class="input-file__head-input" />
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__input-driving temp-input step">
+                        <div class="temp-input__input-wrap">
+                           <label class="temp-input__content">
+                              <p class="temp-input__name">Номер и серия прав</p>
+                              <input placeholder="Укажите ваш номер и серию прав" type="email" class="temp-input__input" />
+                           </label>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__front-driving">
+                        <div class="transfer-first-step__front-driving-input input-file">
+                           <div class="input-file__content">
+                              <div class="input-file__body">
+                                 <img src="" alt="" />
+                              </div>
+                              <div class="input-file__head">
+                                 <div class="input-file__head-block">
+                                    <div class="input-file__head-pc-text">Перетащите свою фотографию</div>
+                                    <div class="input-file__head-pc-text">или</div>
+                                    <div class="input-file__head-mob-text">Фото прав лицевая сторона</div>
+                                    <label class="input-file__head-lable">
+                                       ДОБАВИТЬ ФОТОГРАФИЮ
+                                       <input type="file" class="input-file__head-input" />
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="transfer-first-step__front-driving-prompt prompt">
+                           <div class="prompt__content">
+                              <span class="icon icon-info"></span>
+                              Загрузите вашу фотографию, она будет отображаться в вашем профиле
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__back-driving">
+                        <div class="transfer-first-step__back-driving-input input-file">
+                           <div class="input-file__content">
+                              <div class="input-file__body">
+                                 <img src="" alt="" />
+                              </div>
+                              <div class="input-file__head">
+                                 <div class="input-file__head-block">
+                                    <div class="input-file__head-pc-text">Перетащите свою фотографию</div>
+                                    <div class="input-file__head-pc-text">или</div>
+                                    <div class="input-file__head-mob-text">Фото прав оборотная сторона</div>
+
+                                    <label class="input-file__head-lable">
+                                       ДОБАВИТЬ ФОТОГРАФИЮ
+                                       <input type="file" class="input-file__head-input" />
+                                    </label>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <p class="transfer-first-step__sub-title">Где вы находитесь?</p>
+                     <div class="transfer-first-step__select-country temp-select">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Страна/территория</p>
+                              <button class="temp-select__button">Выберите страну <span class="icon icon-triangle-down"></span></button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">Страна 1</div>
+                                 <div class="temp-select__body-item">Страна 2</div>
+                                 <div class="temp-select__body-item">Страна 3</div>
+                                 <div class="temp-select__body-item">Страна 4</div>
+                                 <div class="temp-select__body-item">Страна 5</div>
+                                 <div class="temp-select__body-item">Страна 6</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__select-city temp-select">
+                        <div class="temp-select__content">
+                           <div class="temp-select__head">
+                              <p class="temp-select__title">Город</p>
+                              <button class="temp-select__button">Выберите город <span class="icon icon-triangle-down"></span></button>
+                           </div>
+                           <div class="temp-select__body">
+                              <div class="temp-select__body-list">
+                                 <div class="temp-select__body-item">Город 1</div>
+                                 <div class="temp-select__body-item">Город 2</div>
+                                 <div class="temp-select__body-item">Город 3</div>
+                                 <div class="temp-select__body-item">Город 4</div>
+                                 <div class="temp-select__body-item">Город 5</div>
+                                 <div class="temp-select__body-item">Город 6</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="transfer-first-step__next-wrap">
+                        <button class="transfer-first-step__next-btn">ДАЛЕЕ</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      @@include('html/footer.html',{})
+   </body>
+</html>

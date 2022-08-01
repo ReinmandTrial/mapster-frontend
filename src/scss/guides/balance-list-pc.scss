@@ -1,0 +1,187 @@
+.balance-list-pc {
+   &__top-line {
+      display: grid;
+      grid-template-columns: 5% 25% 9% 7% 9% 9% 6% 10% 10% 10%;
+      align-items: center;
+      padding: 5px 0px;
+      margin-bottom: 5px;
+      background: #cdffbc;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.15px;
+      &.admin-guide-balance {
+         .icon-watch {
+            margin-right: 0;
+         }
+      }
+      &.admin-full-balance {
+         grid-template-columns: 5% 35% 9% 7% 9% 9% 6% 10% 10%;
+         .icon-watch {
+            margin-right: 0;
+         }
+         .balance-list-pc__top-line-item_commission {
+            display: none;
+         }
+      }
+   }
+
+   &__top-line-item {
+      &_number {
+         text-align: center;
+      }
+
+      &_tour {
+         margin-left: 15px;
+      }
+
+      &_date {
+         display: inline-flex;
+         align-items: center;
+         justify-content: center;
+         .icon-calendar {
+            font-size: 19px;
+            margin-right: 12px;
+         }
+      }
+
+      &_time {
+         display: inline-flex;
+         justify-content: center;
+         align-items: center;
+         .icon-watch {
+            font-size: 21px;
+            margin-right: 8px;
+         }
+      }
+
+      &_amount {
+         text-align: center;
+      }
+
+      &_price-for-one {
+         text-align: center;
+      }
+
+      &_sum {
+         text-align: center;
+      }
+
+      &_commission {
+         text-align: center;
+      }
+
+      &_earned {
+         text-align: center;
+      }
+
+      &_status {
+         text-align: center;
+      }
+   }
+
+   &__content {
+   }
+
+   &__list {
+      border-bottom: 0.5px solid #707070;
+      &:first-child {
+         border-top: 0.5px solid #707070;
+      }
+   }
+
+   &__item {
+      display: grid;
+      grid-template-columns: 5% 8% 17% 9% 7% 9% 9% 6% 10% 10% 10%;
+      padding: 5px 0px;
+      border-bottom: 0.5px solid #707070;
+      align-items: center;
+      &.admin-full-balance {
+         grid-template-columns: 5% 8% 27% 9% 7% 9% 9% 6% 10% 10%;
+         .balance-list-pc__col_commission {
+            display: none;
+         }
+      }
+   }
+
+   &__col {
+      font-size: 12px;
+      line-height: 16px;
+      > span {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+      &_number {
+      }
+
+      &_tour {
+         padding-left: 10px;
+         display: -webkit-box;
+         -webkit-box-orient: vertical;
+         -webkit-line-clamp: 3;
+         overflow: hidden;
+      }
+
+      &_date {
+         text-align: center;
+      }
+
+      &_time {
+         text-align: center;
+      }
+
+      &_amount {
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 2px 8px;
+         padding: 0px 2px;
+      }
+
+      &_price-for-one {
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         flex-wrap: wrap;
+         gap: 2px 8px;
+         padding: 0px 2px;
+      }
+
+      &_sum {
+         text-align: center;
+      }
+
+      &_commission {
+         text-align: center;
+      }
+
+      &_earned {
+         text-align: center;
+      }
+
+      &_status {
+         text-align: center;
+      }
+      .icon-euro {
+         font-size: 13px;
+      }
+   }
+
+   &__image {
+      width: 70px;
+      height: 45px;
+      border-radius: 5px;
+      overflow: hidden;
+      @media (max-width: 1150px) {
+         width: auto;
+      }
+      img {
+         border-radius: 5px;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}

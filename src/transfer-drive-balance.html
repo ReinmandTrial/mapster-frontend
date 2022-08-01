@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{ "title":"Баланс" })
+
+<body>
+   @@include('html/header.html',{})
+   <div class="transfer-driver-balance">
+      <div class="transfer-driver-balance__container container-l">
+         <div class="transfer-driver-balance__content">
+            <h1 class="transfer-driver-balance__title title-page">Баланс</h1>
+            <h2 class="transfer-driver-balance__sub-title title-page_sub">Здесь представлены ваши финансы</h2>
+            <p class="transfer-driver-balance__state"> У вас на счету<span class="transfer-driver-balance__state-sum">240</span> <span
+                  class="icon icon-euro"></span></p>
+            <p class="transfer-driver-balance__state"> Заработано за месяц<span class="transfer-driver-balance__state-sum">1200</span> <span
+                  class="icon icon-euro"></span></p>
+            <div class="transfer-driver-balance__options">
+               <div class="transfer-driver-balance__date date-range">
+                  <p class="date-range__title">Дата</p>
+                  <div class="date-range__list">
+                     <div class="date-range__date-pick-item">
+                        <span class="date-range__from-to">с</span>
+                        <div class="date-range__block">
+                           <button class="date-range__head">
+                              <span class=" date-range__icon icon icon-calendar"></span> <span class="date-range__date">01.04.2022</span>
+                           </button>
+                           <div class="date-range__body"></div>
+                        </div>
+                     </div>
+                     <div class="date-range__date-pick-item">
+                        <span class="date-range__from-to">до</span>
+                        <div class="date-range__block">
+                           <button class="date-range__head">
+                              <span class=" date-range__icon icon icon-calendar"></span> <span class="date-range__date">01.04.2022</span>
+                           </button>
+                           <div class="date-range__body"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="transfer-driver-balance__current-state current-state">
+                  <p class="current-state__title">Статус</p>
+                  <div class="current-state__state-in-process">В процессе</div>
+                  <div class="current-state__state-done">Выплачен</div>
+               </div>
+            </div>
+            <div class="transfer-driver-balance__balance-list driver-balance-list">
+               <div class="driver-balance-list__top-line">
+                  <p class="driver-balance-list__top-line-column driver-balance-list__top-line-column_number">№</p>
+                  <p class="driver-balance-list__top-line-column">Маршрут</p>
+                  <p class="driver-balance-list__top-line-column driver-balance-list__top-line-column_date"><span
+                        class="icon icon-calendar"></span> Дата и время</p>
+                  <p class="driver-balance-list__top-line-column">Кол-во человек</p>
+                  <p class="driver-balance-list__top-line-column">Цена</p>
+                  <p class="driver-balance-list__top-line-column">Комисия <span>20%</span></p>
+                  <p class="driver-balance-list__top-line-column">Заработано</p>
+                  <p class="driver-balance-list__top-line-column">Статус</p>
+               </div>
+               <div class="driver-balance-list__item driver-balance-item ">
+                  <div class="driver-balance-item-pc ">
+                     <div class="driver-balance-item-pc__number-col">0002</div>
+                     <div class="driver-balance-item-pc__route-col">
+                        <div data-full="1 Меликишвили, Батуми, Грузия" class="driver-balance-item-pc__route-where">
+                           <span class="driver-balance-item-pc__route-where-icon">A</span>
+                           <span class="driver-balance-item-pc__route-where-address">1
+                              Меликишвили, Батуми, Грузия </span>
+                        </div>
+                        <span class="driver-balance-item-pc__route-arrow icon icon-arrow-down"></span>
+                        <div data-full="1 Меликишвили, Батуми, Грузия" class="driver-balance-item-pc__route-where">
+                           <span class="driver-balance-item-pc__route-where-icon">B</span>
+                           <span class="driver-balance-item-pc__route-where-address">1
+                              Меликишвили, Батуми, Грузия</span>
+                        </div>
+
+                     </div>
+                     <div class="driver-balance-item-pc__date-col">
+                        <p class="driver-balance-item-pc__date-date">Сб, 14 мая 2022</p>
+                        <p class="driver-balance-item-pc__date-time">12:00</p>
+                     </div>
+                     <div class="driver-balance-item-pc__amount-col">
+                        <span class="driver-balance-item-pc__amount"><span>2</span> вз</span>
+                        <span class="driver-balance-item-pc__amount"><span>0</span> дет</span>
+                     </div>
+                     <div class="driver-balance-item-pc__price-col">
+                        <p class="driver-balance-item-pc__price"><span class="driver-balance-item-pc__sum">15</span> <span
+                              class="icon icon-euro"></span></p>
+                     </div>
+                     <div class="driver-balance-item-pc__price-col">
+                        <p class="driver-balance-item-pc__price"><span class="driver-balance-item-pc__sum">15</span> <span
+                              class="icon icon-euro"></span></p>
+                     </div>
+                     <div class="driver-balance-item-pc__price-col">
+                        <p class="driver-balance-item-pc__price"><span class="driver-balance-item-pc__sum">15</span> <span
+                              class="icon icon-euro"></span></p>
+                     </div>
+                     <div class="driver-balance-item-pc__state-col">
+                        <p class="driver-balance-item-pc__state">В процессе</p>
+                     </div>
+
+                  </div>
+                  <div class="driver-balance-item-mob">
+                     <div class="driver-balance-item-mob__row-route">
+                        <p class="driver-balance-item-mob__route-title">Маршрут</p>
+                        <div class="driver-balance-item-mob__route-block  ">
+                           <div class="driver-balance-item-mob__route-where">
+                              <span class="driver-balance-item-mob__route-icon">A</span>
+                              <span class="driver-balance-item-mob__route-address">1
+                                 Меликишвили, Батуми, Грузия </span>
+                           </div>
+                           <span class="driver-balance-item-mob__route-arrow icon icon-arrow-down"></span>
+                           <div class="driver-balance-item-mob__route-where">
+                              <span class="driver-balance-item-mob__route-icon">B</span>
+                              <span class="driver-balance-item-mob__route-address">1
+                                 Меликишвили, Батуми, Грузия</span>
+                           </div>
+                        </div>
+                        <img class="driver-balance-item-mob__route-state active" src="" alt="done">
+                        <img class="driver-balance-item-mob__route-state" src="" alt="in-process">
+                     </div>
+                     <div class="driver-balance-item-mob__row-info">
+                        <div class="driver-balance-item-mob__info driver-balance-item-mob__info_top">
+                           <p class="driver-balance-item-mob__info-item">№</p>
+                           <p class="driver-balance-item-mob__info-item"><span class="icon icon-calendar"></span> Дата и время</p>
+                           <p class="driver-balance-item-mob__info-item">Пассажиры</p>
+                        </div>
+                        <div class="driver-balance-item-mob__info">
+                           <p class="driver-balance-item-mob__info-item">0002</p>
+                           <p class="driver-balance-item-mob__info-item">Сб, 14 мая 2022 в 12:00</p>
+                           <p class="driver-balance-item-mob__info-item"><span>2 вз</span> <span>0 дет</span></p>
+                        </div>
+                     </div>
+                     <div class="driver-balance-item-mob__row-info">
+                        <div class="driver-balance-item-mob__info driver-balance-item-mob__info_top">
+                           <p class="driver-balance-item-mob__info-item">Цена</p>
+                           <p class="driver-balance-item-mob__info-item">Комисия 20%</p>
+                           <p class="driver-balance-item-mob__info-item">Заработано</p>
+                        </div>
+                        <div class="driver-balance-item-mob__info">
+                           <p class="driver-balance-item-mob__info-item">15 <span class="icon icon-euro"></span></p>
+                           <p class="driver-balance-item-mob__info-item">3 <span class="icon icon-euro"></p>
+                           <p class="driver-balance-item-mob__info-item">12 <span class="icon icon-euro"></p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   @@include('html/footer.html',{})
+</body>
+
+</html>

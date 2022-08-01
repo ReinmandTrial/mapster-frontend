@@ -1,0 +1,54 @@
+:root {
+   --white: #ffffff;
+   --gray: #707070;
+   --black: #000000;
+   --light-green: #41b619;
+   --light-gray: #ececec;
+   --yellow: #ffb703;
+}
+//========================================================================================================================================================
+
+.transfer-driver-orders {
+   &__container {
+   }
+
+   &__content {
+      padding-top: 38px;
+      @media (max-width: 767.98px) {
+         padding-top: 28px;
+      }
+   }
+
+   &__title {
+      margin-bottom: 5px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__sub-title {
+      margin-bottom: 28px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 18px;
+      }
+   }
+
+   &__options {
+      display: flex;
+      align-items: center;
+      gap: 20px 60px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 10px;
+      }
+   }
+
+   &__date {
+   }
+
+   &__sorting {
+   }
+   &__order-list {
+   }
+}

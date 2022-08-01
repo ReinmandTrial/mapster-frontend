@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+   @@include('html/head.html',{ "title":"Главная" })
+   <body>
+      @@include('html/header.html',{})
+      <main class="main">
+         <div class="guide-order">
+            <div class="guide-order__wrapper">
+               <div class="guide-order__container">
+                  <p class="guide-order__title">мои заказы</p>
+                  <p class="guide-order__sub-title">Здесь представлены ваши заказы</p>
+                  <div class="guide-order__options">
+                     <div class="guide-order__options-date date-option">
+                        <div class="date-option__content">
+                           <p class="date-option__title">Дата</p>
+                           <div class="date-option__list">
+                              <div class="date-option__date-pick-item">
+                                 <span class="date-option__from-to">с</span>
+                                 <div class="date-option__date-picker"><span class="icon icon-calendar"></span> 01.04.2022</div>
+                              </div>
+                              <div class="date-option__date-pick-item">
+                                 <span class="date-option__from-to">до</span>
+                                 <div class="date-option__date-picker"><span class="icon icon-calendar"></span> 09.04.2022</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <ul class="guide-order__options-sorting">
+                        <li class="guide-order__sorting-item active">Все</li>
+                        <li class="guide-order__sorting-item">Текущие</li>
+                        <li class="guide-order__sorting-item">Отмененые</li>
+                        <li class="guide-order__sorting-item">Завершеные</li>
+                     </ul>
+                  </div>
+                  <div class="guide-order__order-list-pc order-list-pc">
+                     <div class="order-list-pc__list">
+                        <div class="order-list-pc__top-line">
+                           <div class="order-list-pc__top-line-item order-list-pc__top-line-item_img"></div>
+                           <div class="order-list-pc__top-line-item order-list-pc__top-line-item_number">№</div>
+                           <div class="order-list-pc__top-line-item order-list-pc__top-line-item_route">Маршрут</div>
+                           <div class="order-list-pc__top-line-item order-list-pc__top-line-item_date">Дата</div>
+                           <div class="order-list-pc__top-line-item order-list-pc__top-line-item_client-amount-contact">
+                              <p>Заказчик</p>
+                              <p>Кол-во чел</p>
+                              <p>Контакты</p>
+                           </div>
+                           <div class="order-list-pc__top-line-item order-list-pc__top-line-item_status">Статус</div>
+                        </div>
+                        <div class="order-list-pc__content">
+                           <div class="order-list-pc__content-image">
+                              <img src="@img/guide-order/1.png" alt="oops:O" />
+                           </div>
+                           <div class="order-list-pc__text-content">
+                              <div class="order-list-pc__content-item order-list-pc__content-item_number">
+                                 <p class="order-list-pc__number-order">0001</p>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_route">
+                                 <p class="order-list-pc__order-city"><span class="icon icon-mark"></span>Мачахела</p>
+                                 <p class="order-list-pc__order-location">Мачахельский заповедник авторская экскурсия от Акаки Беридзе</p>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_date">
+                                 <p class="order-list-pc__order-date-info"><span class="icon icon-calendar"></span>20.05.2022</p>
+                                 <p class="order-list-pc__order-date-info"><span class="icon icon-watch"></span>10:00</p>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_client-amount-contact">
+                                 <div class="order-list-pc__list-row">
+                                    <p class="order-list-pc__client">Петр Иванов</p>
+                                    <div class="order-list-pc__amount-person">
+                                       <p class="order-list-pc__person">2 вз</p>
+                                       <p class="order-list-pc__person">2 дет</p>
+                                    </div>
+                                    <p class="order-list-pc__contact">+995 577 44 5566</p>
+                                 </div>
+                                 <div class="order-list-pc__list-row">
+                                    <p class="order-list-pc__client">Петр Иванов</p>
+                                    <div class="order-list-pc__amount-person">
+                                       <p class="order-list-pc__person">2 вз</p>
+                                       <p class="order-list-pc__person">2 дет</p>
+                                    </div>
+                                    <p class="order-list-pc__contact">+995 577 44 5566</p>
+                                 </div>
+                                 <div class="order-list-pc__list-row">
+                                    <p class="order-list-pc__client">Петр Иванов</p>
+                                    <div class="order-list-pc__amount-person">
+                                       <p class="order-list-pc__person">2 вз</p>
+                                       <p class="order-list-pc__person">2 дет</p>
+                                    </div>
+                                    <p class="order-list-pc__contact">+995 577 44 5566</p>
+                                 </div>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_status">
+                                 <p class="order-list-pc__status active">Осталось 10 дней</p>
+                                 <div class="order-list-pc__price-label">
+                                    <p class="order-list-pc__price-sign">Сумма</p>
+                                    <p class="order-list-pc__sum">500<span class="icon icon-euro"></span></p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="order-list-pc__content">
+                           <div class="order-list-pc__content-image">
+                              <img src="@img/guide-order/1.png" alt="oops:O" />
+                           </div>
+                           <div class="order-list-pc__text-content">
+                              <div class="order-list-pc__content-item order-list-pc__content-item_number">
+                                 <p class="order-list-pc__number-order">0001</p>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_route">
+                                 <p class="order-list-pc__order-city"><span class="icon icon-mark"></span>Мачахела</p>
+                                 <p class="order-list-pc__order-location">Мачахельский заповедник авторская экскурсия от Акаки Беридзе</p>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_date">
+                                 <p class="order-list-pc__order-date-info"><span class="icon icon-calendar"></span>20.05.2022</p>
+                                 <p class="order-list-pc__order-date-info"><span class="icon icon-watch"></span>10:00</p>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_client-amount-contact">
+                                 <div class="order-list-pc__list-row">
+                                    <p class="order-list-pc__client">Петр Иванов</p>
+                                    <div class="order-list-pc__amount-person">
+                                       <p class="order-list-pc__person">2 вз</p>
+                                       <p class="order-list-pc__person">2 дет</p>
+                                    </div>
+                                    <p class="order-list-pc__contact">+995 577 44 5566</p>
+                                 </div>
+                                 <div class="order-list-pc__list-row">
+                                    <p class="order-list-pc__client">Петр Иванов</p>
+                                    <div class="order-list-pc__amount-person">
+                                       <p class="order-list-pc__person">2 вз</p>
+                                       <p class="order-list-pc__person">2 дет</p>
+                                    </div>
+                                    <p class="order-list-pc__contact">+995 577 44 5566</p>
+                                 </div>
+                                 <div class="order-list-pc__list-row">
+                                    <p class="order-list-pc__client">Петр Иванов</p>
+                                    <div class="order-list-pc__amount-person">
+                                       <p class="order-list-pc__person">2 вз</p>
+                                       <p class="order-list-pc__person">2 дет</p>
+                                    </div>
+                                    <p class="order-list-pc__contact">+995 577 44 5566</p>
+                                 </div>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_status">
+                                 <p class="order-list-pc__status active">Осталось 10 дней</p>
+                                 <div class="order-list-pc__price-label">
+                                    <p class="order-list-pc__price-sign">Сумма</p>
+                                    <p class="order-list-pc__sum">500<span class="icon icon-euro"></span></p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="order-list-pc__content">
+                           <div class="order-list-pc__content-image">
+                              <img src="@img/guide-order/1.png" alt="oops:O" />
+                           </div>
+                           <div class="order-list-pc__text-content">
+                              <div class="order-list-pc__content-item order-list-pc__content-item_number">
+                                 <p class="order-list-pc__number-order">0001</p>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_route">
+                                 <p class="order-list-pc__order-city"><span class="icon icon-mark"></span>Мачахела</p>
+                                 <p class="order-list-pc__order-location">Мачахельский заповедник авторская экскурсия от Акаки Беридзе</p>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_date">
+                                 <p class="order-list-pc__order-date-info"><span class="icon icon-calendar"></span>20.05.2022</p>
+                                 <p class="order-list-pc__order-date-info"><span class="icon icon-watch"></span>10:00</p>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_client-amount-contact">
+                                 <div class="order-list-pc__list-row">
+                                    <p class="order-list-pc__client">Петр Иванов</p>
+                                    <div class="order-list-pc__amount-person">
+                                       <p class="order-list-pc__person">2 вз</p>
+                                       <p class="order-list-pc__person">2 дет</p>
+                                    </div>
+                                    <p class="order-list-pc__contact">+995 577 44 5566</p>
+                                 </div>
+                                 <div class="order-list-pc__list-row">
+                                    <p class="order-list-pc__client">Петр Иванов</p>
+                                    <div class="order-list-pc__amount-person">
+                                       <p class="order-list-pc__person">2 вз</p>
+                                       <p class="order-list-pc__person">2 дет</p>
+                                    </div>
+                                    <p class="order-list-pc__contact">+995 577 44 5566</p>
+                                 </div>
+                                 <div class="order-list-pc__list-row">
+                                    <p class="order-list-pc__client">Петр Иванов</p>
+                                    <div class="order-list-pc__amount-person">
+                                       <p class="order-list-pc__person">2 вз</p>
+                                       <p class="order-list-pc__person">2 дет</p>
+                                    </div>
+                                    <p class="order-list-pc__contact">+995 577 44 5566</p>
+                                 </div>
+                              </div>
+                              <div class="order-list-pc__content-item order-list-pc__content-item_status">
+                                 <p class="order-list-pc__status active">Осталось 10 дней</p>
+                                 <div class="order-list-pc__price-label">
+                                    <p class="order-list-pc__price-sign">Сумма</p>
+                                    <p class="order-list-pc__sum">500<span class="icon icon-euro"></span></p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="guide-order__order-list-mob order-list-mob">
+                     <div class="order-list-mob__item">
+                        <div class="order-list-mob__top-row">
+                           <div class="order-list-mob__img">
+                              <img src="@img/guide-order/1.png" alt="oops:O" />
+                           </div>
+                           <div class="order-list-mob__top-info">
+                              <div class="order-list-mob__number-price">
+                                 <p class="order-list-mob__order-number">Заказ № 001</p>
+                                 <p class="order-list-mob__order-price">
+                                    <span class="order-list-mob__price-sign">Сумма</span>500<span class="icon icon-euro"></span>
+                                 </p>
+                              </div>
+                              <p class="order-list-mob__location">Мачахельский заповедник авторская экскурсия от Акаки Беридзе</p>
+                           </div>
+                        </div>
+                        <div class="order-list-mob__mid-row">
+                           <div class="order-list-mob__mid-signs">
+                              <p class="order-list-mob__mid-date"><span class="icon icon-calendar"></span>Дата</p>
+                              <p class="order-list-mob__mid-start"><span class="icon icon-watch"></span>Начало</p>
+                              <p class="order-list-mob__mid-status">Статус</p>
+                           </div>
+                           <div class="order-list-mob__mid-info active">
+                              <p class="order-list-mob__info">20.05.2022</p>
+                              <p class="order-list-mob__info">10:00</p>
+                              <p class="order-list-mob__info active">Осталось 10 дней</p>
+                           </div>
+                        </div>
+                        <div class="order-list-mob__bottom-row">
+                           <div class="order-list-mob__bottom-signs">
+                              <p class="order-list-mob__bottom-sign">Заказчик</p>
+                              <p class="order-list-mob__bottom-sign">Кол-во чел.</p>
+                              <p class="order-list-mob__bottom-sign">Контакты</p>
+                           </div>
+                           <div class="order-list-mob__bottom-info">
+                              <div class="order-list-mob__bottom-info-row">
+                                 <p class="order-list-mob__client">Петр Иванов</p>
+                                 <div class="order-list-mob__list-person">
+                                    <p class="order-list-mob__person">2 вз</p>
+                                    <p class="order-list-mob__person">2 дет</p>
+                                 </div>
+                                 <p class="order-list-mob__contact">+995 577 3454</p>
+                              </div>
+                              <div class="order-list-mob__bottom-info-row">
+                                 <p class="order-list-mob__client">Петр Иванов</p>
+                                 <div class="order-list-mob__list-person">
+                                    <p class="order-list-mob__person">2 вз</p>
+                                    <p class="order-list-mob__person">2 дет</p>
+                                 </div>
+                                 <p class="order-list-mob__contact">+995 577 3454</p>
+                              </div>
+                              <div class="order-list-mob__bottom-info-row">
+                                 <p class="order-list-mob__client">Петр Иванов</p>
+                                 <div class="order-list-mob__list-person">
+                                    <p class="order-list-mob__person">2 вз</p>
+                                    <p class="order-list-mob__person">2 дет</p>
+                                 </div>
+                                 <p class="order-list-mob__contact">+995 577 3454</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="order-list-mob__item">
+                        <div class="order-list-mob__top-row">
+                           <div class="order-list-mob__img">
+                              <img src="@img/guide-order/1.png" alt="oops:O" />
+                           </div>
+                           <div class="order-list-mob__top-info">
+                              <div class="order-list-mob__number-price">
+                                 <p class="order-list-mob__order-number">Заказ № 001</p>
+                                 <p class="order-list-mob__order-price">
+                                    <span class="order-list-mob__price-sign">Сумма</span>500<span class="icon icon-euro"></span>
+                                 </p>
+                              </div>
+                              <p class="order-list-mob__location">Мачахельский заповедник авторская экскурсия от Акаки Беридзе</p>
+                           </div>
+                        </div>
+                        <div class="order-list-mob__mid-row">
+                           <div class="order-list-mob__mid-signs">
+                              <p class="order-list-mob__mid-date"><span class="icon icon-calendar"></span>Дата</p>
+                              <p class="order-list-mob__mid-start"><span class="icon icon-watch"></span>Начало</p>
+                              <p class="order-list-mob__mid-status">Статус</p>
+                           </div>
+                           <div class="order-list-mob__mid-info active">
+                              <p class="order-list-mob__info">20.05.2022</p>
+                              <p class="order-list-mob__info">10:00</p>
+                              <p class="order-list-mob__info active">Осталось 10 дней</p>
+                           </div>
+                        </div>
+                        <div class="order-list-mob__bottom-row">
+                           <div class="order-list-mob__bottom-signs">
+                              <p class="order-list-mob__bottom-sign">Заказчик</p>
+                              <p class="order-list-mob__bottom-sign">Кол-во чел.</p>
+                              <p class="order-list-mob__bottom-sign">Контакты</p>
+                           </div>
+                           <div class="order-list-mob__bottom-info">
+                              <div class="order-list-mob__bottom-info-row">
+                                 <p class="order-list-mob__client">Петр Иванов</p>
+                                 <div class="order-list-mob__list-person">
+                                    <p class="order-list-mob__person">2 вз</p>
+                                    <p class="order-list-mob__person">2 дет</p>
+                                 </div>
+                                 <p class="order-list-mob__contact">+995 577 3454</p>
+                              </div>
+                              <div class="order-list-mob__bottom-info-row">
+                                 <p class="order-list-mob__client">Петр Иванов</p>
+                                 <div class="order-list-mob__list-person">
+                                    <p class="order-list-mob__person">2 вз</p>
+                                    <p class="order-list-mob__person">2 дет</p>
+                                 </div>
+                                 <p class="order-list-mob__contact">+995 577 3454</p>
+                              </div>
+                              <div class="order-list-mob__bottom-info-row">
+                                 <p class="order-list-mob__client">Петр Иванов</p>
+                                 <div class="order-list-mob__list-person">
+                                    <p class="order-list-mob__person">2 вз</p>
+                                    <p class="order-list-mob__person">2 дет</p>
+                                 </div>
+                                 <p class="order-list-mob__contact">+995 577 3454</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="order-list-mob__item">
+                        <div class="order-list-mob__top-row">
+                           <div class="order-list-mob__img">
+                              <img src="@img/guide-order/1.png" alt="oops:O" />
+                           </div>
+                           <div class="order-list-mob__top-info">
+                              <div class="order-list-mob__number-price">
+                                 <p class="order-list-mob__order-number">Заказ № 001</p>
+                                 <p class="order-list-mob__order-price">
+                                    <span class="order-list-mob__price-sign">Сумма</span>500<span class="icon icon-euro"></span>
+                                 </p>
+                              </div>
+                              <p class="order-list-mob__location">Мачахельский заповедник авторская экскурсия от Акаки Беридзе</p>
+                           </div>
+                        </div>
+                        <div class="order-list-mob__mid-row">
+                           <div class="order-list-mob__mid-signs">
+                              <p class="order-list-mob__mid-date"><span class="icon icon-calendar"></span>Дата</p>
+                              <p class="order-list-mob__mid-start"><span class="icon icon-watch"></span>Начало</p>
+                              <p class="order-list-mob__mid-status">Статус</p>
+                           </div>
+                           <div class="order-list-mob__mid-info active">
+                              <p class="order-list-mob__info">20.05.2022</p>
+                              <p class="order-list-mob__info">10:00</p>
+                              <p class="order-list-mob__info active">Осталось 10 дней</p>
+                           </div>
+                        </div>
+                        <div class="order-list-mob__bottom-row">
+                           <div class="order-list-mob__bottom-signs">
+                              <p class="order-list-mob__bottom-sign">Заказчик</p>
+                              <p class="order-list-mob__bottom-sign">Кол-во чел.</p>
+                              <p class="order-list-mob__bottom-sign">Контакты</p>
+                           </div>
+                           <div class="order-list-mob__bottom-info">
+                              <div class="order-list-mob__bottom-info-row">
+                                 <p class="order-list-mob__client">Петр Иванов</p>
+                                 <div class="order-list-mob__list-person">
+                                    <p class="order-list-mob__person">2 вз</p>
+                                    <p class="order-list-mob__person">2 дет</p>
+                                 </div>
+                                 <p class="order-list-mob__contact">+995 577 3454</p>
+                              </div>
+                              <div class="order-list-mob__bottom-info-row">
+                                 <p class="order-list-mob__client">Петр Иванов</p>
+                                 <div class="order-list-mob__list-person">
+                                    <p class="order-list-mob__person">2 вз</p>
+                                    <p class="order-list-mob__person">2 дет</p>
+                                 </div>
+                                 <p class="order-list-mob__contact">+995 577 3454</p>
+                              </div>
+                              <div class="order-list-mob__bottom-info-row">
+                                 <p class="order-list-mob__client">Петр Иванов</p>
+                                 <div class="order-list-mob__list-person">
+                                    <p class="order-list-mob__person">2 вз</p>
+                                    <p class="order-list-mob__person">2 дет</p>
+                                 </div>
+                                 <p class="order-list-mob__contact">+995 577 3454</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+      @@include('html/footer.html',{})
+   </body>
+</html>

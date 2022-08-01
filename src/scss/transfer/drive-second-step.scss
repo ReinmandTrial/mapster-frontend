@@ -1,0 +1,160 @@
+:root {
+   --white: #ffffff;
+   --gray: #707070;
+   --black: #000000;
+   --light-green: #41b619;
+   --light-gray: #ececec;
+   --yellow: #ffb703;
+}
+
+//========================================================================================================================================================
+
+.transfer-second-step {
+   background: #e0e0e0;
+   &__wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+   }
+
+   &__container {
+   }
+
+   &__content {
+      padding: 50px 0px 163px 0px;
+      @media (max-width: 767.98px) {
+         padding: 21px 0px 52px 0px;
+      }
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 20px;
+      letter-spacing: 0.4px;
+      margin-bottom: 20px;
+   }
+   &__sub-title {
+      font-size: 18px;
+      line-height: 25px;
+      margin-bottom: 15px;
+      @media (max-width: 767.98px) {
+         font-size: 14px;
+         line-height: 19px;
+         margin-bottom: 10px;
+      }
+   }
+
+   &__select-mark {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 39px;
+      margin-bottom: 25px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 12px;
+         grid-template-columns: 1fr;
+         .temp-select__content {
+            order: 2;
+         }
+      }
+   }
+
+   &__mark-prompt-wrap {
+      align-self: end;
+      @media (max-width: 767.98px) {
+         order: 1;
+      }
+   }
+
+   &__select-model {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 39px;
+      margin-bottom: 25px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 12px;
+         grid-template-columns: 1fr;
+      }
+   }
+   &__input-car-number {
+      .temp-input__input-wrap {
+         max-width: 300px;
+      }
+      margin-bottom: 25px;
+      @media (max-width: 500.98px) {
+         .temp-input__input-wrap {
+            max-width: none;
+         }
+         margin-bottom: 12px;
+      }
+   }
+
+   &__select-car-year {
+      max-width: 300px;
+      margin-bottom: 30px;
+      @media (max-width: 500.98px) {
+         max-width: none;
+         margin-bottom: 20px;
+      }
+   }
+   &__car-photo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 39px;
+      margin-bottom: 25px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 12px;
+         grid-template-columns: 1fr;
+      }
+   }
+
+   &__car-photo-input {
+      @media (max-width: 767.98px) {
+         order: 2;
+      }
+   }
+
+   &__car-photo-prompt {
+   }
+   &__car-passport {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px 39px;
+      margin-bottom: 50px;
+      @media (max-width: 767.98px) {
+         margin-bottom: 30px;
+         grid-template-columns: 1fr;
+      }
+   }
+
+   &__car-passport-input {
+      @media (max-width: 767.98px) {
+         order: 2;
+      }
+   }
+
+   &__car-passport-prompt {
+   }
+   &__next-wrap {
+      max-width: 280px;
+      @media (max-width: 767.98px) {
+         max-width: 345px;
+         margin: 0 auto;
+      }
+   }
+
+   &__next-btn {
+      width: 100%;
+      background: #000000;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 1.25px;
+      text-transform: uppercase;
+      color: #ffffff;
+      padding: 14px 0px;
+      @media (max-width: 767.98px) {
+         padding: 9px 0px;
+      }
+   }
+}
