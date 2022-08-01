@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{ "title":"Клиент профиль" })
+
+<body>
+   @@include('html/header.html',{})
+   <div class="transfer-client-profile">
+      <div class="transfer-client-profile__head"></div>
+      <div class="transfer-client-profile__container container-m">
+         <div class="transfer-client-profile__content">
+            <p class="transfer-client-profile__title">Профиль</p>
+            <div class="transfer-client-profile__photo-guide">
+               <img src="@img/tour-guide-edit-profile/photo-guide.png" alt="photo-guide" />
+            </div>
+            <table class="transfer-client-profile__table">
+               <tbody class="transfer-client-profile__tbody">
+                  <tr class="transfer-client-profile__row">
+                     <td class="transfer-client-profile__data">ID</td>
+                     <td class="transfer-client-profile__data">001</td>
+                  </tr>
+                  <tr class="transfer-client-profile__row">
+                     <td class="transfer-client-profile__data">Имя и Фамилия</td>
+                     <td class="transfer-client-profile__data">Акаки Беридзе</td>
+                  </tr>
+                  <tr class="transfer-client-profile__row">
+                     <td class="transfer-client-profile__data">Дата рождения</td>
+                     <td class="transfer-client-profile__data">21. апр. 1975</td>
+                  </tr>
+                  <tr class="transfer-client-profile__row">
+                     <td class="transfer-client-profile__data">Пол</td>
+                     <td class="transfer-client-profile__data">Мужской</td>
+                  </tr>
+                  <tr class="transfer-client-profile__row">
+                     <td class="transfer-client-profile__data">Страна / город</td>
+                     <td class="transfer-client-profile__data">Грузия / Батуми</td>
+                  </tr>
+                  <tr class="transfer-client-profile__row">
+                     <td class="transfer-client-profile__data">Телефон</td>
+                     <td class="transfer-client-profile__data">+995 577 77 77 77</td>
+                  </tr>
+                  <tr class="transfer-client-profile__row">
+                     <td class="transfer-client-profile__data">e-mail</td>
+                     <td class="transfer-client-profile__data">mail@mail.ru</td>
+                  </tr>
+               </tbody>
+            </table>
+            <but class="transfer-client-profile__edit-table">Редактировать профиль</but>
+         </div>
+      </div>
+   </div>
+   @@include('html/footer.html',{})
+</body>
+
+</html>

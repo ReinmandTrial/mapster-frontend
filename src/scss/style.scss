@@ -4,7 +4,7 @@
 @import 'fonts';
 // @import './guides/info-pay&thanks-page';
 // @import './guides/main-guide';
-// @import './guides/profile-page';
+@import './guides/profile-page';
 // @import './guides/tag';
 // @import './guides/order&balance';
 // @import './guides/AdminPanel';
@@ -25,3 +25,6 @@
 @import './transfer/main-client';
 @import './transfer/client-search';
 @import './transfer/client-car-booking';
+@import './transfer/client-profile';
+@import './transfer/client-profile-edit';
+@import './transfer/client-orders';
