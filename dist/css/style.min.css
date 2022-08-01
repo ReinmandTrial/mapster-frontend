@@ -4913,6 +4913,11 @@ body {
 .transfer-client-profile__container {
   background-color: #ffffff;
 }
+@media (max-width: 575.98px) {
+  .transfer-client-profile__container {
+    background-color: transparent;
+  }
+}
 .transfer-client-profile__content {
   padding: 30px 0px 491px 0px;
   max-width: 560px;

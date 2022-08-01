@@ -19,6 +19,9 @@
 
    &__container {
       background-color: #ffffff;
+      @media (max-width: $mobileSmall) {
+         background-color: transparent;
+      }
    }
 
    &__content {
